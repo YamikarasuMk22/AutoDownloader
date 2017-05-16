@@ -14,7 +14,7 @@ public class ProxyConfig {
 		return null;
 	}
 
-	public static void ProxyAccess(boolean access, boolean login) {
+	public static void proxyAccess(boolean access, boolean login) {
 		//プロキシ接続不要の場合は不要
 		if(access) {
 			System.setProperty("proxySet", "true");

@@ -8,7 +8,7 @@ public class ADLLauncher {
 	public static String URL = "https://ja.wikipedia.org/wiki/テスト";
 
 	public static void main(String[] args) {
-		ProxyConfig.ProxyAccess(true, false);
+		ProxyConfig.proxyAccess(true, false);
 
 		try {
 			String src = SrcReader.getPageSrc(URL);
