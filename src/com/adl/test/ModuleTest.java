@@ -17,5 +17,4 @@ public class ModuleTest {
 		System.out.println(contentType);
 
 	}
-
 }
