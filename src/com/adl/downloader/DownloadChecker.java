@@ -5,13 +5,20 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.net.URLConnection;
 
 import javax.activation.FileTypeMap;
 
 public class DownloadChecker {
-	public static String getContentType(String file) {
+	public static String getContentType(URLConnection conn) {
+
+		String contentType = null;
+		contentType = conn.getContentType();
+
+		return contentType;
+	}
+
+	public static String getContentTypeByInputStream(String file) {
 
 		String contentType = null;
 
@@ -28,20 +35,6 @@ public class DownloadChecker {
 		return contentType;
 	}
 
-	public static String getContentTypeByResponse(URL file) {
-
-		String contentType = null;
-
-		try {
-			URLConnection conn = file.openConnection();
-			contentType = conn.getContentType();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		return contentType;
-	}
-
 	public static String getContentTypeByMap(String file) {
 		FileTypeMap filetypeMap = FileTypeMap.getDefaultFileTypeMap();
 		String mimetype = filetypeMap.getContentType(file);
@@ -49,8 +42,8 @@ public class DownloadChecker {
 		return mimetype;
 	}
 
-	public static String getImgFileExtention(URL file) {
-		String contentType = getContentTypeByResponse(file);
+	public static String getImgFileExtention(URLConnection conn) {
+		String contentType = getContentType(conn);
 
 		if(contentType.equals("image/jpeg"))
 			return ".jpg";

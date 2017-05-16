@@ -9,14 +9,14 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
-import java.net.URL;
+import java.net.URLConnection;
 
 public class Downloader {
 	public static String DOWNLOAD_FOLDER = "C:\\Temp\\image1.jpg";
 
-	public void downloadFromURL(URL url, String path) {
+	public static void downloadFromURL(URLConnection urlconn, String path) {
 	try {
-		HttpURLConnection conn =(HttpURLConnection) url.openConnection();
+		HttpURLConnection conn =(HttpURLConnection) urlconn;
 		conn.setAllowUserInteraction(false);
 		conn.setInstanceFollowRedirects(true);
 		conn.setRequestMethod("GET");conn.connect();
