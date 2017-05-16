@@ -12,7 +12,7 @@ public class ModuleTest {
 		ProxyConfig.proxyAccess(true, false);
 
 		URL url = new URL("http://placehold.jp/570x90.png");
-		String contentType = DownloadChecker.getContentTypeByResponse(url);
+		String contentType = DownloadChecker.getImgFileExtention(url);
 
 		System.out.println(contentType);
 

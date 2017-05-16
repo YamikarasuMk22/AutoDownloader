@@ -48,4 +48,17 @@ public class DownloadChecker {
 
 		return mimetype;
 	}
+
+	public static String getImgFileExtention(URL file) {
+		String contentType = getContentTypeByResponse(file);
+
+		if(contentType.equals("image/jpeg"))
+			return ".jpg";
+		else if(contentType.equals("image/png"))
+			return ".png";
+		else if(contentType.equals("image/gif"))
+			return ".gif";
+		else
+			return null;
+	}
 }
