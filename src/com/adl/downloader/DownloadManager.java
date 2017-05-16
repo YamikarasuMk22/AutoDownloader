@@ -44,6 +44,7 @@ public class DownloadManager {
 
 	//作品を保存するフォルダーの作成
 	public static String createDownloadFolder() {
+		//重複チェックする
 		return null;
 
 	}
