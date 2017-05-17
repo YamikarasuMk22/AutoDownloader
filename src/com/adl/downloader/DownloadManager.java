@@ -6,7 +6,7 @@ import java.net.URLConnection;
 
 import com.adl.util.Util;
 
-public class DownloadManager {
+public class DownloadManager extends Downloader {
 	public static String ROOT_DOWNLOAD_FOLDER_PATH = "";
 
 	//マックスのページ数分ダウンロードする
@@ -24,7 +24,7 @@ public class DownloadManager {
 				String downloadFolder = ROOT_DOWNLOAD_FOLDER_PATH
 						+ id + "ImageName00" + page + extention;
 
-				Downloader.downloadFromURL(conn, downloadFolder);
+				downloadFromURL(conn, downloadFolder);
 
 				Util.getRandInterval();
 
