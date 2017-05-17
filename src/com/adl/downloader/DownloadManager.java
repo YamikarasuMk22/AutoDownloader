@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
 
+import com.adl.util.Util;
+
 public class DownloadManager {
-	public static String ROOT_DOUNLOAD_FOLDER_PATH = "";
+	public static String ROOT_DOWNLOAD_FOLDER_PATH = "";
 
 	//マックスのページ数分ダウンロードする
 	public static void downloadImgs(String lootUrl, String id, int maxPage) {
@@ -19,26 +21,16 @@ public class DownloadManager {
 
 				String extention = DownloadChecker.getImgFileExtention(conn);
 
-				String downloadFolder = ROOT_DOUNLOAD_FOLDER_PATH
+				String downloadFolder = ROOT_DOWNLOAD_FOLDER_PATH
 						+ id + "ImageName00" + page + extention;
 
 				Downloader.downloadFromURL(conn, downloadFolder);
 
-				getRandInterval();
+				Util.getRandInterval();
 
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}
-	}
-
-	public static void getRandInterval() {
-		try {
-			int ran = (int)(Math.random() * 10000);
-			Thread.sleep(ran);
-
-		} catch (InterruptedException e) {
-			e.printStackTrace();
 		}
 	}
 
