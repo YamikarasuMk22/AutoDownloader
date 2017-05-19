@@ -10,4 +10,14 @@ public class Util {
 			e.printStackTrace();
 		}
 	}
+
+	public static String convertCSV(String[] args) {
+		String csv = "";
+
+		for(int i = 0; i < args.length; i++) {
+			csv = csv + args[i] + ",";
+		}
+
+		return csv;
+	}
 }

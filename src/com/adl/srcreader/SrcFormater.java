@@ -10,8 +10,6 @@ import java.util.regex.Pattern;
  */
 public class SrcFormater {
 
-	public static int GALLERY_SIZE = 25;
-
 	public static String getSrcTitle(String src) {
 
 		Pattern pattern1 = Pattern.compile("<title>([^<]+)</title>", Pattern.CASE_INSENSITIVE);

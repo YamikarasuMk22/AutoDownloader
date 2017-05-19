@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><root>
+<comic id="TEST" uploaded="0">
+<Title>Title</Title>
+<TitleJ>TitleJ</TitleJ>
+<TitleO>TitleO</TitleO>
+<Charas>Chara1,Chara2</Charas>
+<Tags>Tag1,Tag2,Tag3</Tags>
+<Artist>Artist</Artist>
+<PageNum>PageNum</PageNum>
+<ComicURL>ComicURL</ComicURL>
+<ComicPath>ComicPath</ComicPath>
+<BlogPageURL>BlogPageURL</BlogPageURL>
+</comic>
+</root>

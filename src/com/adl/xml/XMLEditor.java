@@ -16,9 +16,9 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-public class XMLEditor {
+import com.adl.constant.ConnectionConstants;
 
-	private static final File XML_FILE_PATH = new File("comic.xml");
+public class XMLEditor implements ConnectionConstants {
 
 	public static Document getRootDocument() {
 		try {
@@ -72,9 +72,9 @@ public class XMLEditor {
 		createXML(file, document);
 	}
 
-	// タグは半角空白区切り
+	// タグはカンマ区切り
 	public static void addNode(String id, String[] nodeParams) {
-		String[] nodeElems = { "Title", "Artist", "Circle", "Tags", "PageNum", "ComicURL", "ComicPath", "BlogPageURL" };
+		String[] nodeElems = { "Title", "TitleJ", "TitleO", "Charas", "Tags", "Artist", "PageNum", "ComicURL", "ComicPath", "BlogPageURL" };
 
 		try {
 			Document document = getRootDocument();
@@ -82,7 +82,7 @@ public class XMLEditor {
 
 			Element comic = document.createElement("comic");
 			comic.setAttribute("id", id);
-			comic.setAttribute("uploaded", "0");
+			comic.setAttribute("states", "setup");
 			root.appendChild(comic);
 
 			for (int i = 0; i < nodeElems.length; i++) {
@@ -99,8 +99,9 @@ public class XMLEditor {
 		}
 	}
 
-	//サンプル 指定したidのuploadedを1に変更
-	public static void updateNodeUploaded(String id) {
+	//サンプル 指定したidのuploadedをstatesに変更
+	//setup,downloading,downloaded,uploading,uploaded
+	public static void setStats(String id, String states) {
 
 		try {
 			Document document = getRootDocument();
@@ -111,7 +112,7 @@ public class XMLEditor {
 				Element element = (Element) list.item(i);
 				String strSN = element.getAttribute("id");
 				if (strSN.compareTo(id) == 0) {
-					element.setAttribute("uploaded", "1");
+					element.setAttribute("states", states);
 					break;
 				}
 			}

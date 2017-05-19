@@ -12,7 +12,6 @@ import java.net.ProtocolException;
 import java.net.URLConnection;
 
 public class Downloader {
-	public static String DOWNLOAD_FOLDER = "C:\\Temp\\image1.jpg";
 
 	public static void downloadFromURL(URLConnection urlconn, String path) {
 	try {
