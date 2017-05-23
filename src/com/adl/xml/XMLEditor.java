@@ -73,8 +73,8 @@ public class XMLEditor implements ConnectionConstants {
 	}
 
 	// タグはカンマ区切り
-	public static void addNode(String id, String[] nodeParams) {
-		String[] nodeElems = { "Title", "TitleJ", "TitleO", "Charas", "Tags", "Artist", "PageNum", "ComicURL", "ComicPath", "BlogPageURL" };
+	public static boolean addNode(String id, String[] nodeParams) {
+		String[] nodeElems = { "Title", "TitleJ", "TitleO", "Charas", "Tags", "Artist", "PageNum", "ComicURL", "PageRootURL", "FolderPath", "BlogURL"};
 
 		try {
 			Document document = getRootDocument();
@@ -94,8 +94,11 @@ public class XMLEditor implements ConnectionConstants {
 
 			createXML(XML_FILE_PATH, document);
 
+			return true;
+
 		} catch (Exception e) {
 			e.printStackTrace();
+			return false;
 		}
 	}
 

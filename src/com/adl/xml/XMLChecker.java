@@ -35,9 +35,10 @@ public class XMLChecker extends XMLEditor {
 	}
 
 	/**
-	 * XMLを解析し新規ダウンロード可能の場合はtrueを返す
+	 * XMLを解析し新規ダウンロード可能かをチェックする
+	 * 不可:0 可能(未登録):1 可能(登録済):2
 	 */
-	public static boolean isDownloadable(String id) {
+	public static int isDownloadable(String id) {
 		try {
 			Document document = getRootDocument();
 			Element root = document.getDocumentElement();
@@ -56,15 +57,15 @@ public class XMLChecker extends XMLEditor {
 				}
 			}
 			//XMLに登録されてない場合はダウンロード可能
-			if(match == 0) return true;
+			if(match == 0) return 1;
 
 			//XMLに登録されているかつstatesがsetupの場合はダウンロード可能
-			if(result.equals("setup")) return true;
-			else return false;
+			if(result.equals("setup")) return 2;
+			else return 0;
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			return false;
+			return 0;
 		}
 	}
 }

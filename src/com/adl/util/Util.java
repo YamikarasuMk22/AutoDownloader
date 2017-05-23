@@ -20,4 +20,8 @@ public class Util {
 
 		return csv;
 	}
+
+	public static void systemLoger(String log) {
+		System.out.println(log);
+	}
 }
