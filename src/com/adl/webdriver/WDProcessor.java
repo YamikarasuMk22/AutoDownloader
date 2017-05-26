@@ -119,6 +119,9 @@ public class WDProcessor extends WebDriver {
 				robot.keyPress(KeyEvent.VK_A);
 				robot.keyRelease(KeyEvent.VK_A);
 				robot.delay(200);
+
+				//事前にフォルダを作成して、ファイル名に\folder(id)\1.jpg等と打って保存するか
+
 				robot.keyPress(KeyEvent.VK_ENTER);
 				robot.keyRelease(KeyEvent.VK_ENTER);
 				robot.keyPress(KeyEvent.VK_ENTER);
