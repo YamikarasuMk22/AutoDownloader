@@ -51,7 +51,7 @@ public class XMLChecker extends XMLEditor {
 				Element element = (Element) list.item(i);
 				String strSN = element.getAttribute("id");
 				if (strSN.compareTo(id) == 0) {
-					result = element.getAttribute("uploaded");
+					result = element.getAttribute("states");
 					match ++;
 					break;
 				}

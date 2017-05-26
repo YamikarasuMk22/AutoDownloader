@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.adl.util.Util;
+
 /**
  * ダウンロードサイトのSrcを解析する
  */
@@ -28,13 +30,16 @@ public class SrcFormater {
 	 */
 	public static List<String> getGalleryURLList(String src) {
 
-		Pattern pattern1 = Pattern.compile("<div class=\"gallery\".*<a href=\"(.*)\" class=\"cover\"", Pattern.CASE_INSENSITIVE);
-		Matcher matcher1 = pattern1.matcher(src);
-
 		List<String> URLList = new ArrayList<String>();
+		String[] strs = src.split("¥n");
+		for (int i = 0 ; i < strs.length ; i++) {
 
-		while (matcher1.find()) {
-			URLList.add(matcher1.group(1));
+			Pattern pattern1 = Pattern.compile("<a href=\"/(.*)\" class=\"cover\"", Pattern.CASE_INSENSITIVE);
+			Matcher matcher1 = pattern1.matcher(src);
+
+			while (matcher1.find()) {
+				URLList.add(matcher1.group(1));
+			}
 		}
 
 		return URLList;
@@ -69,7 +74,7 @@ public class SrcFormater {
 			return matcher1.group(1);
 		}
 
-		return null;
+		return "";
 	}
 
 	/**
@@ -85,7 +90,7 @@ public class SrcFormater {
 			return matcher1.group(1);
 		}
 
-		return null;
+		return "";
 	}
 
 	/**
@@ -101,7 +106,7 @@ public class SrcFormater {
 			return matcher1.group(1);
 		}
 
-		return null;
+		return "";
 	}
 
 	/**
@@ -155,7 +160,7 @@ public class SrcFormater {
 			return matcher1.group(1);
 		}
 
-		return null;
+		return "";
 	}
 
 	/**
@@ -224,6 +229,22 @@ public class SrcFormater {
 
 		if (matcher1.find()) {
 			return matcher1.group(1);
+		}
+
+		return null;
+	}
+
+	/**
+	 * 作品イメージの拡張子を返す
+	 * Page
+	 */
+	public static String getImgSuffix(String src) {
+
+		Pattern pattern1 = Pattern.compile("<img src=\"(.*)\" width=\".*\" height=\".*\" class=\"fit-horizontal\" />", Pattern.CASE_INSENSITIVE);
+		Matcher matcher1 = pattern1.matcher(src);
+
+		if (matcher1.find()) {
+			return Util.getSuffix(matcher1.group(1));
 		}
 
 		return null;

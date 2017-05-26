@@ -74,7 +74,7 @@ public class XMLEditor implements ConnectionConstants {
 
 	// タグはカンマ区切り
 	public static boolean addNode(String id, String[] nodeParams) {
-		String[] nodeElems = { "Title", "TitleJ", "TitleO", "Charas", "Tags", "Artist", "PageNum", "ComicURL", "PageRootURL", "FolderPath", "BlogURL"};
+		String[] nodeElems = { "Title", "TitleJ", "TitleO", "Charas", "Tags", "Artist", "PageNum", "ComicURL", "FolderPath", "BlogURL"};
 
 		try {
 			Document document = getRootDocument();

@@ -66,4 +66,41 @@ FirefoxDriver wd = new FirefoxDriver(profile);
 PDF(.pdf)･･･"application/pdf"
 PNG画像(.png)･･･"image/png"
 
+public static void processDownload(String url, int pageNum) {
+		Util.systemLoger("Start Process [Download]-----");
+		Util.systemLoger("[Download] URL:" + url + "X/");
+		Util.systemLoger("[Download] PageSize:" + pageNum);
 
+		//driver.get("https://nhentai.net/g/196078/2/");
+		driver.get("https://i.nhentai.net/galleries/1067090/2.jpg");
+		//driver.navigate().to("https://nhentai.net/g/196078/2/");
+		//driver.navigate().to("https://i.nhentai.net/galleries/1067090/2.jpg");
+
+		//new Actions(driver).contextClick(driver.findElement(
+		//		By.xpath("//div[@id='page-container']/section[@id='image-container']/a/img"))).build().perform();
+		new Actions(driver).contextClick().build().perform();
+		//driver.findElement(By.className("fit-horizontal")).sendKeys(Keys.CONTROL + "s");
+		//new Actions(driver).sendKeys(Keys.CONTROL + "s");
+		//new Actions(driver).sendKeys("a");
+
+		try {
+			Robot robot = new Robot();
+
+			robot.delay(1000);
+//			robot.keyPress(KeyEvent.VK_CONTROL);
+//			robot.keyPress(KeyEvent.VK_S);
+//			robot.keyRelease(KeyEvent.VK_S);
+//			robot.keyRelease(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_A);
+			robot.keyRelease(KeyEvent.VK_A);
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+			robot.delay(1000);
+		} catch (AWTException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+	}

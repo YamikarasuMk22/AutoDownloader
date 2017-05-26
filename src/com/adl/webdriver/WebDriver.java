@@ -3,6 +3,7 @@ package com.adl.webdriver;
 import java.util.Hashtable;
 import java.util.Map;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
@@ -18,22 +19,31 @@ public class WebDriver implements ConnectionConstants {
 		System.setProperty("webdriver.chrome.driver", ".\\driver\\chromedriver.exe");
 
 		ChromeOptions options = new ChromeOptions();
+		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+
 		//chromeのパスを指定
 		options.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+
+		//proxy serverの指定
 		options.addArguments("--proxy-server=" + PROXY_SERVER + ":" + PROXY_PORT);
+		//Proxy proxy = new Proxy();
+		//proxy.setHttpProxy(PROXY_SERVER + ":" + PROXY_PORT);
+		//capabilities.setCapability("proxy", proxy);
 
 		Map<String, Object> prefs = new Hashtable<String, Object>();
 		prefs.put("profile.default_content_settings.popups", 0);
 		prefs.put("download.prompt_for_download", "false");
 		prefs.put("download.default_directory", DOWNLOAD_ROOT_FOLDER);
 
-		options.setExperimentalOption("chrome.prefs", prefs);
+		capabilities.setCapability("chrome.prefs", prefs);
 
-		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
-		driver = new ChromeDriver(options);
+		ChromeDriver localDriver = new ChromeDriver(capabilities);
+		driver = localDriver;
+
+		driver.manage().window().setSize(new Dimension(100, 50));
 	}
 
 	public static void quitWebDriver() throws Exception {
@@ -41,11 +51,46 @@ public class WebDriver implements ConnectionConstants {
 	}
 
 	public static void init() {
-		WDProcessor.processGallery();
+		try {
+			WDProcessor.processGallery();
+			quitWebDriver();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static String openWebSite(String url) {
+		String srcStr = "";
+
+		try {
+			createWebDriver();
+
+			driver.get(url);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return srcStr;
+	}
+
+	public static void closeWebSite() throws Exception {
+		driver.quit();
 	}
 
 	public static String getSrc(String url) {
-		driver.get(url);
-		return driver.getPageSource();
+		String srcStr = "";
+
+		try {
+			createWebDriver();
+
+			driver.get(url);
+			srcStr = driver.getPageSource();
+
+			quitWebDriver();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return srcStr;
 	}
 }
