@@ -11,17 +11,16 @@ public class ModuleTest implements ConnectionConstants {
 	public static void main(String[] args) throws IOException {
 		ProxyConfig.proxyAccess(true, false);
 
-		WDProcessor.processDownloadImg("196288", "jpg", 2);
 
 //		WDProcessor.processGallery();
 //
-//		try {
-//			WDProcessor.createWebDriver();
-//			WDProcessor.processDownload("", "", 1);
-//
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
+		try {
+			WDProcessor.createWebDriver();
+			WDProcessor.processDownloadImg("1068078" ,"1068078", "png", 2);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 //		String src = WebDriver.getSrc(DOWNLOAD_ROOT_URL);
 //

@@ -72,7 +72,10 @@ public class XMLEditor implements ConnectionConstants {
 		createXML(file, document);
 	}
 
-	// タグはカンマ区切り
+	/**
+	 * 作品を登録する
+	 * 複数の要素はカンマ区切りとなる
+	 */
 	public static boolean addNode(String id, String[] nodeParams) {
 		String[] nodeElems = { "Title", "TitleJ", "TitleO", "Charas", "Tags", "Artist", "PageNum", "ComicURL", "FolderPath", "BlogURL"};
 
@@ -82,6 +85,7 @@ public class XMLEditor implements ConnectionConstants {
 
 			Element comic = document.createElement("comic");
 			comic.setAttribute("id", id);
+			comic.setAttribute("imgid", id);
 			comic.setAttribute("states", "setup");
 			root.appendChild(comic);
 
@@ -102,8 +106,10 @@ public class XMLEditor implements ConnectionConstants {
 		}
 	}
 
-	//サンプル 指定したidのuploadedをstatesに変更
-	//setup,downloading,downloaded,uploading,uploaded
+	/**
+	 * 指定した作品IDのStatesを変更する
+	 * setup,downloading,downloaded,uploading,uploaded
+	 */
 	public static void setStats(String id, String states) {
 
 		try {
@@ -116,6 +122,32 @@ public class XMLEditor implements ConnectionConstants {
 				String strSN = element.getAttribute("id");
 				if (strSN.compareTo(id) == 0) {
 					element.setAttribute("states", states);
+					break;
+				}
+			}
+
+			createXML(XML_FILE_PATH, document);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 指定した作品IDのImgIDを変更する
+	 */
+	public static void setImgId(String id, String imgid) {
+
+		try {
+			Document document = getRootDocument();
+			Element root = document.getDocumentElement();
+
+			NodeList list = root.getElementsByTagName("comic");
+			for (int i = 0; i < list.getLength(); i++) {
+				Element element = (Element) list.item(i);
+				String strSN = element.getAttribute("id");
+				if (strSN.compareTo(id) == 0) {
+					element.setAttribute("imgid", imgid);
 					break;
 				}
 			}

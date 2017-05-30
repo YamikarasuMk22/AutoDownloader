@@ -244,7 +244,23 @@ public class SrcFormater {
 		Matcher matcher1 = pattern1.matcher(src);
 
 		if (matcher1.find()) {
-			return Util.getSuffix(matcher1.group(1));
+			return Util.getSuffixbyURL(matcher1.group(1));
+		}
+
+		return null;
+	}
+
+	/**
+	 * 作品イメージのIDを返す
+	 * Page
+	 */
+	public static String getImgID(String src) {
+
+		Pattern pattern1 = Pattern.compile("<img src=\"(.*)\" width=\".*\" height=\".*\" class=\"fit-horizontal\" />", Pattern.CASE_INSENSITIVE);
+		Matcher matcher1 = pattern1.matcher(src);
+
+		if (matcher1.find()) {
+			return Util.getIDbyURL(matcher1.group(1));
 		}
 
 		return null;

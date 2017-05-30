@@ -5,6 +5,7 @@ import java.io.File;
 public interface ConnectionConstants {
 	//Download Constants
 	static final String DOWNLOAD_SITE_URL = "https://nhentai.net/";
+	static final String DOWNLOAD_IMG_URL = "https://i.nhentai.net/";
 	static final String CATEGORY_TAG = "tag/futanari";
 	static final String DOWNLOAD_ROOT_URL = DOWNLOAD_SITE_URL + CATEGORY_TAG + "/";
 	static final String DOWNLOAD_ROOT_FOLDER = "D:\\Users\\J34568\\Downloads";
@@ -22,6 +23,9 @@ public interface ConnectionConstants {
 
 	//XML Constants
 	static final File XML_FILE_PATH = new File("comics.xml");
+
+	//Robot Constants
+	static final int DEFAULT_KEY_INTERVAL = 1000;
 
 	//Test
 	static final String TEST_URL = "https://nhentai.net/tag/futanari/";
