@@ -7,7 +7,7 @@ public interface ConnectionConstants {
 	static final String DOWNLOAD_SITE_URL = "https://nhentai.net/";
 	static final String CATEGORY_TAG = "tag/futanari";
 	static final String DOWNLOAD_ROOT_URL = DOWNLOAD_SITE_URL + CATEGORY_TAG + "/";
-	static final String DOWNLOAD_ROOT_FOLDER = "C:\\temp\\";
+	static final String DOWNLOAD_ROOT_FOLDER = "D:\\Users\\J34568\\Downloads";
 
 	//Upload Constants
 	static final String BLOG_ROOT_URL = "";

@@ -3,6 +3,7 @@ package com.adl.webdriver;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,14 @@ import com.adl.xml.XMLChecker;
 import com.adl.xml.XMLEditor;
 
 public class WDProcessor extends WebDriver {
+
+	public static void processALL() {
+		processGallery();
+	}
+
+	/**
+	 * GalleryURLのHTMLを解析し、各作品のURLを取得するまでのプロセス
+	 */
 	public static void processGallery() {
 		Util.systemLoger("Start Process [Gallery]-----");
 		Util.systemLoger("[Gallery] AccessURL:" + DOWNLOAD_ROOT_URL);
@@ -24,13 +33,17 @@ public class WDProcessor extends WebDriver {
 		Util.systemLoger("[Gallery] GalleryURLListSize:" + contentURLList.size());
 
 		for (int i = 0; i < contentURLList.size(); i++) {
-			processContent(DOWNLOAD_SITE_URL + contentURLList.get(i));
 			Util.systemLoger("Start Process [Content] " + (i + 1) + "/" + contentURLList.size() + "-----");
-			Util.systemLoger("[Content] ContentURL:" + DOWNLOAD_SITE_URL + contentURLList.get(i));
+			processContent(DOWNLOAD_SITE_URL + contentURLList.get(i));
 		}
 	}
 
+	/**
+	 * ContentURLのHTMLを解析し、パラメータを取得する
+	 * パラメータチェックを行いXMLに登録を行うまでのプロセス
+	 */
 	public static void processContent(String url) {
+		Util.systemLoger("[Content] ContentURL:" + url);
 		String srcContent = getSrc(url);
 
 		// 日本語でない場合、同人作品でない場合はreturn
@@ -95,43 +108,64 @@ public class WDProcessor extends WebDriver {
 		}
 	}
 
+	/**
+	 * PageURLのHTMLを解析し、イメージの拡張子を取得、保存フォルダの作成までのプロセス
+	 */
 	public static void processDownload(String id, String url, int pageNum) {
 		Util.systemLoger("Start Process [Download]-----");
 		Util.systemLoger("[Download] URL:" + url + "X/");
 		Util.systemLoger("[Download] PageSize:" + pageNum);
 
+		//拡張子の取得
 		String srcPage1 = getSrc(url + "1/");
 		String suffix = SrcFormater.getImgSuffix(srcPage1);
 
 		Util.systemLoger("[Download] Image Suffix:" + suffix);
 
+		//ダウンロードフォルダーにIDでフォルダーを作成
+		//※Chromeの設定でダウンロードフォルダーの設定を行うこと
+		File downloadDir = new File(DOWNLOAD_ROOT_FOLDER + "\\" + id);
+		downloadDir.mkdir();
+
 		for(int page = 1; page <= pageNum; page++) {
-			String DownloadURL = DOWNLOAD_SITE_URL + "galleries/" + id + "/" + page + "." + suffix;
-
-			driver.get(DownloadURL);
-
-			new Actions(driver).contextClick().build().perform();
-
-			try {
-				Robot robot = new Robot();
-
-				robot.delay(200);
-				robot.keyPress(KeyEvent.VK_A);
-				robot.keyRelease(KeyEvent.VK_A);
-				robot.delay(200);
-
-				//事前にフォルダを作成して、ファイル名に\folder(id)\1.jpg等と打って保存するか
-
-				robot.keyPress(KeyEvent.VK_ENTER);
-				robot.keyRelease(KeyEvent.VK_ENTER);
-				robot.keyPress(KeyEvent.VK_ENTER);
-				robot.keyRelease(KeyEvent.VK_ENTER);
-				robot.delay(200);
-			} catch (AWTException e) {
-				e.printStackTrace();
-			}
-
-			//ダウンロードフォルダーにファイルが存在するかチェック
+			Util.systemLoger("Start Process [DownloadImg]-----");
+			processDownloadImg(id, suffix, page);
 		}
+	}
+
+	/**
+	 * イメージの保存、保存チェックをするまでのプロセス
+	 */
+	public static void processDownloadImg(String id, String suffix, int page) {
+		Util.systemLoger("[DownloadImg] ID:" + id + ", Suffix:" + suffix + ", Page:" + page);
+		String downloadURL = DOWNLOAD_SITE_URL + "galleries/" + id + "/" + page + "." + suffix;
+		Util.systemLoger("[DownloadImg] ImgURL:" + downloadURL);
+
+		driver.get(downloadURL);
+
+		//イメージを右クリック
+		new Actions(driver).contextClick().build().perform();
+
+		//ブラウザメニュー操作
+		try {
+			Robot robot = new Robot();
+
+			robot.delay(200);
+			robot.keyPress(KeyEvent.VK_A);
+			robot.keyRelease(KeyEvent.VK_A);
+			robot.delay(200);
+
+			//事前にフォルダを作成して、ファイル名に\folder(id)\1.jpg等と打って保存するか
+
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+			robot.delay(200);
+		} catch (AWTException e) {
+			e.printStackTrace();
+		}
+
+		//ダウンロードフォルダーにファイルが存在するかチェック
 	}
 }
