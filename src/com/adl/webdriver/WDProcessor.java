@@ -217,6 +217,8 @@ public class WDProcessor extends WebDriver {
 			result = false;
 		}
 
+		//TODO png→jpgに変換する？
+
 		Util.systemLoger("End Process [DownloadImg]----- Flag:" + result);
 		return result;
 	}
