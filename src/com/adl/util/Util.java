@@ -4,6 +4,9 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
 public class Util {
+	/**
+	 * 0.1～1.0秒のインターバルを生成する
+	 */
 	public static void getRandInterval() {
 		try {
 			int ran = (int) (Math.random() * 1000);
@@ -14,16 +17,25 @@ public class Util {
 		}
 	}
 
+	/**
+	 * 文字列配列をカンマ区切りで連結する
+	 */
 	public static String convertCSV(String[] args) {
 		String csv = "";
 
 		for (int i = 0; i < args.length; i++) {
-			csv = csv + args[i] + ",";
+			if(i < args.length - 1)
+				csv = csv + args[i] + ",";
+			else
+				csv = csv + args[i];
 		}
 
 		return csv;
 	}
 
+	/**
+	 * 画像URLから拡張子を抽出する
+	 */
 	public static String getSuffixbyURL(String url) {
 		if (url == null)
 			return null;
@@ -36,6 +48,10 @@ public class Util {
 		return url;
 	}
 
+	/**
+	 * nhentai.netのURL構造に基づき
+	 * URLに含まれる作品ID、イメージIDを抽出する
+	 */
 	public static String getIDbyURL(String url) {
 		if (url == null)
 			return null;
@@ -45,10 +61,13 @@ public class Util {
 		return args[4];
 	}
 
-	public static void typeID(String id, Robot robo) {
-		String[] idArray = id.split("");
+	/**
+	 * id名のディレクトリをキーボードから入力する
+	 * イメージ保存時のディレクトリ指定に使用
+	 */
+	public static void typeIDDir(String id, Robot robo) {
 
-		//カーソル移動
+		// カーソル移動
 		for (int x = 0; x < 10; x++) {
 			robo.keyPress(KeyEvent.VK_LEFT);
 			robo.keyRelease(KeyEvent.VK_LEFT);
@@ -56,64 +75,34 @@ public class Util {
 		}
 
 		// 1文字ずつ処理
-		for (int i = 0; i < idArray.length; i++) {
-			switch (Integer.parseInt(idArray[i])) {
-			case 0:
-				robo.keyPress(KeyEvent.VK_0);
-				robo.keyRelease(KeyEvent.VK_0);
-				robo.delay(200);
-				break;
-			case 1:
-				robo.keyPress(KeyEvent.VK_1);
-				robo.keyRelease(KeyEvent.VK_1);
-				robo.delay(200);
-				break;
-			case 2:
-				robo.keyPress(KeyEvent.VK_2);
-				robo.keyRelease(KeyEvent.VK_2);
-				robo.delay(200);
-				break;
-			case 3:
-				robo.keyPress(KeyEvent.VK_3);
-				robo.keyRelease(KeyEvent.VK_3);
-				robo.delay(200);
-				break;
-			case 4:
-				robo.keyPress(KeyEvent.VK_4);
-				robo.keyRelease(KeyEvent.VK_4);
-				robo.delay(200);
-				break;
-			case 5:
-				robo.keyPress(KeyEvent.VK_5);
-				robo.keyRelease(KeyEvent.VK_5);
-				robo.delay(200);
-				break;
-			case 6:
-				robo.keyPress(KeyEvent.VK_6);
-				robo.keyRelease(KeyEvent.VK_6);
-				robo.delay(200);
-				break;
-			case 7:
-				robo.keyPress(KeyEvent.VK_7);
-				robo.keyRelease(KeyEvent.VK_7);
-				robo.delay(200);
-				break;
-			case 8:
-				robo.keyPress(KeyEvent.VK_8);
-				robo.keyRelease(KeyEvent.VK_8);
-				robo.delay(200);
-				break;
-			case 9:
-				robo.keyPress(KeyEvent.VK_9);
-				robo.keyRelease(KeyEvent.VK_9);
-				robo.delay(200);
-				break;
-			}
-		}
+		sendKey(id, robo);
 
 		robo.keyPress(KeyEvent.VK_BACK_SLASH);
 		robo.keyRelease(KeyEvent.VK_BACK_SLASH);
 		robo.delay(200);
+	}
+
+	/**
+	 * 文字列(半角英小文字+数字)をキーボードから入力する
+	 * TODO 大文字に対応する
+	 */
+	private static void sendKey(String text, Robot robo) {
+		for (int i = 0; i < text.length(); i++) {
+
+			char c = text.charAt(i);
+			int keycode;
+
+			if (0 <= c && c <= 9) {
+				keycode = KeyEvent.VK_0 + (c - '0');
+			} else if ('a' <= c && c <= 'z') {
+				keycode = KeyEvent.VK_A + (c - 'a');
+			} else {
+				throw new IllegalArgumentException("unsupported : " + c);
+			}
+
+			robo.keyPress(keycode);
+			robo.delay(100);
+		}
 	}
 
 	public static void systemLoger(String log) {

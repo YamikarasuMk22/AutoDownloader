@@ -1,0 +1,2175 @@
+http://admin.blog.fc2.com/control.php?mode=editor&process=new
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+	<meta name="robots" content="noindex,nofollow" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>HDF;DataBase - FC2 BLOG 管理ページ</title>
+	<link rel="shortcut icon" type="image/ico" href="//static.fc2.com/share/image/favicon.ico" />
+			<link href="//static.fc2.com/css/admin/wide/common.css" rel="stylesheet" type="text/css" charset="UTF-8" />
+	<link href="//static.fc2.com/css/admin/wide/default_150525.css?160113a2" rel="stylesheet" type="text/css" charset="UTF-8" />
+	<link href="//static.fc2.com/css/admin/wide/ja/style_150528.css" rel="stylesheet" type="text/css" charset="UTF-8" />
+	<link href="//static.fc2.com/css/admin/wide/main/editor_151006.css?160721a1" rel="stylesheet" type="text/css" charset="UTF-8" />
+
+	<link rel="stylesheet" type="text/css" href="//static.fc2.com/share/fc2parts/css/share.css" />
+	<script type="text/javascript" src="//static.fc2.com/js/admin/lang_ja.js" charset="utf-8"></script>
+	<script type="text/javascript" src="//static.fc2.com/js/admin/admin.js?20151224" charset="utf-8"></script>
+
+	<script type="text/javascript">
+	    <!--
+	    function search_back(){
+	        var isMSIE = /*@cc_on!@*/false; //IE判別
+	        if (isMSIE) {
+	            if(document.charset!="utf-8"){ //文字コードが変換されているかチェック
+	                document.charset="utf-8"; //変換されていたら指定の文字コードに戻す
+	                location.reload();
+	            }
+	        }
+	    }
+	    window.onload=search_back;
+	    //-->
+	</script>
+
+	<script type="text/javascript">
+	<!--
+	function checkiMac(){
+		return 0;//others
+	}
+	document.cookie = 'access_time' + "=" + escape('1496297972') + ";";
+			document.write('<script type="text/javascript" src="//static.fc2.com/js/admin/edit_entry.js?20160929a1" charset="utf-8"></'+'script>');
+		//-->
+	</script>
+
+	<script type="text/javascript">
+if (Blog == undefined) var Blog={};
+Blog.isSimple = true;
+
+function switch_sipmle_normal(){
+Blog.isSimple = !Blog.isSimple;
+
+//switch
+var change_normal_link = document.getElementById('change_normal_link');
+if (change_normal_link) change_normal_link.style.display = (Blog.isSimple)? '' : 'none';
+var change_simple_link = document.getElementById('change_simple_link');
+if (change_simple_link) change_simple_link.style.display = (Blog.isSimple)? 'none' : '';
+
+var switch_list = ['menu_simple_normal_block','tabmenu','sub_menu2','intro_tools','tr_entry_genre','tr_entry_theme','tr_entry_tb','left_menu_trackback','left_menu_charge','highlight_toggle_body','tvtheme_box','left_menu_box_app','left_menu_myshop','left_menu_box_fc2srv'];
+
+for(var i = 0, j = switch_list.length, b; i < j; i++){
+	var switch_element = document.getElementById(switch_list[i]);
+	if (switch_element) switch_element.style.display = (Blog.isSimple)? 'none' : '';
+}
+// editor
+var bodyToolbar = document.getElementById('bodyToolbar');
+if (bodyToolbar) bodyToolbar.style.display = (Blog.isSimple)? 'none' : '';
+var bodySimpleToolbar = document.getElementById('bodySimpleToolbar');
+if (bodySimpleToolbar) bodySimpleToolbar.style.display = (Blog.isSimple)? '' : 'none';
+var bodySimpleEmoticon = document.getElementById('bodySimpleEmoticon');
+if (bodySimpleEmoticon) bodySimpleEmoticon.style.display = (Blog.isSimple)? '' : 'none';
+}
+</script>
+
+
+
+</head>
+<body class="common_lang_ja">
+
+	<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N4H7X2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N4H7X2');</script>
+<!-- End Google Tag Manager -->
+<!-- bg image box -->
+<div id="wrap" style="min-height: 800px;">
+	<div id="header">
+		<h1><a title="FC2ブログ - 無料ブログ(blog)を簡単作成！" href="//blog.fc2.com/" target="_blank">ブログ</a></h1>
+		<p class="charge_icon">
+			<a href="//fc2.to/cdpsHI" target="_blank">
+				<img src="//static.fc2.com/image/sh_design/duck_domainex01.png">
+			</a>
+		</p>
+	</div>
+<!-- hader menu -->
+	<div class="header_menu">
+		<div class="header_menu_inner clear">
+						<p class="userid">ブログID : hdfdatabase</p>
+			<ul id="header_menulist">
+									<li><a href="?mode=logging&process=out&lang=ja" title="ログアウトします" class="gtm-hm_logout">ログアウト</a></li>
+												<li id="myservice" class="off" onfocus="this.className='on'" onblur="this.className='off'" onmouseover="this.className='on'" onmouseout="this.className='off'" onactivate="this.className='on'" ondeactivate="this.className='off'">
+					<a href="#" title="登録済みサービスメニュー">マイサービス</a>
+					<ul class="drop_list">
+						<li><a href="//id.fc2.com/" title="FC2ID" target="_blank" class="gtm-hm_id">FC2ID</a></li>
+						<li><a href="http://id.fc2.com/?mode=login&done=counter" title="カウンター" target="_blank" class="gtm-hm_counter">カウンター</a></li>					</ul>
+				</li>
+								<li id="bloghelp" class="off" onfocus="this.className='on'" onblur="this.className='off'" onmouseover="this.className='on'" onmouseout="this.className='off'" onactivate="this.className='on'" ondeactivate="this.className='off'">
+					<a href="#" title="ヘルプ">ヘルプ</a>
+					<ul class="drop_list">
+						<li><a href="http://help.fc2.com/blog/manual/Home.html" target="_blank" class="gmt-header_menu_help">マニュアル</a></li>						<li><a href="http://blog.fc2.com/forum_community/" target="_blank" class="gmt-header_menu_forum">ユーザーフォーラム</a></li>						<li><a href="http://help.fc2.com/blog/" target="_blank" class="gmt-header_menu_qa">公式Q&A</a></li>						<li><a href="http://blog.fc2.com/spam/" target="_blank" class="gmt-header_menu_qa">スパム対策</a></li>						<li><a href="http://help.fc2.com/inquiry" target="_blank" class="gmt-header_menu_inquire">お問い合わせ</a></li>						<li><a href="http://request.fc2.com/search_wish.php?ct1=5" target="_blank" title="FC2サービスに対する要望などが投稿できます">リクエスト</a></li>					</ul>
+				</li>
+								<li><a href="//fc2.to/1ehAWZ" class="gtm-hm_ranking">ランキング</a></li>
+				<li><a href="//fc2.to/flmnqy" target="_blank" title="Twitter" class="gtm-hm_twitter"><img alt="twitter" src="//static.fc2.com/image/twitter_icon.png" /></a></li>
+								<li><a href="?mode=notify" title="ＦＣ２からのお知らせや新着情報" class="gtm-hm_notify">お知らせ</a></li>
+
+								<li id="simple_mode">
+					<a href="#" title="簡易モードに切り替える" id="change_simple_link" class="gtm-hm_change_simple" style="display:none;">簡易モード&nbsp;：&nbsp;<img src="//static.fc2.com/image/ja/admin/simple_mode_off.png" alt="通常モード" onclick="switchmenu('menu_simple_normal','not');switch_sipmle_normal();return false;" /></a>
+					<a href="#" title="通常モードに切り替える" id="change_normal_link" class="gtm-hm_change_normal" style="display:;">簡易モード&nbsp;：&nbsp;<img src="//static.fc2.com/image/ja/admin/simple_mode_on.png" alt="簡易モード" onclick="switchmenu('menu_simple_normal','not');switch_sipmle_normal();return false;" /></a>
+				</li>
+							</ul>
+					<div id="menu_simple_normal" style="display:none;"></div>		</div>
+	</div>
+<!-- /header menu -->
+<div id="container" class="clear m_simple">
+<div class="contents_box">
+	<div id="left" >
+					<!--PR--><div id="ad_sidebar"></div>
+				<div class="menu">
+			<h3 class="ml_home" >
+					<a href="#" title="クリックでメニューが開閉します">ホーム</a>
+			</h3>
+			<ul class="menulist" id="menu_home" style="display:block;">
+				<li><a href="?mode=notify" class="gtm-lm_notify">お知らせ</a></li>
+				<li><a href="http://hdfdatabase.blog.fc2.com/" target="_blank" class="gtm-lm_myblog">ブログの確認</a></li>
+				<li><a href="?mode=editor&process=new" class="gtm-lm_editor"><img src="//static.fc2.com/image/icon_main/blue_arr.png" class="menu_point" alt="" /><strong>新しく記事を書く</strong></a></li>
+				<li><a href="?mode=control&process=entry" class="gtm-lm_entry">記事の管理</a></li>
+				<li><a href="?mode=control&process=comment" class="gtm-lm_comment">コメントの管理</a></li>
+				<li id="left_menu_trackback" style="display:none;"><a href="?mode=control&process=trackback" class="gtm-lm_trackback">トラックバックの管理</a></li>
+				<li><a href="?mode=control&process=upload" class="gtm-lm_upload">ファイルアップロード</a></li>
+				<li><a href="control.php?mode=album" class="gtm-lm_album">アルバムの管理</a></li>
+			</ul>
+		</div>
+		<div class="menu">
+			<h3 class="ml_sns"><a href="#" title="クリックでメニューが開閉します">コミュニケーション</a></h3>
+			<ul class="menulist" id="menu_sns" style="display:block;">
+				<li><a href="?mode=history" class="gtm-lm_history">訪問者リスト</a></li>
+								<li><a href="http://fc2.to/8INRVZ" class="gtm-lm_ranking">ランキング</a></li>
+								<li><a href="?mode=clap" class="gtm-lm_clap">ブログ拍手</a></li>
+				<li><a href="?mode=sns_community" class="gtm-lm_community">コミュニティ</a></li>
+				<li><a href="?mode=sns" class="gtm-lm_sns">ブロとも</a></li>
+				<li>
+<a href="?mode=message" class="gtm-lm_message">
+<span class="menulist_txt">メッセージ</span>
+</a>
+				</li>
+								<li><a href="?mode=baton" class="gtm-lm_baton">バトン</a></li>
+								<li><a href="?mode=invite" class="gtm-lm_invite">招待する</a></li>
+			</ul>
+		</div>
+		<div class="menu">
+			<h3 class="ml_setting"><a href="#" title="クリックでメニューが開閉します">設定</a></h3>
+			<ul class="menulist" id="menu_setting" style="display:block;">
+				<li><a href="?mode=setting&process=1" class="gtm-lm_setting">環境設定</a></li>
+				<li><a href="?mode=design" class="gtm-lm_design">テンプレートの設定</a></li>
+				<li><a href="?mode=plugin" class="gtm-lm_plugin">プラグインの設定</a></li>
+				<li><a href="?mode=control&process=category" class="gtm-lm_category">カテゴリの編集</a></li>
+				<li><a href="?mode=control&process=link" class="gtm-lm_link">リンクの編集</a></li>
+								<li id="left_menu_paid" class="paid_label"><a href="?mode=paid" class="gtm-lm_paid"><img src="//static.fc2.com/image/ja/paid/pro_label_small.png" class="paid_label_img" alt="" />				<span class="paid_menu">有料プラン</span></a></li>
+																			</ul>
+		</div>
+		<div class="menu">
+			<h3 class="ml_tool"><a href="#" title="クリックでメニューが開閉します">ツール</a></h3>
+			<ul class="menulist" id="menu_tool" style="display:block;">
+				<li id="left_menu_charge" style="display:none;"><a href="?mode=blomaga" class="gtm-lm_charge">ブロマガ</a></li>
+				<li id="left_menu_payreport"><a href="?mode=payreport" class="gtm-lm_payreport">アフィリエイト</a></li>
+
+												<li><a href="?mode=control&process=backup" class="gtm-lm_backup">ログインポート</a></li>
+				<li><a href="?mode=control&process=backup" class="gtm-lm_backup">データバックアップ</a></li>
+				<li><a href="?mode=control&process=tag" class="gtm-lm_tag">ユーザータグの編集</a></li>
+				<li><a href="?mode=control&process=theme" class="gtm-lm_theme">スレッドテーマの編集</a></li>
+								<li><a href="http://r.fc2.com/" target="_blank" title="ブログに貼り付ける画像を好きなサイズに縮小できます" class="gtm-lm_resize">画像縮小</a></li>
+												<li><a href="?mode=epub" class="gtm-lm_epub">電子書籍化</a></li>
+								<li><a href="?mode=control&process=publish" class="gtm-lm_publish">ブログ書籍化</a></li>
+							</ul>
+		</div>
+
+				<!--<div class="menu" id="side_help_search">
+			<h3>FC2ヘルプ検索</h3>
+			<div class="clear">
+				<form action="http://help.fc2.com/search/qa" method="get" target="_blank">
+					<input type="text" name="q" class="help_form_tetarea" /><input type="hidden" name="service_id" value="2" /><input type="submit" value="検索" class="admin_common_btn" />
+				</form>
+			</div>
+		</div>-->
+
+
+	</div><!--/left-->
+
+	<!-- 右カラム -->
+	<div id="ajaxcontent">
+<dl id="tabmenu" style="display:none;">
+		<dd class="tabselected" title="ブログ"><a href="?" title="ブログ">ブログ</a></dd>
+
+			<dd><a href="?mode=sns" title="コミュニケーション">コミュニケーション</a></dd>
+	</dl>	<ul id="sub_menu2" style="display:none;">
+		<li><a class="gtm-hsub_menu" href="http://hdfdatabase.blog.fc2.com/" target="_blank" title="ブログの確認">ブログの確認</a></li>
+		<li>
+						<a class="gtm-hsub_menu" href="?mode=editor&process=new" title="新しく記事を書く"><img src="//static.fc2.com/image/icon_main/blue_arr.png" class="menu_point" alt="" /><span style="font-weight:bold;">新しく記事を書く</span></a>		</li>
+		<li>
+			<a class="gtm-hsub_menu" href="#" onclick="Upload('body');return false;" title="ファイルアップロード">ファイルアップロード</a>					</li>
+		<li class="last">
+			<a class="gtm-hsub_menu" href="?mode=setting&process=1" title="環境設定">環境設定</a>					</li>
+	</ul>
+<script type="text/javascript">
+var blog_url = "http://hdfdatabase.blog.fc2.com/";
+// MacのSafariでリアルタイムプレビューを出さない
+try {
+	window.addEventListener('load', function() {
+		var ua = navigator.userAgent,removeElm = function(id) {
+			var elm = document.getElementById(id);
+			elm.parentNode.removeChild(elm);
+		};
+		if (ua.indexOf('Macintosh;') > -1 && ua.indexOf('Safari') > -1 && ua.indexOf('Chrome') == -1) {
+			removeElm('area_pre_body');
+			removeElm('area_pre_extend');
+			removeElm('area_pre_blomaga_intro');
+		}
+	}, false);
+} catch(e) {
+}
+
+function WYSIWYGPreview(id){
+	if(checkiMac() == 1){
+		return false;
+	}else{
+		var ins = Editor._instances;
+		if(Editor._status.isFck[id] && Editor.control.isAutoBreak()){
+			var text = ins.fckeditor[id].GetXHTML();
+			text = text.replace(/<br([^>]+)clear="([^>]+)"([^>]+)>/gi,"fc2_br_clear_$2_tag");
+			text = text.replace(/<br([^>]+)>/gi,"\n");
+			text = text.replace(/fc2_br_clear_([^>]+)_tag/gi,'<br clear="$1" />');
+			ins.textarea[id].value = text;
+		}
+	}
+}
+
+
+function AddTag(tag){
+	var txt = document.getElementById('usertag').value;
+	var re_space = /(\u3000|\u3001|\u002c)+| {2,}/g;
+
+	if(txt){
+		txt =  txt.replace(re_space, " ");
+		var tags = txt.split(" ");
+	}else{
+		var tags = new Array();
+	}
+
+	var f = false;
+	var tags2 = new Array();
+
+	for(var i=0; i<tags.length; i++){
+		if(tags[i] == tag){
+			f = true;
+		}else{
+			tags2.push(tags[i]);
+		}
+	}
+
+	if(!f){
+		if(tags.length >= 1){
+			if (tags.length >= 10){
+				window.alert('入力できるタグは10個までです。');
+			}else{
+				txt = txt + ' ' + tag;
+			}
+		}else{
+			txt = tag;
+		}
+	}else{
+		txt = tags2.join(" ");
+	}
+
+	txt = txt.replace(re_space, " ");
+	document.getElementById('usertag').value = txt;
+}
+
+function writeEmbedTag(id){
+	var h = '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" ' +
+		'codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" ' +
+		'width="400" height="400" id="main" align="middle">' +
+		'<param name="allowScriptAccess" value="always" />' +
+		'<param name="movie" value="https://icon.fc2.com/ieditor/blogicon.swf?ac=hdfdatabase&ps=ae3736651f67ef7273b9deed2430f2b1" />' +
+		'<param name="quality" value="best" />' +
+		'<param name="bgcolor" value="#ffffff" />' +
+		'<embed src="https://icon.fc2.com/ieditor/blogicon.swf?ac=hdfdatabase&ps=ae3736651f67ef7273b9deed2430f2b1" quality="best" bgcolor="#ffffff"' +
+		'width="400" height="400" name="main" ' +
+		'align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" ' +
+		'pluginspage="http://www.macromedia.com/go/getflashplayer" />' +
+		'</object>';
+	if (checkiMac() == 0) document.getElementById(id).innerHTML=h;else document.all(id).innerHTML=h;
+}
+
+function writeEmbedTag2(id){
+	var h = '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" ' +
+		'codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" ' +
+		'width="570" height="400" id="main" align="middle">' +
+		'<param name="allowScriptAccess" value="always" />' +
+		'<param name="movie" value="http://blog.fc2.com/oekaki/lineDraw.swf" />' +
+		'<param name="quality" value="high" />' +
+		'<param name="FlashVars" value="bid=hdfdatabase">' +
+		'<param name="bgcolor" value="#ffffff" />' +
+		'<embed src="http://blog.fc2.com/oekaki/lineDraw.swf" quality="high" bgcolor="#ffffff"' +
+		'width="570" height="400" name="main" ' +
+		'align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" ' +
+		'pluginspage="http://www.macromedia.com/go/getflashplayer" FlashVars="bid=hdfdatabase" />' +
+		'</object>';
+	document.getElementById(id).innerHTML=h;
+}
+var is_blomaga_price_setting = false;		// ブロマガの設定を行ったかどうか
+function postEntry(){
+
+
+		if ( !is_blomaga_price_setting && ! checkCharge() ){
+		return false;
+	}
+
+	if ( ! checkChargeSingle() ){
+		return false;
+	}
+
+		execBeforeUnload = false;
+	if(checkiMac() == 1){
+		document.entry.target='_self';
+		document.entry.action='http://admin.blog.fc2.com/control.php';
+		document.entry.submit();
+		return false;
+	}else{
+		try {
+						Editor.commands.submit('save');
+		}catch(e){
+			var form=document.getElementById('entry');
+			form.onsubmit=function(){};
+			form.submit();
+		}
+	}
+}
+
+
+
+
+
+function changeNolimit(obj)
+{
+	var friends  = document.getElementById('blogfriends');
+	var charge   = document.getElementById('entry_charge');
+	var charge_s = document.getElementById('entry_charge_single_check');
+	var e_charge_s = document.getElementById('entry_charge_single');
+
+	friends.checked   = !obj.checked;
+	charge.checked    = !obj.checked;
+	charge_s.disabled = true;
+	e_charge_s.disabled = true;
+	toggleBlomagaIntro()
+}
+
+function changePrivate(obj)
+{
+	var nolimit  = document.getElementById('no_limit');
+	var charge   = document.getElementById('entry_charge');
+	var charge_s = document.getElementById('entry_charge_single_check');
+	var e_charge_s = document.getElementById('entry_charge_single');
+
+	nolimit.checked   = !obj.checked;
+	charge.checked    = !obj.checked;
+	charge_s.disabled = true;
+	e_charge_s.disabled = true;
+	toggleBlomagaIntro()
+}
+
+function changeCharge(obj)
+{
+	var nolimit  = document.getElementById('no_limit');
+	var friends  = document.getElementById('blogfriends');
+	var charge_s = document.getElementById('entry_charge_single_check');
+
+	nolimit.checked   = !obj.checked;
+	friends.checked   = !obj.checked;
+	charge_s.disabled = false;
+	changeChargeSingle(charge_s);
+	toggleBlomagaIntro();
+}
+
+function changeChargeSingle(obj)
+{
+	var disabledVal = invalidChargeSingleCheck(obj);
+	document.getElementById('entry_charge_single').disabled = disabledVal;
+}
+
+function invalidChargeSingleCheck(obj)
+{
+	return ! (obj.checked && ! obj.disabled);
+}
+
+function checkCharge()
+{
+
+	if ( document.getElementById('entry_charge').checked ) {
+		alert('ブロマガの月額費が設定されていません。');
+		return false;
+	}
+
+	return true;
+}
+
+function checkChargeSingle()
+{
+	var val = document.getElementById('entry_charge_single').value;
+	if ( invalidChargeSingleCheck( document.getElementById('entry_charge_single_check') ) ) return true;
+
+	var errmsg = '';
+
+	val = val.replace(/(^\s+)|(\s+$)/g, "");
+
+	if (val == '') {
+		errmsg = '単体販売を行う場合は、価格を設定して下さい';
+	}
+
+	if ( errmsg == '' ) {
+		if (val.match(/[^0-9]/g)) {
+			errmsg = '単体販売価格は数値で入力してください';
+		}
+	}
+
+	if ( errmsg == '' ) {
+		num = eval(val);
+		if (! (num >= 100 && num <= 100000) ) {
+			errmsg = '単体販売価格は100～100,000円で入力してください';
+		}
+	}
+
+	if ( errmsg != '' ){
+		alert(errmsg);
+		return false;
+	}
+
+	return true;
+}
+
+</script>
+
+<style type="text/css">
+#wrap div.header_menu{
+position: relative;
+z-index: 10000;
+}
+</style>
+<!--right-->
+<div id="right" class="blog_admin_right">
+	<!--新しく記事を書く-->
+	<div id="editor_area" class="section">
+		<div id="editor_page_head">
+			<h2 class="editor_title">
+									新しく記事を書く							</h2>
+												<ul id="post_number" class="clear">
+						<li id="today_posts">今日の投稿<span id="today_posts_num">0件</span></li>
+						<li id="rest_posts">残り<span id="rest_posts_num">30件</span></li>
+					</ul>
+									</div>
+
+	<!--/message(result)-->
+
+
+		<form method="post" name="entry" id="entry" onsubmit="return false;">
+
+						<span class="adimn_pr_txt">
+				<a href="http://blog.fc2.com/campaign/domainex/?editor_1506_02" class="pr_link" target="_blank">
+					<img class="pr_tag" src="//static.fc2.com/image/ja/admin/pr_tag.png" alt="" /><span class="pr_txt">JPドメインが無料なんて嘘だッ！！！→マジだった・・・・・・</span>
+				</a>
+			</span>
+
+					<div class="new_editor_migration clear">
+				<div class="new_editor_migration_desc">
+					もっと記事を書きやすく。投稿ページが新しくなりました。<span>※推奨動作環境Google Chrome最新版</span>
+				</div>
+				<a href="http://admin.blog.fc2.com/control.php?mode=editor_change" class="gtm_editor_new_editor_link">さっそく試してみる</a>
+			</div>
+
+							<table border="0" cellspacing="0" cellpadding="0" class="main_table main_table_head">
+					<tr>
+						<th><label for="entry_title">タイトル</label></th>
+						<td><input name="entry[title]" id="entry_title" type="text" value="" style="padding:6px;" /></td>
+					</tr>
+					<tr class="evencell">
+						<th><label for="cate">カテゴリ</label></th>
+						<td>
+							<select name="entry[category]" id="cate" style="" class="cat_select">
+								<option value="0" selected> 未分類 </option><option value="1" > アニメ </option><option value="6" > アニメ(旧作) </option><option value="7" > アニメ(R18) </option><option value="2" > コミック </option><option value="8" > コミック(旧作) </option><option value="9" > コミック(R18) </option><option value="3" > ゲーム </option><option value="10" > ゲーム(旧作) </option><option value="11" > ゲーム(R18) </option><option value="4" > 映画 </option><option value="12" > 映画(海外) </option><option value="5" > ドラマ </option><option value="13" > ドラマ(海外) </option><option value="14" > AV(R18) </option><option value="15" > その他 </option><option value="16" > タイトル一覧 </option>							</select>
+							<input type="text" name="name" style="width: 240px;height:22px;line-height: 22px;padding: 6px;font-size:14px;vertical-align:middle;" />
+														<input type="button" value="追加" onclick="execBeforeUnload=false;Editor.commands.submit('category');" class="admin_common_btn cat_add_btn" />
+													</td>
+					</tr>
+								</table>
+
+
+
+	<div class="boxposition_left"><span class="style_error"></span></div>
+
+	<div class="editor_main_flame">
+				<h3 class="subtitle_switch_body editor_subtitle"><a href="#">本文の編集&nbsp;<span class="switch_link"></span></a>
+			<span class="switch_tool_tip">
+				<a class="tool_tip">
+					<img alt="" src="//static.fc2.com/share/fc2footermenu/blank.gif" width="20px" height="20px" />
+					<span class="tool_tip_text">
+						クリックで開閉します					</span>
+				</a>
+			</span>
+		</h3>
+		<div style="text-align:left;margin-bottom:5px;">追記や投稿時間などの設定を行う場合は、管理画面上部にて「簡易モード」をオフにしてください <a href="http://help.fc2.com/blog/manual/Home/kankyou/simplemode.html" target="_blank">[解説]</a></div>
+				<div id="menu_text_body">
+
+
+			<!--bodyToolbar-->
+			<div class="editor" id="bodyToolbar" style="display:none;">
+				<ul>
+					<li class="toolbar_1">
+					<a href="#" onclick="ColorPicker('body');return false;" title="文字に色を付ける" class="func_button">
+					文字に色を付ける</a>
+					<div id="pick_color_body" class="color_pallet" style="display:none"></div>
+					</li>
+
+										<li class="toolbar_2">
+					<a href="#" onclick="Style('body','font-size:x-large;','大きい文字');return false;" title="文字を大きくする" class="func_button">
+					文字を大きくする</a>
+					</li>
+
+					<li class="toolbar_3">
+					<a href="#" onclick="Style('body','font-size:large;','少し大きい文字');return false;" title="文字を少し大きくする" class="func_button">
+					文字を少し大きくする</a>
+					</li>
+
+					<li class="toolbar_4">
+					<a href="#" onclick="Style('body','font-size:x-small;','小さい文字');return false;" title="文字を小さくする" class="func_button">
+					文字を小さくする</a>
+					</li>
+
+
+					<li class="toolbar_5">
+					<a href="#" onclick="Tag('body','<strong>','</strong>','強調文');return false;" alt="" title="太字" class="func_button">
+					太字</a>
+					</li>
+
+					<li class="toolbar_6">
+					<a href="#" onclick="Tag('body','<i>','</i>','斜体文');return false;" title="斜体" class="func_button">
+					斜体</a>
+					</li>
+
+					<li class="toolbar_7">
+					<a href="#" onclick="Tag('body','<s>','</s>','打ち消し文');return false;" title="打ち消し" class="func_button">
+					打ち消し</a>
+					</li>
+
+					<li class="toolbar_8">
+					<a href="#" onclick="Tag('body','<u>','</u>','下線文');return false;" title="下線" class="func_button">
+					下線</a>
+					</li>
+
+					<li class="toolbar_9">
+					<a href="#" onclick="Tag('body','<blockquote><p>','</p></blockquote>','引用');return false;" title="引用" class="func_button">
+					引用</a>
+					</li>
+
+					<li class="toolbar_10">
+					<a href="#" onclick="Tag('body','<hr size=&quot;1&quot; />','','');return false;" title="水平線" class="func_button">
+					水平線</a>
+					</li>
+
+					<li class="toolbar_11">
+					<a href="#" onclick="Upload('body');return false;" title="ファイル挿入" class="func_button">
+					ファイル挿入</a>
+					</li>
+
+					<li class="toolbar_12">
+					<a href="#"onclick="Link('body');return false;" title="リンク" class="func_button">
+					リンク</a>
+					<div class='url_form' id="url_form_body" style="display: none;"></div>
+					</li>
+
+					<li class="toolbar_13">
+					<a href="#" onclick="Google('body');return false;" title="Googleリンク" class="func_button">
+					Googleリンク</a>
+					</li>
+<!--
+					<li class="toolbar_15">
+					<a href="#" onclick="Tag('body','&amp;lt;','','');return false;" title="＜" class="func_button">
+					＜</a>
+					</li>
+
+					<li class="toolbar_16">
+					<a href="#" onclick="Tag('body','&amp;gt;','','');return false;" title="＞" class="func_button">
+					＞</a>
+					</li>
+-->
+					<li class="toolbar_30">
+					<a href="#" id="body-emoticon" onclick="return false;" title="顔文字を挿入する" class="func_button">
+					顔文字を挿入する</a>
+					</li>
+
+										<li class="toolbar_17">
+					<a href="#" onclick="Emoji('body','i');return false;" title="i-mode絵文字を挿入する" class="func_button">
+					i-mode絵文字を挿入する</a>
+					</li>
+
+					<li class="toolbar_18">
+					<a href="#" onclick="Emoji('body','e');return false;" title="Ezweb絵文字を挿入する" class="func_button">
+					Ezweb絵文字を挿入する</a>
+					</li>
+
+										<li class="toolbar_19">
+															<a href="#" onclick="Emoji('body','v');return false;" title="softbank絵文字を挿入する" class="func_button">
+					softbank絵文字を挿入する</a>
+					</li>
+
+
+										<li class="toolbar_20">
+					<a href="#" onclick="openEditor('body');return false;" title="絵文字エディター" class="func_button">
+					絵文字エディター</a>
+					</li>
+
+					<li class="toolbar_21">
+					<a href="#" onclick="openEditor2('body');return false;" title="お絵かきエディター" class="func_button">
+					お絵かきエディター</a>
+					</li>
+
+					<li class="toolbar_22">
+					<a href="#" onclick="FC2Video('body');return false;" title="FC2動画投稿ツール" class="func_button">
+					FC2動画投稿ツール</a>
+					</li>
+
+
+					<li class="toolbar_23">
+					<a href="#" onclick="NicoVideo('body');return false;" title="ニコニコ動画ツール" class="func_button">
+					ニコニコ動画ツール</a>
+					</li>
+
+					<li class="toolbar_27">
+					<a href="#" onclick="YoutubeVideo('body'); return false;" title="Youtube動画ツール" class="func_button">youtubeを挿入</a>
+					</li>
+										<li class="toolbar_28">
+					<a href="#" onclick="return false;" title="Instagramの画像を記事に挿入する" class="func_button toggleEmbedInstagram">Instagramの画像を記事に挿入する</a></li>
+					</li>
+
+
+
+
+					<li class="toolbar_32">
+						<a href="#" onclick="return false;" title="Evernoteを挿入する" class="func_button evernote_icon toggleEmbedEvernote">Evernoteを挿入する</a>
+					</li>
+
+					<li class="toolbar_24">
+					<a href="#" onclick="Extends('body');return false;" title="テキストエリア拡大" class="func_button">
+					テキストエリア拡大</a>
+					</li>
+
+					<li class="toolbar_25">
+					<a href="#" onclick="unExtends('body');return false;" title="テキストエリア縮小" class="func_button">
+					テキストエリア縮小</a>
+					</li>
+
+					<li class="toolbar_26">
+					<img src="//static.fc2.com/image/icon_main/wysiwyg.gif?a1" onclick="SwitchEditor('body');" alt="高機能テキストエディタ" title="高機能テキストエディタ" class="func_button" width="20" height="20" />
+					</li>
+
+					<li class="btn">
+					<input type="button" value="設定" onClick="window.open('http://admin.blog.fc2.com/control.php?mode=setting&process=2#post', 'setting');" class="setbtn editor_set_btn" />
+					</li>
+
+				</ul>
+			</div>
+			<!--/bodyToolbar-->
+
+
+			<!--bodySimpleToolbar-->
+			<div class="simple_editor" id="bodySimpleToolbar" style="display:;">
+				<ul>
+					<li class="simple_toolbar_1">
+					<a href="#" onclick="ColorPicker('simple');return false;" title="文字に色を付ける" class="simple_func_button">
+					文字に色を付ける</a>
+					<div id="pick_color_simple" class="color_pallet" style="display:none"></div>
+					</li>
+
+					<li class="simple_toolbar_2">
+					<a href="#" onclick="Style('body','font-size:x-large;','大きい文字');return false;" title="文字を大きくする" class="simple_func_button">
+					文字を大きくする</a>
+					</li>
+
+					<li class="simple_toolbar_3">
+					<a href="#" onclick="Style('body','font-size:large;','少し大きい文字');return false;" title="文字を少し大きくする" class="simple_func_button">
+					文字を少し大きくする</a>
+					</li>
+
+					<li class="simple_toolbar_4">
+					<a href="#" onclick="Style('body','font-size:x-small;','小さい文字');return false;" title="文字を小さくする" class="simple_func_button">
+					文字を小さくする</a>
+					</li>
+
+					<li class="simple_toolbar_5">
+					<a href="#" onclick="Tag('body','<strong>','</strong>','強調文');return false;" alt="" title="太字" class="simple_func_button">
+					太字</a>
+					</li>
+
+					<li class="simple_toolbar_6">
+					<a href="#" onclick="Tag('body','<i>','</i>','斜体文');return false;" title="斜体" class="simple_func_button">
+					斜体</a>
+					</li>
+
+					<li class="simple_toolbar_7">
+					<a href="#" onclick="Tag('body','<s>','</s>','打ち消し文');return false;" title="打ち消し" class="simple_func_button">
+					打ち消し</a>
+					</li>
+
+					<li class="simple_toolbar_8">
+					<a href="#" onclick="Tag('body','<u>','</u>','下線文');return false;" title="下線" class="simple_func_button">
+					下線</a>
+					</li>
+
+					<li class="simple_toolbar_9">
+					<a href="#" onclick="Tag('body','<blockquote><p>','</p></blockquote>','引用');return false;" title="引用" class="simple_func_button">
+					引用</a>
+					</li>
+
+					<li class="simple_toolbar_10">
+					<a href="#" onclick="Tag('body','<hr size=&quot;1&quot; />','','');return false;" title="水平線" class="simple_func_button">
+					水平線</a>
+					</li>
+
+					<li class="simple_toolbar_11">
+					<a href="#" onclick="Upload('body');return false;" title="ファイル挿入" class="simple_func_button">
+					ファイル挿入</a>
+					</li>
+
+					<li class="simple_toolbar_12">
+					<a href="#"onclick="Link('simple');return false;" title="リンク" class="simple_func_button">
+					リンク</a>
+					<div class='url_form' id="url_form_simple" style="display: none;"></div>
+					</li>
+
+					<li class="simple_toolbar_30">
+					<a href="#" id="simple-body-emoticon" onclick="return false;" title="顔文字を挿入する" class="simple_func_button">
+					顔文字を挿入する</a>
+					</li>
+
+										<li class="simple_toolbar_14">
+					<a href="#" onclick="Emoji('body','i');return false;" title="i-mode絵文字を挿入する" class="simple_func_button">
+					i-mode絵文字を挿入する</a>
+					</li>
+
+					<li class="simple_toolbar_15">
+					<a href="#" onclick="Emoji('body','e');return false;" title="Ezweb絵文字を挿入する" class="simple_func_button">
+					Ezweb絵文字を挿入する</a>
+					</li>
+
+					<li class="simple_toolbar_16">
+					<a href="#" onclick="Emoji('body','v');return false;" title="softbank絵文字を挿入する" class="simple_func_button">
+					softbank絵文字を挿入する</a>
+					</li>
+
+					<li class="simple_toolbar_17">
+					<a href="#" onclick="openEditor('body');return false;" title="絵文字エディター" class="simple_func_button">
+					絵文字エディター</a>
+					</li>
+
+					<li class="simple_toolbar_18">
+					<a href="#" onclick="openEditor2('body');return false;" title="お絵かきエディター" class="simple_func_button">
+					お絵かきエディター</a>
+					</li>
+
+					<li class="simple_toolbar_19">
+					<a href="#" onclick="FC2Video('body');return false;" title="FC2動画投稿ツール" class="simple_func_button">
+					FC2動画投稿ツール</a>
+					</li>
+
+					<li class="btn">
+					<input type="button" value="設定" onClick="window.open('http://admin.blog.fc2.com/control.php?mode=setting&process=2#post', 'setting');" class="simple_setbtn" style="overflow:visible;padding:0;font-size:12px;" />
+					</li>
+				</ul>
+			</div>
+			<!--/bodySimpleToolbar-->
+
+
+
+
+
+			<!--本文入力エリア-->
+			<div class="edit_block">
+				<textarea id="body" name="entry[body]" class="edit_area" style="height:200px;"></textarea>
+				<textarea id="bodyFck" class="edit_area" style="display:none"></textarea>
+			</div><!--/edit_block -->
+			<!--/本文入力エリア-->
+
+			<div id="swf" class="epanel"></div>
+			<div id="js_message_body" class="style_red"></div>
+
+						<!--プレビュー-->
+			<div class="entry_prebody" id="area_pre_body" style="display:block;">
+				<p class="pre_description">リアルタイムプレビュー</p>
+				<div class="pre_switchview"><a href="#" onClick="SwitchPreview('body');Editor.commands.preview('body');switchview('area_pre_body');switchview('area_link_body');return false;" >&times;</a></div>
+				<!--<div class="pre_switchview"><a href="#" onClick="SwitchPreview('body');Editor.commands.preview('body');switchview('area_pre_body');switchview('area_link_body');return false;" >&times;</a></div>-->
+				<div id="pre_body" style="overflow:auto;overflow-x:hidden;overflow-y:visible;padding:6px 6px 10px;;"></div>
+			</div><!--/entry_prebody -->
+			<!--/プレビュー-->
+			<!--プレビューボタン-->
+			<div id="area_link_body" style="display:none;">
+				<a href="#" onClick="SwitchPreview('body');Editor.commands.preview('body');switchview('area_pre_body');switchview('area_link_body');return false;" >
+					<span class="boxposition_right admin_common_btn realtime_prev_btn">リアルタイムプレビュー</span><!--/boxposition_right -->
+				</a>
+			</div><!--/area_link_body -->
+			<!--/プレビューボタン-->
+
+
+			<div class="boxposition_center">
+				<input type="submit" value="記事を保存" onClick="postEntry();return false;" class="multiple_btn admin_common_positive_btn save_btn" />
+				<input type="button" value="プレビュー" onClick="WYSIWYGPreview('body');document.entry.action='http://hdfdatabase.blog.fc2.com/?editor';if (checkiMac() == 0){document.entry.target='_preview';}else{document.entry.target='_blank';}document.entry.submit();if (checkiMac() == 0){document.entry.action='';document.entry.target='_self';this.focus();}" class="multiple_btn admin_common_btn prev_btn" />
+			</div>
+
+		</div><!-- /menu_text_body -->
+
+	</div>
+	<!--/editor_main_flame-->
+
+
+<div id="menu_simple_normal_block" style="display:none;">
+	<div class="editor_main_flame">
+		<!--追記ブロック-->
+		<h3 class="subtitle_switch_extend editor_subtitle"><a href="#">追記の編集&nbsp;<span class="switch_link"><span></span></span></a>
+			<span class="switch_tool_tip">
+				<a class="tool_tip">
+					<img alt="" src="//static.fc2.com/share/fc2footermenu/blank.gif" width="20px" height="20px" />
+					<span class="tool_tip_text">
+						クリックで開閉します					</span>
+				</a>
+			</span>
+		</h3>
+		<div id="menu_extend" style="display:block;">
+
+			<!--extendToolbar-->
+			<div class="editor" id="extendToolbar"></div>
+			<!--/extendToolbar -->
+
+			<!--追記-->
+			<div class="edit_block" style="margin-bottom:5px;">
+			<textarea id="extend" name="entry[extend]" class="edit_area" style="height:200px;"></textarea>
+			<textarea id="extendFck" class="edit_area" style="display:none;"></textarea>
+			</div>
+			<!--/追記-->
+
+
+
+			<div id="swf2" class="epanel"></div>
+			<div id="js_message_extend" class="style_red"></div>
+
+
+						<!--プレビュー-->
+			<div class="entry_prebody" id="area_pre_extend" style="display:block;">
+				<p class="pre_description">リアルタイムプレビュー</p>
+				<div class="pre_switchview">
+					<a href="#" onClick="SwitchPreview('extend');Editor.commands.preview('extend',true);switchview('area_pre_extend');switchview('area_link_extend');return false;" >&times;</a>
+				</div>
+				<div id="pre_extend" style="overflow:auto;overflow-x:hidden;overflow-y:visible;padding:6px 6px 10px;">
+									</div>
+			</div>
+			<!--/プレビュー-->
+			<!--プレビューボタン-->
+			<div id="area_link_extend" style="display:none;">
+				<a href="#" onClick="SwitchPreview('extend');Editor.commands.preview('extend',true);switchview('area_pre_extend');switchview('area_link_extend');return false;" >
+					<span class="boxposition_right admin_common_btn realtime_prev_btn">リアルタイムプレビュー</span>
+				</a>
+			</div>
+			<!--/プレビュー-->
+
+
+
+			<div class="boxposition_center">
+				<input type="submit" value="記事を保存" onClick="postEntry();return false;" class="multiple_btn admin_common_positive_btn save_btn" />
+				<input type="button" value="プレビュー" onClick="WYSIWYGPreview('extend');document.entry.action='http://hdfdatabase.blog.fc2.com/?editor';if (checkiMac() == 0){document.entry.target='_preview';}else{document.entry.target='_blank';}document.entry.submit();if (checkiMac() == 0){document.entry.action='';document.entry.target='_self';this.focus();}" class="multiple_btn admin_common_btn prev_btn" />
+			</div>
+			<!--
+				<div class="pagetop"><a href="#header">▲ページトップ</a></div>
+			-->
+		</div>
+		<!--/menu_extend-->
+	</div>
+	<!--/editor_main_flame-->
+
+	<!--/追記ブロック-->
+
+		<div class="edit_icon_help">
+		<a href="http://help.fc2.com/blog/manual/Home/tool.html" target="_blank"><img src="//static.fc2.com/share/fc2parts/image/sh_help_icon.gif" width="20" height="20" alt="" style="vertical-align: middle;">編集ツールアイコンについて</a>
+	</div>
+
+	<div class="editor_main_flame_setting">
+		<!--記事の設定ブロック-->
+		<h3 class="subtitle_switch_config editor_subtitle"><a href="#">記事の設定&nbsp;<span class="switch_link"></span></a>
+			<span class="switch_tool_tip">
+				<a class="tool_tip">
+					<img alt="" src="//static.fc2.com/share/fc2footermenu/blank.gif" width="20px" height="20px" />
+					<span class="tool_tip_text">
+						クリックで開閉します					</span>
+				</a>
+			</span>
+		</h3>
+		<div id="menu_config" style="display:block;">
+
+			<table border="0" cellspacing="0" cellpadding="0" class="main_table">
+								<tr>
+					<th style="width:135px" rowspan="2"><label for="cate3">テーマ</label></th>
+					<td style="border-bottom:1px dashed #CFCFCF;">
+													<select name="entry[genre]" onchange="execBeforeUnload=false;Editor.commands.submit('reload');" style="" class="genres_select">
+								<option value="7" >日記</option><option value="6" >ニュース</option><option value="22" >ブログ</option><option value="45" >モブログ</option><option value="8" >音楽</option><option value="30" >映画</option><option value="9" >政治・経済</option><option value="48" >オンラインゲーム</option><option value="10" >ゲーム</option><option value="11" selected>アニメ・コミック</option><option value="17" >本・雑誌</option><option value="36" >小説・文学</option><option value="12" >車・バイク</option><option value="52" >テレビ・ラジオ</option><option value="13" >アイドル・芸能</option><option value="47" >就職・お仕事</option><option value="14" >恋愛</option><option value="15" >ファッション・ブランド</option><option value="43" >結婚・家庭生活</option><option value="16" >育児</option><option value="18" >ペット</option><option value="46" >趣味・実用</option><option value="32" >ライフ</option><option value="42" >株式・投資・マネー</option><option value="44" >アフィリエイト</option><option value="24" >グルメ</option><option value="49" >ヘルス・ダイエット</option><option value="19" >ビジネス</option><option value="20" >コンピュータ</option><option value="21" >携帯電話・PHS</option><option value="25" >写真</option><option value="34" >地域情報</option><option value="33" >旅行</option><option value="35" >海外情報</option><option value="26" >スポーツ</option><option value="27" >ファイナンス</option><option value="38" >学校・教育</option><option value="39" >福祉・ボランティア</option><option value="28" >学問・文化・芸術</option><option value="40" >お笑い</option><option value="29" >ギャンブル</option><option value="31" >謎</option><option value="50" >独身・フリー</option><option value="41" >心と身体</option><option value="37" >サブカル</option><option value="51" >その他</option>							</select>
+							<span class="genres_txt">任意のジャンルのテーマに投稿できます</span>
+							<input type="hidden" />
+											</td>
+				</tr>
+				<tr class="evencell">
+					<td style="border-bottom:1px solid #CFCFCF;">
+							<select id="cate3" onchange="document.entry.elements['entry[theme]'].value=this.value;this.focus()" style="" class="theme_select">
+							<option value="">-----</option>
+								<option value="215177" >1: アニメ無料動画 (16694)</option><option value="142138" >2: フィギュア (622)</option><option value="31563" >3: 声優 (20714)</option><option value="211347" >4: 弱虫ペダル (1119)</option><option value="147651" >5: アニメ･感想 (11620)</option><option value="156282" >6: 漫画 (16823)</option><option value="122662" >7: 漫画の感想 (8683)</option><option value="165362" >8: アニメ・コミック (11764)</option><option value="122625" >9: ボーイズラブ (8765)</option><option value="226821" >10: 進撃の巨人 (1055)</option><option value="240853" >11: アイカツ！ (1424)</option><option value="122709" >12: NARUTO (1779)</option><option value="42790" >13: 日記とアニメ･マンガ関連ごちゃまぜ (6030)</option><option value="26268" >14: 腐女子の日記 (1970)</option><option value="52022" >15: 管理人日記 (2240)</option><option value="8598" >16: アニメ (66087)</option><option value="161215" >17: プリキュア (767)</option><option value="199729" >18: 週刊少年チャンピオン全般 (560)</option><option value="258540" >19: キラキラ☆プリキュアアラモード (321)</option><option value="122864" >20: ONEPIECE (2156)</option><option value="258441" >21: 2017年新作アニメ (1989)</option><option value="33811" >22: 銀魂 (3858)</option><option value="168951" >23: 夏目友人帳 (436)</option><option value="5415" >24: 日記 (2868)</option><option value="203182" >25: ファンタジー (330)</option><option value="124247" >26: 週刊少年サンデー全般 (540)</option><option value="250912" >27: プリパラ (1343)</option><option value="122644" >28: らくがき (272)</option><option value="123573" >29: ジョジョの奇妙な冒険 (1732)</option><option value="256938" >30: 不倫漫画ホリデイラブ〜夫婦間恋愛〜 (1585)</option><option value="123145" >31: 一次創作漫画 (305)</option><option value="134567" >32: 創作・オリジナル (6937)</option><option value="160051" >33: 4コマ漫画 (2728)</option><option value="123071" >34: 遊★戯★王 (2346)</option><option value="5382" >35: 週刊少年ジャンプ全般 (6706)</option><option value="206600" >36: 同人グッズ (197)</option><option value="7120" >37: 感想 (2989)</option><option value="123543" >38: 宇宙戦艦ヤマト (1304)</option><option value="254651" >39: 六神合体ゴッドマーズ (17)</option><option value="233707" >40: To LOVEる -とらぶる- ダークネス (1036)</option><option value="226308" >41: ラブライブ！ (4125)</option><option value="255629" >42: BLAME! (5)</option><option value="122779" >43: 自作イラスト (4107)</option><option value="258019" >44: 鬼滅の刃 (229)</option><option value="122926" >45: テニスの王子様 (405)</option><option value="123006" >46: 漫画家日記 (634)</option><option value="132055" >47: 遊戯王 (341)</option><option value="6448" >48: 自作イラスト（二次創作） (2364)</option><option value="257587" >49: ラブライブ！サンシャイン!! (328)</option><option value="186080" >50: 美少女、萌え系、リアル、スーパーロボット　アニメ (1246)</option><option value="254301" >51: 僕のヒーローアカデミア (663)</option><option value="256251" >52: おそ松さん (1248)</option><option value="239611" >53: 月刊少年ガンガン (209)</option><option value="123471" >54: 名探偵コナン (1850)</option><option value="133312" >55: BL(ボーイズラブ） (364)</option><option value="140635" >56: 宇宙戦艦ヤマト (696)</option><option value="170390" >57: 二次創作小説 (562)</option><option value="132392" >58: アニメグッズ (3302)</option><option value="129500" >59: てぃんくる (216)</option><option value="17328" >60: 少女マンガ全般 (273)</option><option value="256610" >61: 機動戦士ガンダム サンダーボルト (11)</option><option value="122969" >62: 男性声優 (3171)</option><option value="124612" >63: 忍たま乱太郎 (1011)</option><option value="181335" >64: 月光条例 (199)</option><option value="211434" >65: アイドルマスター (1903)</option><option value="205625" >66: マギ (577)</option><option value="150217" >67: 自作漫画 (1045)</option><option value="207186" >68: 懐かしいアニメ作品 (2250)</option><option value="254792" >69: MAJOR 2nd (102)</option><option value="219137" >70: まんがタイムきらら (431)</option><option value="170474" >71: サイボーグ009 (201)</option><option value="191544" >72: 境界のＲＩＮＮＥ (420)</option><option value="219741" >73: さんかれあ (198)</option><option value="130802" >74: HUNTER×HUNTER (668)</option><option value="155585" >75: BLEACH (793)</option><option value="257391" >76: 漫画・アニメグッズ (143)</option><option value="122804" >77: ドラゴンボール (1154)</option><option value="144551" >78: ONE PIECE (1530)</option><option value="254288" >79: 今日の1冊 (212)</option><option value="141224" >80: ヘタリア (1933)</option><option value="123215" >81: 魔法先生ネギま！ (244)</option><option value="230473" >82: 森田さんは無口。 (240)</option><option value="176228" >83: BLイラスト・漫画 (303)</option><option value="122890" >84: 新世紀エヴァンゲリオン (2232)</option><option value="254225" >85: 冴えない彼女の育てかた (398)</option><option value="131860" >86: 創作(オリジナル) (559)</option><option value="252230" >87: 正直、微妙だと思う作品 (687)</option><option value="170536" >88: 魔法少女もの (345)</option><option value="217204" >89: おすすめマンガ (218)</option><option value="132526" >90: 家庭教師ヒットマンREBORN! (1326)</option><option value="158985" >91: アニメ動画 (3994)</option><option value="258620" >92: けものフレンズ (191)</option><option value="256169" >93: スタミュ　高校星歌劇 (89)</option><option value="258864" >94: 無料で見放題!! アニメ動画まとめ (44)</option><option value="145503" >95: カイジ (243)</option><option value="134021" >96: 咲-Saki- (550)</option><option value="237568" >97: つぐもも (259)</option><option value="254556" >98: アイドルマスター シンデレラガールズ (346)</option><option value="148742" >99: ベイブレード (254)</option><option value="171135" >100: 彼岸島 (215)</option>							</select>
+							<input type="text" name="entry[theme]" style="width: 170px;line-height: 22px;padding: 6px;font-size: 14px;vertical-align:middle;ime-mode:disabled;" value="" onchange="execBeforeUnload=false;Editor.commands.submit('theme');" class="theme_input" />
+							<a href="?mode=control&amp;process=theme" target="_blank" class="admin_common_btn theme_add_btn" style="vertical-align:middle;">作成</a>
+					</td>
+				</tr>
+
+
+								<tr>
+					<th>
+						アイキャッチ画像
+						<a class="tool_tip">
+							<img alt="" src="//static.fc2.com/image/admin/sh_design/sh_hint_icon.png" />
+							<span class="tool_tip_text">
+								<span class="tool_tip_text_inner">
+								</span>記事の見出し画像を設定できます。SNS通知(OGPタグ)などに利用できます。</span>
+						</a>
+					</th>
+					<td>
+						<div id="eyecatch" class="eyecatch">
+						<a href="" id="eyecatch-image-url" target="_blank"><img id="eyecatch-image" class="eyecatch_img"></a>
+							<a href="#" id="eyecatch-delete" class="eyecatch_del">削除する</a>
+						</div>
+						<div class="eyecatch_management">
+							<a href="#" id="eyecatch-select" class="admin_common_btn btn_small">アイキャッチ画像を選択する</a>
+							<span style="display:block; font-size: 12px; margin: 10px 0 0 4px;">またはアップロードした画像のURLを入力してください</span>
+							<input type="text" id="eyecatch-text" class="eyecatch_url_txt"  name="entry[eyecatch]" value="" />
+						</div>
+					</td>
+				</tr>
+
+				<tr id="tr_entry_tb" style="display:none;">
+					<th>
+						<label for="entry_sendtb">トラックバック</label>
+						<a class="tool_tip">
+							<img alt="" src="//static.fc2.com/image/admin/sh_design/sh_hint_icon.png" />
+							<span class="tool_tip_text">
+								<span class="tool_tip_text_inner">
+								<strong>トラックバックの送信</strong>
+								</span>
+								一度に送信できるトラックバックは５件までです。１件ごとに改行してください。							</span>
+						</a>
+					</th>
+					<td>
+						<textarea name="entry[sendtb]" id="entry_sendtb" style="height:40px;width:385px;ime-mode:disabled;overflow:visible;" class="edit_area"></textarea>
+						<span class="sendtb_tip"><a href="#" style="vertical-align:bottom;">[送信済]</a></span>
+					</td>
+				</tr>
+			</table>
+
+				<!--トラックバック送信のTips-->
+				<div id="tip_trackbacked" style="display:none">
+					<th>
+						<h3>送信済トラックバック</h3>
+					</th>
+					<td>
+						<textarea class="transmitted_tb"></textarea>
+						<textarea name="entry[senttb]" style="display:none"></textarea>
+					</td>
+				</div>
+				<!--/トラックバック送信のTips-->
+
+			<table border="0" cellspacing="0" cellpadding="0" class="main_table">
+						<!--ユーザータグの設定-->
+				<tr>
+					<th style="width:135px" rowspan="2"><label for="usertag">ユーザータグ</label></th>
+					<td style="border-bottom:1px dashed #CFCFCF;">
+						<input type="text" id="usertag" name="entry[tag]" style="width:290px;line-height: 22px;padding: 6px;" value="" onchange="for(i=0;i<10;i++){this.value = this.value.replace('　',' ');}" />
+						<input type="checkbox" id="entry_allowtag" name="entry[allowtag]" checked="checked" />&nbsp;<label for="entry_allowtag">タグをリンクにする</label>
+						<span class="user_tag_help"><a href="#">[?]</a></span>
+					</td>
+				</tr>
+				<tr class="evencell">
+					<td class="user_tag_name td_usertag clear" style="border-bottom:1px solid #CFCFCF;">
+						<a href="#" onClick='AddTag("\u5fc3\u97f3\u306a\u3057");return false;'>心音なし</a>
+						<a href="#" onClick='AddTag("\u5fc3\u81d3\u75c5");return false;'>心臓病</a>
+						<a href="#" onClick='AddTag("\u305d\u306e\u4ed6(\u5916\u7684)");return false;'>その他(外的)</a>
+						<a href="#" onClick='AddTag("\u5fc3\u97f3\u3042\u308a");return false;'>心音あり</a>
+						<a href="#" onClick='AddTag("\u305d\u306e\u4ed6(\u5185\u7684)");return false;'>その他(内的)</a>
+						<a href="#" onClick='AddTag("\u5fc3\u97f3\u3042\u308a(\u63cf\u5199\u3042\u308a)");return false;'>心音あり(描写あり)</a>
+						<a href="#" onClick='AddTag("\u305d\u306e\u4ed6(\u75c5\u5f31)");return false;'>その他(病弱)</a>
+						<a href="#" onClick='AddTag("\u305d\u306e\u4ed6(\u30b0\u30ed)");return false;'>その他(グロ)</a>
+						<a href="#" onClick='AddTag("\u5fc3\u81d3\u75c5(\u4e0d\u6574\u8108)");return false;'>心臓病(不整脈)</a>
+						<a href="#" onClick='AddTag("\u5fc3\u81d3\u75c5(\u7a81\u767a\u6027\u62e1\u5f35\u578b\u5fc3\u7b4b\u75c7)");return false;'>心臓病(突発性拡張型心筋症)</a>
+						<span class="no_usertag">&nbsp;</span>
+					</td>
+				</tr>
+			<!--/ユーザータグの設定-->
+						</table>
+
+			<!--ユーザータグの設定Tips-->
+			<div id="tip_tag" style="display:none">
+				<h3>ユーザータグの設定</h3>
+				<ul class="txt_list">
+					<li>記事に関連した識別タグ(キーワード)を関連付けます。</li><li>チェックボックスがオンになっていれば記事内のタグにマッチした語句をリンクへ変換します。</li><li>また<a href="http://blog.fc2.com/tag/" target="_blank">タグ検索</a>により、同じタグを付けた他のユーザーを見つけることができます</li><li class="style_red">タグは必ずしも入力する必要はありません。また入力できるタグは<span>１０個まで</span>です<br />続けてタグを入力する時は<span>半角/全角スペース</span>で分けて入力してください</li>				</ul>
+				<table border="0" cellspacing="0" cellpadding="0" class="usertag_table2">
+					<tr>
+	<th>記事本文サンプル</th>
+	<td>今日は友達と一緒に房総沖に釣りに出かけた。狙いはイシダイだ</th>
+</tr>
+<tr>
+	<th>タグの入力例</th>
+	<td><input value="釣り イシダイ" readonly="readonly" />（スペースで区切ります）</td>
+</tr>
+<tr>
+	<th>タグ変換有効時</th>
+	<td>今日は友達と一緒に房総沖に
+		<a href="http://blog.fc2.com/tag/%C4%E0%A4%EA" target="_blank">釣り</a>に出かけた。狙いは
+		<a href="http://blog.fc2.com/tag/%A5%A4%A5%B7%A5%C0%A5%A4" target="_blank">イシダイ</a>だ
+	</td>
+</tr>				</table>
+			</div>
+			<!--/ユーザータグの設定Tips-->
+		</div>
+		<!--/menu_config-->
+		<!--/記事の設定ブロック-->
+	</div>
+	<!--/editor_main_flame_setting-->
+
+	<div class="editor_main_flame_setting">
+		<!--詳細設定ブロック-->
+				<h3 class="subtitle_switch_detail_config editor_subtitle"><a href="#"><!--記事の設定-->詳細設定&nbsp;<span class="switch_link"></span></a>
+			<span class="switch_tool_tip">
+				<a class="tool_tip">
+					<img alt="" src="//static.fc2.com/share/fc2footermenu/blank.gif" width="20px" height="20px" />
+					<span class="tool_tip_text">
+						クリックで開閉します					</span>
+				</a>
+			</span>
+		</h3>
+				<div id="menu_detail_config" style="display:;">
+		<table border="0" cellspacing="0" cellpadding="0" class="main_table">
+			<!--改行の設定-->
+			<tr>
+				<th style="width:100px"><label for="format">改行の扱い</label></th>
+				<td style="padding: 4px 8px;">
+					<input id="format1" type="radio" value="a" name="entry[format]" checked /> <label for="format1">自動改行　</label>
+					<input id="format2" type="radio" value="b" name="entry[format]"  /> <label for="format2">ＨＴＭＬタグのみ</label>
+				</td>
+			</tr>
+			<!--/改行の設定-->
+			<!--コメントの設定-->
+			<tr class="evencell">
+				<th><label for="entry_allowcomment">コメント</label></th>
+				<td style="padding: 4px 8px;">
+					<input type="radio" value="y" name="entry[allowcomment]" id="entry_allowcomment1" checked /> <label for="entry_allowcomment1">受け付ける　</label>
+					<input type="radio" value="n" name="entry[allowcomment]" id="entry_allowcomment2"  /> <label for="entry_allowcomment2">受け付けない</label>
+	<!--
+					<br />
+					期間:
+					<input name="entry[commentlimit_time]" id="commentimit_time" value="" size=4 maxlength=3 style="text-align:right;ime-mode:disabled;">
+					<select name="entry[commentlimit_unit]" id="commentlimit_unit">
+						<option value="min" >分間</option>
+						<option value="hour" >時間</option>
+						<option value="day" >日間</option>
+					</select>
+	-->
+				</td>
+			</tr>
+			<!--/コメントの設定-->
+			<!--トラックバックの設定-->
+			<tr>
+				<th><label for="entry_allowtb">トラックバック</label></th>
+				<td style="padding: 4px 8px;">
+					<input type="radio" value="y" name="entry[allowtb]" id="allowtb1"  /> <label for="allowtb1">受け付ける　</label>
+					<input type="radio" value="n" name="entry[allowtb]" id="allowtb2" checked /> <label for="allowtb2">受け付けない</label>
+	<!--
+					<br />
+					期間:
+					<input name="entry[tblimit_time]" id="tblimit_time" value="" size=4 maxlength=3 style="text-align:right;ime-mode:disabled;">
+					<select name="entry[tblimit_unit]" id="tblimit_unit">
+						<option value="min" >分間</option>
+						<option value="hour" >時間</option>
+						<option value="day" >日間</option>
+					</select>
+	-->
+				</td>
+			</tr>
+			<!--/トラックバックの設定-->
+
+			<!--時間の設定-->
+			<tr class="align_left">
+				<th>
+					<label for="entry_timestamp">投稿区分<!--記事の設定--></label>
+					<a class="tool_tip">
+					<img alt="" src="//static.fc2.com/image/admin/sh_design/sh_hint_icon.png">
+					<span class="tool_tip_text">
+						<strong>公開 </strong>: 記事を公開します。Pingやトラックバックを送信する際はこれを選択して下さい。<br />
+						<strong>下書き </strong>: 記事を下書きとして保存します。<br />
+						<strong>予約投稿 </strong>: 指定した日付に公開するよう設定できます。<br />
+						<strong>期間限定 </strong>: 指定した日付までの期間限定公開を設定できます。					</span>
+					</a>
+				</th>
+				<td style="padding: 4px 8px;">
+					<input type="radio" value="y" name="entry[property]" id="entry_property1" checked /> <label for="entry_property1">公開</label>
+					<input type="radio" value="n" name="entry[property]" id="entry_property2"  /> <label for="entry_property2">下書き</label>
+					<input type="radio" value="f" name="entry[property]" id="entry_property3"  onclick="document.entry['entry[timestamp]'][1].checked=true;" /> <label for="entry_property3">予約投稿</label>
+					<input type="radio" value="l" name="entry[property]" id="entry_property4"  onclick="document.entry['entry[timestamp]'][1].checked=true;" /> <label for="entry_property4">期間限定</label>
+				</td>
+			</tr>
+			<!--
+			<tr class="align_left evencell">
+				<th><label for="entry_year">日時設定</label></th>
+				<td>
+				</td>
+			</tr>
+			-->
+
+				<tr>
+					<th style="width:135px" rowspan="2">
+						<label for="entry_property">日時設定</label>
+					</th>
+					<td style="border-bottom:1px dashed #CFCFCF;padding: 4px 8px;">
+						<input type="radio" value="auto" id="entry_timestamp1" name="entry[timestamp]" checked /> <label for="entry_timestamp1">保存時の時間で投稿</label>&nbsp;&nbsp;
+						<input type="radio" value="edit" id="entry_timestamp2" name="entry[timestamp]"   /> <label for="entry_timestamp2">自分で指定（下のフォームに入力）</label>
+					</td>
+				</tr>
+				<tr class="evencell">
+					<td class="entry_time" style="border-bottom:1px solid #CFCFCF;">
+						<input maxlength="5" size="5" value="2017" id="entry_year" name="entry[year]" class="entry_time_input" style="ime-mode: disabled;" onchange="document.entry['entry[timestamp]'][1].checked=true;" />年						<input maxlength="2" size="2" value="06" name="entry[month]" class="entry_time_input" style="ime-mode: disabled;" onchange="document.entry['entry[timestamp]'][1].checked=true;" />月						<input maxlength="2" size="2" value="01" name="entry[day]" class="entry_time_input" style="ime-mode: disabled;" onchange="document.entry['entry[timestamp]'][1].checked=true;" />日						<input maxlength="2" size="2" value="15" name="entry[hour]" class="entry_time_input" style="ime-mode: disabled;" onchange="document.entry['entry[timestamp]'][1].checked=true;" />時						<input maxlength="2" size="2" value="19" name="entry[minute]" class="entry_time_input" style="ime-mode: disabled;" onchange="document.entry['entry[timestamp]'][1].checked=true;" />分						<input maxlength="2" size="2" value="32" name="entry[second]" class="entry_time_input" style="ime-mode: disabled;" onchange="document.entry['entry[timestamp]'][1].checked=true;" />秒					</td>
+				</tr>
+
+
+			<!--/時間の設定-->
+			<tr class="evencell">
+				<th><label for="entry_private">限定公開</label></th>
+				<td style="padding:6px 8px;">
+					<span class="private_form">
+						<input type="radio" name="entry[no_limit]" id="no_limit" onclick="changeNolimit(this);"  /> <label for="no_limit" class="private_label">なし</label>
+					</span>
+					<span class="private_form">
+						<input type="radio" name="entry[private]" id="blogfriends" onclick="changePrivate(this);"  /> <label for="blogfriends" class="private_label">限定公開記事にする</label>
+						<a href="?mode=setting&process=2#private" target="_blank">[パスワード設定 ]</a>
+					</span>
+
+												<span class="private_form_last">
+							<input
+								type="radio"
+								name="entry[charge]"
+								id="entry_charge" onclick="changeCharge(this);"
+																																							/>
+							<label for="entry_charge" class="private_label">ブロマガコンテンツにする</label>
+														<a href="http://blog.fc2.com/contents/blomaga/" target="_blank" class="help_link">
+								<span class="help_link_txt"> [ブロマガとは]</span>
+							</a>
+																				</span>
+
+				</td>
+			</tr>
+		</table>
+		<div id="tip_time" style="display:none">
+			<ul class="txt_list">
+				<li><strong>公開 </strong>:記事を公開します。Pingやトラックバックを送信する際はこれを選択して下さい。</li>
+				<li><strong>下書き </strong>:記事を下書きとして保存します。</li>
+				<li><strong>予約投稿 </strong>:指定した日付に公開するよう設定できます。</li>
+				<li><strong>期間限定 </strong>:指定した日付までの期間限定公開を設定できます。</li>
+			</ul>
+		</div>
+
+		<!-- ブロマガ前書き -->
+		<div id="wrap_blomaga_intro" style="display:none">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									<div id="sys_blomaga_complete_message" class="admin_blue_message" style="display: none;"><p class="admin_message">ブロマガの設定が完了しました</p></div>
+			<div id="sys_blomaga_price_area">
+					<div class="blomaga_price_area setting_attention">
+						<h3 class="setting_attention_title">ブロマガコンテンツの販売設定がされておりません。</h3>
+						<ul class="txt_list">
+							<li class="txt_list_item">・月刊ブロマガの販売を行う場合は、100～30,000円で「月刊ブロマガの価格」の設定が必要です。</li>
+							<li class="txt_list_item">・単独記事のみ販売を行う場合は、「販売設定」を「単独記事のみ販売を行う」に変更する必要があります。</li>
+						</ul>
+						<dl class="blomaga_price_setting">
+							<dt class="blomaga_price_title">販売設定</dt>
+							<dd class="blomaga_price_form">
+								<select name="blomaga_mode" id="blomaga_mode">
+									<option value="0" selected="selected">月刊ブロマガの販売を行う</option>
+									<option value="2" >単体コンテンツのみ販売を行う</option>
+								</select>
+							</dd>
+							<dt class="blomaga_price_title" id="blomaga_price_title">月刊ブロマガの価格</dt>
+							<dd class="blomaga_price_form" id="blomaga_price_form">
+								<input type="text" maxlength="10" value="" name="blomaga_price" id="blomaga_price" /> 円/月								<span class="price_range">(100～30,000円)</span>
+							</dd>
+						</dl>
+						<p class="error" id="sys_blomaga_price_error" style="display: none;"></p>
+						<input type="button" value="設定する" id="blomaga_setting_button" class="multiple_btn admin_common_btn" />
+					</div>
+			</div>
+
+
+
+		<script src="//static.fc2.com/js/lib/jquery-1.10.1.min.js"></script>
+		<script>
+		$(function() {
+			$('#sys_blomaga_input_area').hide();
+
+			var checkBlomagaPrice = function(){
+				var mode = $('#blomaga_mode').children(':selected').val();
+				if (mode!=0) {
+					// 単独販売
+					$('#sys_blomaga_price_error').hide();
+					$('#blomaga_setting_button').removeAttr('disabled');
+					return true;
+				}
+
+				// 月額販売
+				var price = $('#blomaga_price').val();
+				// 金額の入力チェック
+				if (price=="" || price.match(/[^0-9]/g)) {
+					$('#blomaga_setting_button').attr('disabled', 'disabled');
+					blomaga_error_disp('金額を入力してください');
+					return false;
+				}
+				if (price < 100 || price > 30000){
+					$('#blomaga_setting_button').attr('disabled', 'disabled');
+					blomaga_error_disp('100〜30000円の間で金額を入力してください');
+					return false;
+				}
+				$('#sys_blomaga_price_error').hide();
+				$('#blomaga_setting_button').removeAttr('disabled');
+				return true;
+			};
+
+			$('#blomaga_mode').change(function(){
+				var mode = $(this).children(':selected').val();
+				$('#blomaga_price_title').toggle(mode==0);
+				$('#blomaga_price_form').toggle(mode==0);
+				checkBlomagaPrice();
+			});
+			$('#blomaga_price').on('blur', function(){
+				checkBlomagaPrice();
+			});
+
+			var blomaga_error_disp = function(msg){
+				$('#sys_blomaga_price_error').html(msg);
+				$('#sys_blomaga_price_error').show();
+			};
+
+			$('#blomaga_setting_button').click(function(){
+				var price = $('#blomaga_price').val();
+				var type = $('#blomaga_mode').children(':selected').val();
+				if (checkBlomagaPrice() == false) {
+					return ;
+				}
+				// 非表示設定
+				$('#blomaga_setting_button').attr('disabled', 'disabled');
+				$('#blomaga_setting_button').val('通信中...');
+				var blomaga_status = '（販売設定 ： 月刊ブロマガの販売）';
+				var entry_label = '単体コンテンツを販売する。 単体価格：';
+				if (type==2) {
+					blomaga_status = '（販売設定 ： 単体コンテンツのみ販売）';
+					$('#entry_charge_single_check').attr('checked', 'checked');
+					$('#entry_charge_single').removeAttr('disabled');
+					entry_label = '単体コンテンツでも販売する。 単体価格：';
+				}
+				$('#sys_blomaga_input_area .blomaga_status').html(blomaga_status);
+				$.ajax({
+					type: "POST",
+					url: "control.php",
+					data: {
+						"mode":"setting_blomaga",
+						"process":"update",
+						"type":type,
+						"price":price,
+						"crc":"bd1925d6bd28d30c7a1ce609954e17dd"
+					},
+					success: function(res){
+						var rets = $(res).find('#system-return-blomaga-price').html();
+						rets = eval(rets);
+						if (rets && rets[0] == 1) {
+							// 完了判定
+							$("#sys_blomaga_complete_message > p").html(rets[1]);
+							$('#sys_blomaga_price_area').slideUp('fast', function(){
+								$("#sys_blomaga_complete_message").show();
+								$('#sys_blomaga_input_area').slideDown('fast');
+								is_blomaga_price_setting = true;		// ブロマガの設定を行ったかどうか
+							});
+						}else{
+							blomaga_error_disp(rets[1]);
+							$('#blomaga_setting_button').removeAttr('disabled');
+							$('#blomaga_setting_button').val('設定する');
+						}
+					}
+				});
+			});
+
+		});
+		</script>
+
+			<div id="sys_blomaga_input_area">
+
+				<div id="swf_blomaga_intro" class="epanel"></div>
+
+					<h3 class="editor_subtitle blomaga_entry_subtitle">
+						ブロマガ前書き						<span class="blomaga_status" >（販売設定 ： 月刊ブロマガの販売）</span>
+												<a href="http://help.fc2.com/blog/manual/Home/blomaga/hanbai.html#4" class="h3_help_link" target="_blank"><img class="help_link_img" src="//static.fc2.com/share/fc2parts/image/sh_help_icon.gif" width="20" height="20" alt=""><span class="help_link_txt">前書き機能について</span>
+						</a>
+											</h3>
+
+
+					<div class="editor" id="blomaga_introToolbar"></div>
+					<div id="menu_blomaga_intro" class="edit_block">
+						<textarea id="blomaga_intro" name="entry[blomaga_intro]" class="edit_area" style="height:200px;"></textarea>
+						<textarea id="blomaga_introFck" class="edit_area" style="display:none;"></textarea>
+					</div>
+
+				<div id="js_message_blomaga_intro" class="style_red"></div>
+
+										<!--プレビュー-->
+					<div class="entry_prebody" id="area_pre_blomaga_intro" style="display:block;">
+						<p class="pre_description">リアルタイムプレビュー</p>
+						<div class="pre_switchview"><a href="#" onClick="SwitchPreview('blomaga_intro');Editor.commands.preview('blomaga_intro',true);switchview('area_pre_blomaga_intro');switchview('area_link_blomaga_intro');return false;" >&times;</a></div>
+						<!--<div class="pre_switchview"><a href="#" onClick="SwitchPreview('blomaga_intro');Editor.commands.preview('blomaga_intro',true);switchview('area_pre_blomaga_intro');switchview('area_link_blomaga_intro');return false;" >&times;</a></div>-->
+						<div id="pre_blomaga_intro" style="overflow:auto;overflow-x:hidden;overflow-y:visible;padding:6px 6px 10px;;"></div>
+					</div>
+					<!--/プレビュー-->
+
+										<div class="blomaga_btn_block clear">
+						<div class="blomaga_save_btn">
+							<input type="submit" value="記事を保存" onClick="postEntry();return false;" class="multiple_btn admin_common_positive_btn save_btn" />
+						</div>
+												<!--プレビューボタン-->
+						<div class="blomaga_realtime_btn">
+							<div id="area_link_blomaga_intro" style="display:none;">
+								<a href="#" onClick="SwitchPreview('blomaga_intro');Editor.commands.preview('blomaga_intro',true);switchview('area_pre_blomaga_intro');switchview('area_link_blomaga_intro');return false;" >
+									<span class="boxposition_right admin_common_btn blomaga_realtime_prev_btn">リアルタイムプレビュー</span>
+								</a>
+							</div>
+						</div>
+						<!--/プレビューボタン-->
+
+
+						<script>
+						/* case: Русский or Português */
+										(function(){
+							var tgt = ["cn", "ru"];
+							var max = 10;
+							if (!Array.prototype.contains) {
+								Array.prototype.contains = function(val) {
+									for (var i = 0; i < this.length; i++) if (this[i] === val) return true;
+									return false;
+								};
+							};
+							var t = setInterval(function(){
+								if (1 > max) clearInterval(t);
+								max--;
+								if ("function" !== typeof jQuery) {
+									return;
+								}
+								clearInterval(t);
+								var lang = "ja";
+								if (true === tgt.contains(lang)) {
+									var rmClassName = "realtime_prev_btn";
+									var addClassName  = "realtime_prev_btn_" + lang;
+									var elm = $("." + rmClassName).not(".realtime_blomaga_btn");
+									elm.removeClass(rmClassName).addClass(addClassName);
+								};
+							}, 100);
+						})();
+						</script>
+
+
+										<div class="blomaga_prev_btn">
+							<input type="button" value="ブロマガ用プレビュー" onClick="WYSIWYGPreview('blomaga_intro');document.entry.action='http://hdfdatabase.blog.fc2.com/?editor&preview_blomaga';if (checkiMac() == 0){document.entry.target='_preview';}else{document.entry.target='_blank';}document.entry.submit();if (checkiMac() == 0){document.entry.action='';document.entry.target='_self';this.focus();}" class="admin_common_btn blomaga_btn"/>
+						</div>
+
+
+					</div>
+
+								<div class="blomaga_charge_single_area clear">
+					<span class="blomaga_charge_single_form">
+						<input type="checkbox"
+							name="entry[charge]"
+							id="entry_charge_single_check"
+							onclick="changeChargeSingle(this);"
+																					disabled />
+						<label for="entry_charge_single_check" class="entry_charge_single_check_label">
+														単体コンテンツでも販売する。 単体価格：													</label>
+						<input type="text"
+							name="entry[charge_single]"
+							id="entry_charge_single"
+							value=""
+							maxlength="6"
+							disabled />
+						円（100～100,000円）						<input type="hidden" name="entry[blomaga_video]" id="blomaga_video_check" value="" />
+					</span>
+					<a class="blomaga_settting_link admin_common_btn" href="?mode=setting&process=2#charge" target="_blank">ブロマガの設定</a>
+				</div>
+
+			</div>
+
+		</div>
+		<!-- /ブロマガ前書き -->
+
+		</div>
+		<!--/menu_config2-->
+		<!--/詳細設定ブロック-->
+	</div>
+
+
+</div>
+
+
+	<!--通知設定ブロック-->
+	<!--editor_main_flame_setting-->
+	<div class="editor_main_flame_setting">
+				<h3 class="subtitle_switch_notice editor_subtitle"><a href="#"><!--記事の設定-->通知設定&nbsp;<span class="switch_link"></span></a>
+			<span class="switch_tool_tip">
+				<a class="tool_tip">
+					<img alt="" src="//static.fc2.com/share/fc2footermenu/blank.gif" width="20px" height="20px" />
+					<span class="tool_tip_text">
+						クリックで開閉します					</span>
+				</a>
+			</span>
+		</h3>
+				<!--通知設定-->
+		<div id="renewal_notice" style="display:;">
+			<table border="0" cellspacing="0" cellpadding="0" class="main_table sns_notify">
+				<tbody>
+								<tr>
+					<th>更新通知</th>
+					<td>
+						<label for="entry_topping" id="entry_topping_label">
+							<input type="checkbox" name="entry[topping]" id="entry_topping" checked="checked" />
+							FC2ブログの各ジャンル新着記事へ更新を通知する						</label>
+					</td>
+				</tr>
+
+			<!-- twitter assoc -->
+				<tr>
+															<th rowspan="4">SNSへの通知</th>
+																				<td>
+						<a target="_blank" href="/control.php?mode=setting&process=2#twitter" id="twitter_notify_setting_link" style="float:left;">Twitterに通知する設定はこちら</a>
+												<a href="http://help.fc2.com/blog/manual/Home/toukou/setting.html#6" class="td_help_link" target="”_blank”"><img src="//static.fc2.com/share/fc2parts/image/sh_help_icon.gif" width="20" height="20" alt=""><span>設定方法</span></a>
+											</td>
+									</tr>
+				<tr>
+								</tr>
+			<!-- /twitter assoc -->
+			<!-- Facebook assoc -->
+
+								<tr>
+
+					                                        					<td>
+						<a target="_blank" href="/control.php?mode=setting&process=2#facebook" id="facebook_notify_setting_link" style="float:left;">facebookに通知する設定はこちら</a>
+												<a href="http://help.fc2.com/blog/manual/Home/toukou/setting.html#7" class="td_help_link" target="_blank"><img src="//static.fc2.com/share/fc2parts/image/sh_help_icon.gif" width="20" height="20" alt=""><span>設定方法</span></a>
+											</td>
+									</tr>
+							<!-- /Facebook assoc -->
+			</tbody>
+		</table>
+		</div>
+		<!--/通知設定-->
+
+		<script type="text/javascript" src="//static.fc2.com/js/lib/jquery-1.10.1.min.js"></script>
+				<script type="text/javascript">
+			$(function() {
+				$(".td_accordion").click(function() {
+					if($(this).hasClass("td_acc_open")){
+						$(this).removeClass("td_acc_open");
+						$(this).next().hide();
+					}
+					else{
+						$(this).addClass("td_acc_open");
+						$(this).next().show();
+					}
+					return false;
+				});
+			});
+		</script>
+			</div>
+	<!--/editor_main_flame_setting-->
+	<!--/通知設定ブロック-->
+
+
+
+	<div id="js_message_setting" class="boxposition_center style_red" style="border:none;"></div>
+	<div class="boxposition_center" style="border:none;">
+		<input type="submit" value="記事を保存" onClick="postEntry();return false;" class="multiple_btn admin_common_positive_btn save_btn" />
+		<input type="button" value="プレビュー" onClick="document.entry.action='http://hdfdatabase.blog.fc2.com/?editor';if (checkiMac() == 0){document.entry.target='_preview';}else{document.entry.target='_blank';}document.entry.submit();if (checkiMac() == 0){document.entry.action='';document.entry.target='_self';this.focus();}" class="multiple_btn admin_common_btn prev_btn"/>
+		<input type="hidden" name="process" value="save">
+		<input type="hidden" name="mode"          value="editor">
+		<input type="hidden" name="mission_id"    value="">
+		<input type="hidden" name="tbtheme_id"    value="" id="tbtheme_id">
+		<input type="hidden" name="entry[eno]"    value="">
+		<input type="hidden" name="MAX_FILE_SIZE" value="500">
+		<input type="hidden" name="entry[sessid]" value="v8asoo5qon9">
+		<input type="hidden" name="entry[sespsd]" value="pvvml0wuiy8lm15rm48nm7yfpv9qk08r">
+	</div>
+	<!--
+		<div class="pagetop"><a href="#header">▲ページトップ</a></div>
+	-->
+
+		<input type='hidden' name='checkid' value='hdfdatabase'>
+	</form>
+
+	<!--ヘルプブロック-->
+	<div id="entry_help" style="display:none">
+		<p>HELP</p>
+				<ul>
+			<li><a href="#" onclick="switchview('manual');return false;" title="公式マニュアル">公式マニュアル</a></li>
+			<li id="manual" style="display:none">
+			<ol>
+				<li><a href="http://help.fc2.com/blog/manual/Home/ouyou/termsofservice.html"  target="_blank" title="このマニュアルについて">このマニュアルについて</a></li>
+				<li><a href="http://help.fc2.com/blog/manual/Home.html"  target="_blank" title="ブログとは">ブログとは</a></li>
+				<li><a href="http://help.fc2.com/fc2id/manual/Home/touroku.html"  target="_blank" title="ブログをはじめる">ブログをはじめる</a></li>
+				<li><a href="http://help.fc2.com/blog/manual/Home/toukou.html"  target="_blank" title="記事を書く">記事を書く</a></li>
+				<li><a href="http://help.fc2.com/blog/manual/Home/tool.html" target="_blank" title="ツールを使って記事を書く">ツールを使って記事を書く</a></li>
+				<li><a href="http://help.fc2.com/blog/manual/Home/community.html"  target="_blank" title="ほかのひととつながる">ほかのひととつながる</a></li>
+				<li><a href="http://help.fc2.com/blog/manual/Home/ouyou/password.html"  target="_blank" title="アカウントを管理する">アカウントを管理する</a></li>
+				<li><a href="http://help.fc2.com/blog/manual/Home/kako_kiji.html"  target="_blank" title="データを管理する">データを管理する</a></li>
+				<li><a href="http://help.fc2.com/blog/manual/Home/kankyou.html"  target="_blank" title="ブログの格好を整える">ブログの格好を整える</a></li>
+				<li><a href="http://help.fc2.com/blog/manual/Home/meiwaku.html"  target="_blank" title="迷惑投稿に対抗する">迷惑投稿に対抗する</a></li>
+				<li><a href="http://help.fc2.com/blog/manual/Home/myshop.html"  target="_blank" title="こんな機能も使ってみよう">こんな機能も使ってみよう</a></li>
+				<li><a href="http://help.fc2.com/blog/manual/Home/mobile.html" target="_blank" title="ピンポイントアドバイス">ピンポイントアドバイス</a></li>
+				<li><a href="http://help.fc2.com/blog/manual/Home/ouyou.html" target="_blank" title="初級者のためのピンポイントアドバイス">初級者のためのピンポイントアドバイス</a></li>
+				<li><a href="http://help.fc2.com/blog/manual/Home/customize.html" target="_blank" title="中級者のためのピンポイントアドバイス">中級者のためのピンポイントアドバイス</a></li>
+				<li><a href="http://help.fc2.com/blog/manual/Home/community/blomessage.html" target="_blank" title="上級者のための手引き">上級者のための手引き</a></li>
+			</ol>
+			</li>
+			<li><a href="http://help.fc2.com/blog/manual/Home/toukou/gazou.html#4" target="_blank" title="記事中で画像を使用するには">記事中で画像を使用するには</a></li>
+			<li><a href="#" onclick="switchview('emojieditor');return false;" title="絵文字エディターについて">絵文字エディターについて</a></li>
+		</ul>
+				<div id="emojieditor" style="display:none">16×16サイズのオリジナル絵文字を作って記事に入れることができます。<br />新しく作る場合は「絵文字を作る」をクリックします。<br />すでに保存した絵文字を使う場合は、一覧表示から選んでください。<br />新規作成ウィンドウの左側にあるツールアイコンを選んで、マス目に絵文字を書いていきます。<br />【鉛筆】（絵文字を書く）<br />【カラーパレット】（鉛筆の色を選ぶ）<br />【スポイト】（すでに書かれている部分と同じ色を選ぶ）<br />【消しゴム】（書いた部分を消す） 右側の「プレビュー」に実際のサイズが表示されます。<br />書いた作業手順は【やり直す】【元へ戻る】【すべて消す】ことができます。<br />すでに保存した絵文字を修正する場合は[インポート]を開いて、修正したい絵文字を選んでください。<br />書き終えたら「保存」します。保存したオリジナル絵文字は、記事文中に入れることができます。</div>
+	</div>
+	<!--/ヘルプブロック-->
+	<span id="edit_object" value="0"></span>
+	<span id="mouseX"></span>
+	<span id="mouseY"></span>
+	<span id="str"></span>
+	<span id="bloglang" style="display:none;">ja</span>
+	<script type="text/javascript">
+
+		if(checkiMac() == 0){
+			Blog.isFC2=true;
+			Editor.initialize(true);
+					}
+	</script>
+
+	</div>
+	<!-- /editor_area -->
+
+	<script type="text/javascript">
+		function toggleBlomagaIntro(){
+			if(!document.getElementById('wrap_blomaga_intro') || !document.getElementById('entry_charge')){
+				return ;
+			}
+			var chk=document.getElementById('entry_charge');
+			if (chk.checked) {
+				$('#wrap_blomaga_intro').slideDown('fast');
+			}else{
+				$('#wrap_blomaga_intro').slideUp('fast');
+			}
+		}
+toggleBlomagaIntro();
+	</script>
+
+<div id="embedInstagram" class="embedInstagram" style="display:none;background:#fff;z-index:10000;">
+	<div class="embedInstagramHeader clear"><p class="embedInstagramTitle">Instagramの画像を挿入する</p><p class="closeButton">×</p></div>
+	<div class="embedInstagramBody">
+		<p>
+			Instagramと連携していません。<br />
+			<a href='http://help.fc2.com/blog/manual/Home/kankyou/instagram.html' class="td_help_link" target="_blank">
+				<img src="//static.fc2.com/share/fc2parts/image/sh_help_icon.gif" width="20" height="20" alt="">
+				設定方法はこちら
+			</a>
+		</p>
+
+	</div>
+	<div class="embedInstagramFooter clear">
+						<a href="http://admin.blog.fc2.com/control.php?mode=setting&process=2#instagram" class="admin_common_btn linkPreference">Instagram連携設定へ</a>
+			</div>
+</div>
+
+<!--vine-->
+<!--/vine-->
+
+
+<link charset="UTF-8" type="text/css" rel="stylesheet" href="//static.fc2.com/css/admin/wide/evernote.css?151019a1">
+<script type="text/javascript" src="//static.fc2.com/js/admin/jquery.tinyplaceholder.js"></script>
+
+<script type="text/javascript">
+	(function($){
+		var defaultMessage = "このノートブック内を検索";
+		setTimeout(function(){
+			$(".evernote_search_word").tinyplaceholder({message: defaultMessage, top: "5px", left: "8px", addClass: "comment_placeholder"});
+		}, 1000);
+	})(jQuery);
+</script>
+
+<div id="embed_tool_evernote" style="display: none;">
+			<div class="evernote_header clear">
+			<div class="evernote_title">Evernoteを挿入する</div>
+			<span class="evernote_close">×</span>
+		</div>
+		<div class="evernote_body">
+			<p class="evernote_not_assoc_info">Evernoteと連携していません</p>
+						<a href ="http://help.fc2.com/blog/manual/group99/3221?nc=1" class="td_help_link" target="_blank">
+				<img src="//static.fc2.com/share/fc2parts/image/sh_help_icon.gif" width="20" height="20" alt="">
+				<span>設定方法はこちら</span>
+			</a>
+					</div>
+		<div class="evernote_footer">
+			<a href="//admin.blog.fc2.com/control.php?mode=setting&process=2#evernote" class="assoc_button admin_common_btn">Evernote連携設定へ</a>
+		</div>
+	</div>
+
+<div id="evernote_window_mask"></div>
+<script type="text/javascript">
+Evernote = function(){
+	this.destination = "//admin.blog.fc2.com/control.php";
+	this.MESSAGE = {
+		INVALID_AUTH      : "再認証が必要です。",
+		API_LIMIT_EXCEEDED: "Evernoteへのリクエスト数が制限を超えたため情報を取得できません。<%limit_duration%>に制限がリセットされます。しばらくお待ちください。",
+		TIME_FORMAT_L     : "<%hours%>時間<%minutes%>分後",
+		TIME_FORMAT_S     : "1分以内"
+	};
+};
+
+Evernote.prototype = {
+	message: function(key){
+		if ("undefined" == this.MESSAGE[key]) {
+			return "";
+		};
+		return this.MESSAGE[key];
+	},
+
+	getDestinationUrl: function(){
+		return this.destination;
+	},
+
+	containMediaImage: function(contents){
+		contents = $(contents);
+		return contents.find("en-media").length > 0;
+	},
+
+	importNote: function(param){
+		return this.request({method: "importNote", guid: param.guid, updateSequenceNum: param.num});
+	},
+
+	importImage: function(param) {
+		return this.request({method: "importImage", guid: param.guid});
+	},
+
+	getNotebooksList: function(){
+		return this.request({method: "listNotebooks"});
+	},
+
+	getNotesMetadata: function(param){
+		if (param != "all") {
+			return this.request({method: "getNotes", guid: param.guid});
+		} else {
+			return this.request({method: "getNotesByAllNotebook"});
+		}
+	},
+
+	getPreviews: function(param) {
+		return this.request({method: "getPreviews", guid: param.guid, updateSequenceNum: param.updateSequenceNum});
+	},
+
+	search: function(param){
+		return this.request({method: "search", guid: param.guid, word: param.word});
+	},
+
+	request: function(option){
+		var param = {
+			mode   : "api",
+			process: "evernote"
+		};
+		for (var key in option) {
+			param[key] = option[key];
+		};
+
+		return $.ajax({
+			url: this.destination,
+			method  : "POST",
+			dataType: "json",
+			data    : param
+		});
+	}
+};
+</script>
+<script type="text/javascript" src="//static.fc2.com/js/admin/editor_evernote.js"></script>
+
+
+<!-- <script type="text/javascript" src="//static.fc2.com/js/lib/jquery-1.10.1.min.js"></script>
+-->
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	if(!$('#body').length){
+		// 投稿と完了が同一テンプレートなので分岐処理代わり
+		return ;
+	}
+
+		var html = '';
+
+	// bodyのtoolbarをextendにコピー
+	html = $("<ul>" + $('#bodyToolbar').html().replace(/body/g, 'extend') + "</ul>");
+	html.find('li.toolbar_28').remove();
+	html = html.html();
+	html = html.replace(/<hr size=&quot;1&quot; ><\/a>/g,"&lt;hr size=&quot;1&quot; /&gt;");  // #64707対応
+	$('#extendToolbar').append(html);
+
+	// bodyのtoolbarをblomagaにコピー
+	html = $("<ul>" + $('#bodyToolbar').html().replace(/body/g, 'blomaga_intro') + "</ul>");
+	html.find('li.toolbar_28').remove();
+	html = html.html();
+	html = html.replace(/<hr size=&quot;1&quot; ><\/a>/g,"&lt;hr size=&quot;1&quot; /&gt;");  // #64707対応
+	$('#blomaga_introToolbar').append(html);
+
+	var instagram     = document.createElement('script');
+	instagram.type    = 'text/javascript';
+	instagram.src     = '//static.fc2.com/js/admin/editor_instagram.js?20170515';
+	instagram.charset = 'utf-8';
+	document.body.appendChild(instagram);
+	});
+</script>
+<script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type="text/javascript">
+// ページの内容に修正がかかった時 別ベージに移動する際に確認ダイアログを出す
+var execBeforeUnload = true;
+var formSerializeArray = {};
+var unload_body_fck = "";
+var unload_extend_fck = "";
+var unload_blomaga_fck = "";
+// formのentry[*の値を配列で保持
+function getFormSerializeArray(){
+	var serializeArray = {};
+	var len = 0;
+	jQuery.each($('form').serializeArray(),function(){
+		if (this.name.indexOf('entry[')!=0) return ;
+		serializeArray[this.name] = this.value;
+		len++;
+	});
+	serializeArray.length = len;
+	return serializeArray;
+}
+// formの内容が変更されたかをチェック
+function isFormEdit(){
+	var isEdit = true;
+	if (formSerializeArray.length) {
+		var checkFormSerializeArray = getFormSerializeArray();
+		for(var i in checkFormSerializeArray){
+			switch(i){
+				case 'entry[eno]': break;
+				case 'entry[body]': case 'entry[extend]': case 'entry[blomaga_intro]':
+					var checkText = checkFormSerializeArray[i].replace(/(?:<p>(?:&nbsp;|\s*)<\/p>|<br(?:\s?\/)?>)|(?:&nbsp;)|(?:&#160;)*$/i, '');
+					isEdit = isEdit && (checkFormSerializeArray[i] == formSerializeArray[i] || checkText == formSerializeArray[i]);
+					break;
+				default:
+					isEdit = isEdit && checkFormSerializeArray[i] == formSerializeArray[i];
+					break;
+			}
+		}
+	}
+	return !isEdit;
+}
+// FCKの確認ダイアログ用初期値設定
+function setUnloadFckBody(){
+	if (!Editor._status.isFck['body'] || !Editor._instances.fckeditor['body'] || !Editor._instances.fckeditor['body'].GetXHTML) {
+		setTimeout("setUnloadFckBody()", 1000);
+		return ;
+	}
+	unload_body_fck = Editor._instances.fckeditor['body'].GetXHTML();
+}
+function setUnloadFckExtend(){
+	if (!Editor._status.isFck['extend'] || !Editor._instances.fckeditor['extend'] || !Editor._instances.fckeditor['extend'].GetXHTML) {
+		setTimeout("setUnloadFckExtend()", 1000);
+		return ;
+	}
+	unload_extend_fck = Editor._instances.fckeditor['extend'].GetXHTML();
+}
+function setUnloadFckBlomaga(){
+	if (!Editor._status.isFck['blomaga_intro'] || !Editor._instances.fckeditor['blomaga_intro'] || !Editor._instances.fckeditor['blomaga_intro'].GetXHTML) {
+		setTimeout("setUnloadFckExtend()", 1000);
+		return ;
+	}
+	unload_blomaga_fck = Editor._instances.fckeditor['blomaga_intro'].GetXHTML();
+}
+// ゴミ文字対応用
+function unloadFckComp(u_html, n_html){
+	return u_html.replace(/(?:<p>(?:&nbsp;|\s*)<\/p>|<br(?:\s?\/)?>)|(?:&nbsp;)|(?:&#160;)*$/i, '') ==
+		n_html.replace(/(?:<p>(?:&nbsp;|\s*)<\/p>|<br(?:\s?\/)?>)|(?:&nbsp;)|(?:&#160;)*$/i, '');
+}
+// IEのFlashでbeforeunloadが呼ばれる対策用
+function isMatchFlashPosition(x, y, swf){
+	if( swf.css('display') == 'none' ){
+		// 非表示の場合は計算に入れない
+		return false;
+	}
+	var top = swf.offset().top;
+	var left = swf.offset().left;
+	var height = swf.height();
+	var width = swf.width();
+	if(top <= y && y <= top + height){
+		if(left <= x && x <= left + width){
+			return true;
+		}
+	}
+	return false;
+}
+$(function(){
+	if(!$('#body').length){
+		// 投稿と完了が同一テンプレートなので分岐処理代わり
+		return ;
+	}
+	// カテゴリーテキストボックスEnter時の処理
+	$('input[name=name]').on('keypress', function(e){
+		if (e.keyCode==13) {
+			execBeforeUnload = false;
+			Editor.commands.submit('category');
+			return false;
+		}
+	});
+
+	// Unloadイベント系の処理
+	formSerializeArray = getFormSerializeArray();
+	setUnloadFckBody();
+	setUnloadFckExtend();
+	$(window).on('beforeunload', function(e) {
+		// 入力の変更があったかどうかのチェック
+		var isData = !isFormEdit();
+		if (Editor._status.isFck['body']) {
+			isData = isData && unloadFckComp(unload_body_fck, Editor._instances.fckeditor['body'].GetXHTML());
+		}
+		if (Editor._status.isFck['extend']) {
+			isData = isData && unloadFckComp(unload_extend_fck, Editor._instances.fckeditor['extend'].GetXHTML());
+		}
+		if (Editor._status.isFck['blomaga_intro']) {
+			isData = isData && unloadFckComp(unload_blomaga_fck, Editor._instances.fckeditor['blomaga_intro'].GetXHTML());
+		}
+
+		// IEの場合のみFlashの位置に座標があった場合スルー(Flashのイベントでonbeforeunloadが呼ばれる為
+		var isMSIE = /*@cc_on!@*/false;
+		if (isMSIE) {
+			if (e && e.currentTarget && e.currentTarget.event && e.currentTarget.event.clientX) {
+				var x = e.currentTarget.event.clientX;
+				var y = e.currentTarget.event.clientY;
+				x += document.documentElement.scrollLeft || document.body.scrollLeft;
+				y += document.documentElement.scrollTop || document.body.scrollTop;
+				if (isMatchFlashPosition(x, y, $('#swf')) || isMatchFlashPosition(x, y, $('#swf2'))) {
+					// どちらかにマッチした場合 onbeforeunload で確認ダイアログは表示しない
+					isData = true;
+				}
+			}
+		}
+
+		// 変更があった場合 移動前に確認ダイアログを表示
+		if( isData == false ){
+			if (execBeforeUnload) {
+				var unload_message = '保存が完了しておりません。保存していないデータが失われますがよろしいですか？';
+				if(unload_message != ''){
+					return unload_message;
+				}
+			}
+		}
+	});
+});
+
+
+
+
+
+
+
+
+
+
+
+
+$(function(){
+	var toggleSpeed = 150;
+	$('.subtitle_switch_body').click(function() {
+		$('#menu_text_body').slideToggle();
+		$('.subtitle_switch_body').toggleClass("active");
+		return false;
+	});
+	$('.subtitle_switch_extend').click(function() {
+		$('#menu_extend').slideToggle();
+		$('.subtitle_switch_extend').toggleClass("active");
+		return false;
+	});
+	$('.subtitle_switch_config').click(function() {
+		$('#menu_config').slideToggle();
+		$('.subtitle_switch_config').toggleClass("active");
+		return false;
+	});
+	$('.subtitle_switch_detail_config').click(function() {
+		$('#menu_detail_config').slideToggle();
+		$('.subtitle_switch_detail_config').toggleClass("active");
+		return false;
+	});
+	$('.subtitle_switch_notice').click(function() {
+		$('#renewal_notice').slideToggle();
+		$('.subtitle_switch_notice').toggleClass("active");
+		return false;
+	});
+	$('.user_tag_help').click(function() {
+		$('#tip_tag').slideToggle();
+		$('.user_tag_help').toggleClass("active");
+		return false;
+	});
+	$('.sendtb_tip').click(function() {
+		$('#tip_trackbacked').slideToggle();
+		$('.sendtb_tip').toggleClass("active");
+		return false;
+	});
+});
+
+
+</script>
+
+
+<script>
+// アイキャッチ画像設定
+	$(function() {
+		$('#eyecatch-select').on('click', function(){
+			window.open(
+				"http://admin.blog.fc2.com/control.php?mode=control&process=upload&insert=set" ,
+				"Upload",
+				"width=740,height=640,scrollbars=yes,resizable=yes"
+			);
+			return false;
+		});
+		$('#eyecatch-text').on('change keydown', function(){
+			selectImage($('#eyecatch-text').val());
+		}).trigger('change');
+		$('#eyecatch-delete').on('click', function(){
+			selectImage('');
+			return false
+		});
+	});
+
+	function selectImage(image){
+		$('#eyecatch-text').val(image);
+		if (image) {
+			if (!image.match(/^http:\/\//)) {
+				image = 'http://' + image;
+			}
+			$('#eyecatch-image-url').attr('href', image);
+			$('#eyecatch-image').attr('src', image);
+			$('#eyecatch').show();
+		} else {
+			$('#eyecatch').hide();
+		}
+	}
+</script>
+
+<link href="//static.fc2.com/js/admin/emoticon/emoticon.css?201509281437" rel="stylesheet" type="text/css" charset="UTF-8" />
+<script type="text/javascript" src="//static.fc2.com/js/admin/emoticon/emoticon.js" charset="UTF-8"></script>
+<script type="text/javascript">
+$(function(){
+  new EmotIcon('simple-body-emoticon',   'body'         , $('#simple-body-emoticon').parent().parent().parent());
+  $('#bodySimpleToolbar').next('.emoticon').attr('id', 'bodySimpleEmoticon');
+  new EmotIcon('body-emoticon',          'body'         , $('#body-emoticon').parent().parent());
+  new EmotIcon('extend-emoticon',        'extend'       , $('#extend-emoticon').parent().parent());
+  new EmotIcon('blomaga_intro-emoticon', 'blomaga_intro', $('#blomaga_intro-emoticon').parent().parent());
+});
+
+$(function(){
+	if (location.protocol === "https:") {
+		window.FC2Video = function(i) {
+			window.open(
+				'http://admin.blog.fc2.com/control.php?mode=video&insert='+i,
+				'Video',
+				'width=640,height=640,scrollbars=yes,resizable=yes'
+			).focus();
+		};
+		$(window).on("message", function(e){
+			var evt = e.originalEvent;
+			console.log(evt.origin);
+			if (!evt.origin.match(/^https?\:\/\/admin.blog.fc2.com/)) {
+				return false;
+			};
+			switch (evt.data.method) {
+				case "tag":
+					Tag(evt.data.insert, "", evt.data.value, "");
+					Preview(evt.data.insert);
+					break;
+
+				default:
+			}
+		});
+	}
+});
+</script>
+		</div><!-- /right -->
+	</div><!-- /ajaxcontent -->
+</div><!--contents_box end-->
+		<div id="ad_sidebody">
+		<iframe src="//assys01.fc2.com/1191" style="width:200px;height:200px;border:none;" scrolling="no"></iframe>
+<!-- FC2管理用 -->
+<img src="//media.fc2.com/counter_img.php?id=878" width="1" height="1">
+<!-- FC2管理用 -->	</div>
+
+
+	<div class="header_ad">
+				<iframe src="//assys01.fc2.com/1192" style="width:468px;height:60px;border:none;" scrolling="no"></iframe>
+<!-- FC2管理用 -->
+<img src="//media.fc2.com/counter_img.php?id=977" width="1" height="1">
+<!-- FC2管理用 -->					</div>
+
+
+</div><!-- /container -->
+</div><!-- /wrap -->
+
+
+
+<div id="f-wrap" style="text-align:left">
+	<div id="f-wrap_inner" style="width:900px;">
+		<div id="f-service_outline">
+			<h3 id="f-serevice_logo">
+				<a href="http://blog.fc2.com/" target="_blank">
+					<img src="//static.fc2.com/image/blog_portal/pc/blog_logo.png" alt="FC2ブログ">
+				</a>
+			</h3>
+
+			<ul class="service_outline_list" style="display: none;">
+				<li class="service_outline_item"><a class="gtm-f_link" href="http://help.fc2.com/blog/" target="_blank">ヘルプ</a></li>
+				<li class="service_outline_item"><a class="gtm-f_link" href="http://fc2information.blog.fc2.com/?cat=21" target="_blank">インフォメーション</a></li>
+				<li class="service_outline_item"><a class="gtm-f_link" href="http://request.fc2.com/search_wish.php?ct1=5" target="_blank">リクエスト</a></li>
+				<li class="service_outline_item"><a class="gtm-f_link" href="http://help.fc2.com/blog/tos/ja#service_blog" target="_blank">利用規約</a></li>
+				<li class="service_outline_item"><a class="gtm-f_link" href="http://fc2support.blog85.fc2.com/blog-category-1.html" target="_blank">障害情報</a></li>
+			</ul>
+		</div>
+		<div id="f-service_map">
+			<div class="service_map_contents">
+				<h4 class="service_map_title">FC2ブログについて</h4>
+				<ul class="service_map_list">
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/guide/" target="_blank">FC２の豊富な機能</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/mobile/" target="_blank">スマホからもブログ投稿</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/paid/" target="_blank">有料プラン</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/album/" target="_blank">アルバム機能</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/recommend/" target="_blank">おすすめブログ</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/template_search.php" target="_blank">テンプレート一覧</a></li>
+				</ul>
+			</div>
+			<div class="service_map_contents">
+				<h4 class="service_map_title">ブロマガ</h4>
+				<ul class="service_map_list">
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/blomaga/" target="_blank">ブロマガとは？</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/genre/ranking/blomaga/" target="_blank">ブロマガランキング</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/blomaga/write.html" target="_blank">ブロマガの書き方</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/blomaga/affiliate.html" target="_blank">ブロマガアフィリエイト</a></li>
+				</ul>
+			</div>
+			<div class="service_map_contents last">
+				<h4 class="service_map_title">サポート</h4>
+				<ul class="service_map_list">
+					<li class="service_map_item"><a class="gtm-f_link" href="http://help.fc2.com/blog/" target="_blank">ヘルプ</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://fc2information.blog.fc2.com/?cat=21" target="_blank">インフォメーション</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://request.fc2.com/search_wish.php?ct1=5" target="_blank">リクエスト</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://help.fc2.com/blog/tos/ja#service_blog" target="_blank">利用規約</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://fc2support.blog85.fc2.com/blog-category-1.html" target="_blank">障害情報</a></li>
+				</ul>
+			</div>
+			<div class="footer_bnr_area">
+				<h4 class="service_map_title">アプリでもブログ投稿</h4>
+				<a href="http://apps.fc2.com/referrer/index.php?nexturl=https%3A%2F%2Fitunes.apple.com%2Fjp%2Fapp%2Fid374259309&amp;utm_source=blog.fc2.com&amp;utm_medium=referral&amp;utm_term=blog.ios.app&amp;utm_content=pc_rightColumn&amp;utm_campaign=officialBanner-ja" class="gtm-f_link footer_bnr" target="_blank">
+					<img src="//static.fc2.com/image/app/appstore139x41.png" alt="App Store">
+				</a>
+				<a href="http://apps.fc2.com/referrer/index.php?nexturl=http%3A%2F%2Fapps.fc2.com%2Fblog%2F%3Fc_device%3Dandroid&amp;utm_source=blog.fc2.com&amp;utm_medium=referral&amp;utm_term=blogn.android.app&amp;utm_content=pc_rightColumn&amp;utm_campaign=banner-ja" class="gtm-f_link footer_bnr" target="_blank">
+					<img src="//static.fc2.com/image/app/andoroid_n_139x41.png" alt="Google play">
+				</a>
+			</div>
+		</div>
+		<div id="f-service_common">
+			<ul class="common_service_list">
+				<li class="common_service_item"><a class="gtm-f_link" href="http://fc2.com/" target="_blank">FC2トップ</a></li>
+				<li class="common_service_item"><a class="gtm-f_link" href="http://help.fc2.com/inquiry">お問い合わせ</a></li>
+				<li class="common_service_item"><a class="gtm-f_link" href="http://fc2.com/company.html" target="_blank">会社概要</a></li>
+				<li class="common_service_item"><a class="gtm-f_link" href="http://fc2.com/privacy.html" target="_blank">プライバシーポリシー</a></li>
+				<li class="common_service_item"><a class="gtm-f_link" href="http://help.fc2.com/copyrights/tos/ja" target="_blank">著作権ガイドライン</a></li>
+				<li class="common_service_item"><a class="gtm-f_link" href="http://fc2.com/ja/sales.html" target="_blank">広告掲載</a></li>
+			</ul>
+
+			<div class="copyright_wrap">
+				<p class="copyright">Copyright(c)1999 FC2, Inc. All Rights Reserved.</p>
+				<a href="https://twitter.com/fc2info" class="twitter-follow-button" data-show-count="false" data-lang="ja">@fc2infoさんをフォロー</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+function toggleMenuCookie(id) {
+	var style_display = $('#'+id).css('display');
+	var coookie = document.cookie+";",key_find = "blog_menu_conf=",key_begin = coookie.indexOf(key_find);
+	if(key_begin != -1){
+		cookie = decodeURIComponent(coookie.substring(key_begin+key_find.length, coookie.indexOf(";", key_begin)));
+		id = id.substring(id.indexOf('menu_')+5);
+		cookie = cookie.replace(new RegExp(id+"=[01]"), id+"="+(style_display == 'none' ? '1' : '0'));
+		SetCookie("blog_menu_conf", cookie);
+	}
+}
+$(function(){
+	var toggleSpeed = 150;
+	$('h3.ml_home').click(function() {
+		$('#menu_home').slideToggle(toggleSpeed, toggleMenuCookie('menu_home'));
+		return false;
+	});
+	$('h3.ml_sns').click(function() {
+		$('#menu_sns').slideToggle(toggleSpeed, toggleMenuCookie('menu_sns'));
+		return false;
+	});
+	$('h3.ml_setting').click(function() {
+		$('#menu_setting').slideToggle(toggleSpeed, toggleMenuCookie('menu_setting'));
+		return false;
+	});
+	$('h3.ml_tool').click(function() {
+		$('#menu_tool').slideToggle(toggleSpeed, toggleMenuCookie('menu_tool'));
+		return false;
+	});
+});
+</script>
+</body>
+</html>

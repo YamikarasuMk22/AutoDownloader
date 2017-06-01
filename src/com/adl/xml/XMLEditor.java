@@ -65,7 +65,7 @@ public class XMLEditor implements ConnectionConstants {
 		}
 
 		Document document = documentBuilder.newDocument();
-		Element root = document.createElement("root");
+		Element root = document.createElement("Root");
 		document.appendChild(root);
 
 		File file = new File("comics.xml");
@@ -77,13 +77,13 @@ public class XMLEditor implements ConnectionConstants {
 	 * 複数の要素はカンマ区切りとなる
 	 */
 	public static boolean addNode(String id, String[] nodeParams) {
-		String[] nodeElems = { "Title", "TitleJ", "TitleO", "Charas", "Tags", "Artist", "PageNum", "ComicURL", "FolderPath", "BlogURL"};
+		String[] nodeElems = { "Title", "TitleJ", "TitleO", "Charas", "Tags", "Artist", "PageNum", "ComicURL", "FolderPath" };
 
 		try {
 			Document document = getRootDocument();
 			Element root = document.getDocumentElement();
 
-			Element comic = document.createElement("comic");
+			Element comic = document.createElement("Comic");
 			comic.setAttribute("id", id);
 			comic.setAttribute("imgid", id);
 			comic.setAttribute("states", "setup");
@@ -116,7 +116,7 @@ public class XMLEditor implements ConnectionConstants {
 			Document document = getRootDocument();
 			Element root = document.getDocumentElement();
 
-			NodeList list = root.getElementsByTagName("comic");
+			NodeList list = root.getElementsByTagName("Comic");
 			for (int i = 0; i < list.getLength(); i++) {
 				Element element = (Element) list.item(i);
 				String strSN = element.getAttribute("id");
@@ -142,7 +142,7 @@ public class XMLEditor implements ConnectionConstants {
 			Document document = getRootDocument();
 			Element root = document.getDocumentElement();
 
-			NodeList list = root.getElementsByTagName("comic");
+			NodeList list = root.getElementsByTagName("Comic");
 			for (int i = 0; i < list.getLength(); i++) {
 				Element element = (Element) list.item(i);
 				String strSN = element.getAttribute("id");

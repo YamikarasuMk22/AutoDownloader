@@ -104,11 +104,11 @@ public class WDProcessor extends WebDriver {
 			// "Title", "TitleJ", "TitleO", "Charas", "Tags", "Artist",
 			// "PageNum", "ComicURL", "PageRootURL", "FolderPath", "BlogURL"
 			String[] param = { title, titleJP, titleOR, chara, tag, artist, pageNumStr, url,
-					DOWNLOAD_ROOT_FOLDER + comicId, "" };
+					DOWNLOAD_ROOT_FOLDER + comicId };
 			Util.systemLoger("[Content] XMLParam:\n" + "\t Title=" + title + "\n" + "\t TitleJ=" + titleJP + "\n"
 					+ "\t TitleO=" + titleOR + "\n" + "\t Charas=" + chara + "\n" + "\t Tags=" + tag + "\n"
 					+ "\t Artist=" + artist + "\n" + "\t PageNum=" + pageNumStr + "\n" + "\t ComicURL=" + url + "\n"
-					+ "\t FolderPath=" + DOWNLOAD_ROOT_FOLDER + comicId + "\n" + "\t BlogURL=" + "" + "\n");
+					+ "\t FolderPath=" + DOWNLOAD_ROOT_FOLDER + comicId);
 
 			// XML更新
 			XMLEditor.addNode(comicId, param);
@@ -177,6 +177,7 @@ public class WDProcessor extends WebDriver {
 		if (file.exists()) {
 			Util.systemLoger("[DownloadImg] File Already Exist:" + DOWNLOAD_ROOT_FOLDER + "\\" + id + "\\" + page + "." + suffix);
 			result = true;
+			return result;
 		}
 
 		Util.systemLoger("[DownloadImg] ID:" + id + ", ImgID:" + imgId + ", Suffix:" + suffix + ", Page:" + page);
@@ -197,7 +198,7 @@ public class WDProcessor extends WebDriver {
 			robot.keyRelease(KeyEvent.VK_A);
 			robot.delay(DEFAULT_KEY_INTERVAL);
 
-			Util.typeID(id, robot);
+			Util.typeIDDir(id, robot);
 
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);

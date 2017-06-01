@@ -1,0 +1,542 @@
+http://admin.blog.fc2.com/control.php
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+	<meta name="robots" content="noindex,nofollow" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>HDF;DataBase - FC2 BLOG 管理ページ</title>
+	<link rel="shortcut icon" type="image/ico" href="//static.fc2.com/share/image/favicon.ico" />
+			<link href="//static.fc2.com/css/admin/wide/common.css" rel="stylesheet" type="text/css" charset="UTF-8" />
+	<link href="//static.fc2.com/css/admin/wide/default_150525.css?160113a2" rel="stylesheet" type="text/css" charset="UTF-8" />
+	<link href="//static.fc2.com/css/admin/wide/ja/style_150528.css" rel="stylesheet" type="text/css" charset="UTF-8" />
+	<link href="//static.fc2.com/css/admin/wide/main/control_150528.css?150630a3" rel="stylesheet" type="text/css" charset="UTF-8" />
+
+	<link rel="stylesheet" type="text/css" href="//static.fc2.com/share/fc2parts/css/share.css" />
+	<script type="text/javascript" src="//static.fc2.com/js/lib/jquery-1.7.2.min.js"></script>
+
+	<script type="text/javascript" src="//static.fc2.com/js/admin/lang_ja.js" charset="utf-8"></script>
+	<script type="text/javascript" src="//static.fc2.com/js/admin/admin.js?20151224" charset="utf-8"></script>
+
+	<script type="text/javascript">
+	    <!--
+	    function search_back(){
+	        var isMSIE = /*@cc_on!@*/false; //IE判別
+	        if (isMSIE) {
+	            if(document.charset!="utf-8"){ //文字コードが変換されているかチェック
+	                document.charset="utf-8"; //変換されていたら指定の文字コードに戻す
+	                location.reload();
+	            }
+	        }
+	    }
+	    window.onload=search_back;
+	    //-->
+	</script>
+
+	<script type="text/javascript">
+	<!--
+	function checkiMac(){
+		return 0;//others
+	}
+	document.cookie = 'access_time' + "=" + escape('1496297737') + ";";
+		//-->
+	</script>
+
+	<script type="text/javascript">
+if (Blog == undefined) var Blog={};
+Blog.isSimple = true;
+
+function switch_sipmle_normal(){
+Blog.isSimple = !Blog.isSimple;
+
+//switch
+var change_normal_link = document.getElementById('change_normal_link');
+if (change_normal_link) change_normal_link.style.display = (Blog.isSimple)? '' : 'none';
+var change_simple_link = document.getElementById('change_simple_link');
+if (change_simple_link) change_simple_link.style.display = (Blog.isSimple)? 'none' : '';
+
+var switch_list = ['menu_simple_normal_block','tabmenu','sub_menu2','intro_tools','tr_entry_genre','tr_entry_theme','tr_entry_tb','left_menu_trackback','left_menu_charge','highlight_toggle_body','tvtheme_box','left_menu_box_app','left_menu_myshop','left_menu_box_fc2srv'];
+
+for(var i = 0, j = switch_list.length, b; i < j; i++){
+	var switch_element = document.getElementById(switch_list[i]);
+	if (switch_element) switch_element.style.display = (Blog.isSimple)? 'none' : '';
+}
+// editor
+var bodyToolbar = document.getElementById('bodyToolbar');
+if (bodyToolbar) bodyToolbar.style.display = (Blog.isSimple)? 'none' : '';
+var bodySimpleToolbar = document.getElementById('bodySimpleToolbar');
+if (bodySimpleToolbar) bodySimpleToolbar.style.display = (Blog.isSimple)? '' : 'none';
+var bodySimpleEmoticon = document.getElementById('bodySimpleEmoticon');
+if (bodySimpleEmoticon) bodySimpleEmoticon.style.display = (Blog.isSimple)? '' : 'none';
+}
+</script>
+
+
+
+</head>
+<body class="common_lang_ja">
+
+	<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N4H7X2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N4H7X2');</script>
+<!-- End Google Tag Manager -->
+<!-- bg image box -->
+<div id="wrap" style="min-height: 800px;">
+	<div id="header">
+		<h1><a title="FC2ブログ - 無料ブログ(blog)を簡単作成！" href="//blog.fc2.com/" target="_blank">ブログ</a></h1>
+		<p class="charge_icon">
+			<a href="//fc2.to/9dmsAH" target="_blank">
+				<img src="//static.fc2.com/image/sh_design/duck_domainex02.png">
+			</a>
+		</p>
+	</div>
+<!-- hader menu -->
+	<div class="header_menu">
+		<div class="header_menu_inner clear">
+						<p class="userid">ブログID : hdfdatabase</p>
+			<ul id="header_menulist">
+									<li><a href="?mode=logging&process=out&lang=ja" title="ログアウトします" class="gtm-hm_logout">ログアウト</a></li>
+												<li id="myservice" class="off" onfocus="this.className='on'" onblur="this.className='off'" onmouseover="this.className='on'" onmouseout="this.className='off'" onactivate="this.className='on'" ondeactivate="this.className='off'">
+					<a href="#" title="登録済みサービスメニュー">マイサービス</a>
+					<ul class="drop_list">
+						<li><a href="//id.fc2.com/" title="FC2ID" target="_blank" class="gtm-hm_id">FC2ID</a></li>
+						<li><a href="http://id.fc2.com/?mode=login&done=counter" title="カウンター" target="_blank" class="gtm-hm_counter">カウンター</a></li>					</ul>
+				</li>
+								<li id="bloghelp" class="off" onfocus="this.className='on'" onblur="this.className='off'" onmouseover="this.className='on'" onmouseout="this.className='off'" onactivate="this.className='on'" ondeactivate="this.className='off'">
+					<a href="#" title="ヘルプ">ヘルプ</a>
+					<ul class="drop_list">
+						<li><a href="http://help.fc2.com/blog/manual/Home.html" target="_blank" class="gmt-header_menu_help">マニュアル</a></li>						<li><a href="http://blog.fc2.com/forum_community/" target="_blank" class="gmt-header_menu_forum">ユーザーフォーラム</a></li>						<li><a href="http://help.fc2.com/blog/" target="_blank" class="gmt-header_menu_qa">公式Q&A</a></li>						<li><a href="http://blog.fc2.com/spam/" target="_blank" class="gmt-header_menu_qa">スパム対策</a></li>						<li><a href="http://help.fc2.com/inquiry" target="_blank" class="gmt-header_menu_inquire">お問い合わせ</a></li>						<li><a href="http://request.fc2.com/search_wish.php?ct1=5" target="_blank" title="FC2サービスに対する要望などが投稿できます">リクエスト</a></li>					</ul>
+				</li>
+								<li><a href="//fc2.to/1ehAWZ" class="gtm-hm_ranking">ランキング</a></li>
+				<li><a href="//fc2.to/flmnqy" target="_blank" title="Twitter" class="gtm-hm_twitter"><img alt="twitter" src="//static.fc2.com/image/twitter_icon.png" /></a></li>
+								<li><a href="?mode=notify" title="ＦＣ２からのお知らせや新着情報" class="gtm-hm_notify">お知らせ</a></li>
+
+								<li id="simple_mode">
+					<a href="#" title="簡易モードに切り替える" id="change_simple_link" class="gtm-hm_change_simple" style="display:none;">簡易モード&nbsp;：&nbsp;<img src="//static.fc2.com/image/ja/admin/simple_mode_off.png" alt="通常モード" onclick="switchmenu('menu_simple_normal','not');switch_sipmle_normal();return false;" /></a>
+					<a href="#" title="通常モードに切り替える" id="change_normal_link" class="gtm-hm_change_normal" style="display:;">簡易モード&nbsp;：&nbsp;<img src="//static.fc2.com/image/ja/admin/simple_mode_on.png" alt="簡易モード" onclick="switchmenu('menu_simple_normal','not');switch_sipmle_normal();return false;" /></a>
+				</li>
+							</ul>
+					<div id="menu_simple_normal" style="display:none;"></div>		</div>
+	</div>
+<!-- /header menu -->
+<div id="container" class="clear m_simple">
+<div class="contents_box">
+	<div id="left" >
+					<!--PR--><div id="ad_sidebar"></div>
+				<div class="menu">
+			<h3 class="ml_home" >
+					<a href="#" title="クリックでメニューが開閉します">ホーム</a>
+			</h3>
+			<ul class="menulist" id="menu_home" style="display:block;">
+				<li><a href="?mode=notify" class="gtm-lm_notify"><img src="//static.fc2.com/image/icon_main/blue_arr.png" class="menu_point" alt="" /><strong>お知らせ</strong></a></li>
+				<li><a href="http://hdfdatabase.blog.fc2.com/" target="_blank" class="gtm-lm_myblog">ブログの確認</a></li>
+				<li><a href="?mode=editor&process=new" class="gtm-lm_editor">新しく記事を書く</a></li>
+				<li><a href="?mode=control&process=entry" class="gtm-lm_entry">記事の管理</a></li>
+				<li><a href="?mode=control&process=comment" class="gtm-lm_comment">コメントの管理</a></li>
+				<li id="left_menu_trackback" style="display:none;"><a href="?mode=control&process=trackback" class="gtm-lm_trackback">トラックバックの管理</a></li>
+				<li><a href="?mode=control&process=upload" class="gtm-lm_upload">ファイルアップロード</a></li>
+				<li><a href="control.php?mode=album" class="gtm-lm_album">アルバムの管理</a></li>
+			</ul>
+		</div>
+		<div class="menu">
+			<h3 class="ml_sns"><a href="#" title="クリックでメニューが開閉します">コミュニケーション</a></h3>
+			<ul class="menulist" id="menu_sns" style="display:block;">
+				<li><a href="?mode=history" class="gtm-lm_history">訪問者リスト</a></li>
+								<li><a href="http://fc2.to/8INRVZ" class="gtm-lm_ranking">ランキング</a></li>
+								<li><a href="?mode=clap" class="gtm-lm_clap">ブログ拍手</a></li>
+				<li><a href="?mode=sns_community" class="gtm-lm_community">コミュニティ</a></li>
+				<li><a href="?mode=sns" class="gtm-lm_sns">ブロとも</a></li>
+				<li>
+<a href="?mode=message" class="gtm-lm_message">
+<span class="menulist_txt">メッセージ</span>
+</a>
+				</li>
+								<li><a href="?mode=baton" class="gtm-lm_baton">バトン</a></li>
+								<li><a href="?mode=invite" class="gtm-lm_invite">招待する</a></li>
+			</ul>
+		</div>
+		<div class="menu">
+			<h3 class="ml_setting"><a href="#" title="クリックでメニューが開閉します">設定</a></h3>
+			<ul class="menulist" id="menu_setting" style="display:block;">
+				<li><a href="?mode=setting&process=1" class="gtm-lm_setting">環境設定</a></li>
+				<li><a href="?mode=design" class="gtm-lm_design">テンプレートの設定</a></li>
+				<li><a href="?mode=plugin" class="gtm-lm_plugin">プラグインの設定</a></li>
+				<li><a href="?mode=control&process=category" class="gtm-lm_category">カテゴリの編集</a></li>
+				<li><a href="?mode=control&process=link" class="gtm-lm_link">リンクの編集</a></li>
+								<li id="left_menu_paid" class="paid_label"><a href="?mode=paid" class="gtm-lm_paid"><img src="//static.fc2.com/image/ja/paid/pro_label_small.png" class="paid_label_img" alt="" />				<span class="paid_menu">有料プラン</span></a></li>
+																			</ul>
+		</div>
+		<div class="menu">
+			<h3 class="ml_tool"><a href="#" title="クリックでメニューが開閉します">ツール</a></h3>
+			<ul class="menulist" id="menu_tool" style="display:block;">
+				<li id="left_menu_charge" style="display:none;"><a href="?mode=blomaga" class="gtm-lm_charge">ブロマガ</a></li>
+				<li id="left_menu_payreport"><a href="?mode=payreport" class="gtm-lm_payreport">アフィリエイト</a></li>
+
+												<li><a href="?mode=control&process=backup" class="gtm-lm_backup">ログインポート</a></li>
+				<li><a href="?mode=control&process=backup" class="gtm-lm_backup">データバックアップ</a></li>
+				<li><a href="?mode=control&process=tag" class="gtm-lm_tag">ユーザータグの編集</a></li>
+				<li><a href="?mode=control&process=theme" class="gtm-lm_theme">スレッドテーマの編集</a></li>
+								<li><a href="http://r.fc2.com/" target="_blank" title="ブログに貼り付ける画像を好きなサイズに縮小できます" class="gtm-lm_resize">画像縮小</a></li>
+												<li><a href="?mode=epub" class="gtm-lm_epub">電子書籍化</a></li>
+								<li><a href="?mode=control&process=publish" class="gtm-lm_publish">ブログ書籍化</a></li>
+							</ul>
+		</div>
+
+				<!--<div class="menu" id="side_help_search">
+			<h3>FC2ヘルプ検索</h3>
+			<div class="clear">
+				<form action="http://help.fc2.com/search/qa" method="get" target="_blank">
+					<input type="text" name="q" class="help_form_tetarea" /><input type="hidden" name="service_id" value="2" /><input type="submit" value="検索" class="admin_common_btn" />
+				</form>
+			</div>
+		</div>-->
+
+
+	</div><!--/left-->
+
+	<!-- 右カラム -->
+	<div id="ajaxcontent">
+<dl id="tabmenu" style="display:none;">
+		<dd class="tabselected" title="ブログ"><a href="?" title="ブログ">ブログ</a></dd>
+
+			<dd><a href="?mode=sns" title="コミュニケーション">コミュニケーション</a></dd>
+	</dl>	<ul id="sub_menu2" style="display:none;">
+		<li><a class="gtm-hsub_menu" href="http://hdfdatabase.blog.fc2.com/" target="_blank" title="ブログの確認">ブログの確認</a></li>
+		<li>
+			<a class="gtm-hsub_menu" href="?mode=editor&process=new" title="新しく記事を書く">新しく記事を書く</a>					</li>
+		<li>
+			<a class="gtm-hsub_menu" href="?mode=control&process=upload" title="ファイルアップロード">ファイルアップロード</a>					</li>
+		<li class="last">
+			<a class="gtm-hsub_menu" href="?mode=setting&process=1" title="環境設定">環境設定</a>					</li>
+	</ul>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-38940509-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<div id="right" class="sh_right">
+		<div id="mypage" class="section notify">
+			<h2>お知らせ</h2>
+							<div style="margin:0 0 20px 0"><a href="http://fc2.to/2csFHQ" target="_blank"><img src="//static.fc2.com/image/admin/notify/bnr/affiliate_bnr201612.png" width="100%"></a></div>
+
+			<div id="top_info" class="contents clear">
+				<h3 class="sh_heading_main_b">インフォメーション</h3>
+				<div class="list_box_01">
+					<h4 class="clear"><span>FC2総合インフォメーション</span><a class="more gtm-notify_info_more" href="http://fc2information.blog.fc2.com/" target="_blank">もっと見る</a></h4>
+					<ul id="bloginfo" class="infobox">
+<li>
+							<span class="date">17/06/01</span>
+							<a href="http://fc2information.blog.fc2.com/blog-entry-1855.html" target="_blank" class="gtm-notify_info">【ブログ】FC2ブロガーが書籍を出版しました♪ </a>
+						</li><li>
+							<span class="date">17/05/19</span>
+							<a href="http://fc2information.blog.fc2.com/blog-entry-1854.html" target="_blank" class="gtm-notify_info">【ブログ】FC2ブロガーが書籍を出版しました♪ </a>
+						</li><li>
+							<span class="date">17/05/11</span>
+							<a href="http://fc2information.blog.fc2.com/blog-entry-1853.html" target="_blank" class="gtm-notify_info">【重要】FC2サービスのSSL化に伴いご利用いただけなくなる端末につきまして</a>
+						</li>
+						<li class="notify_pr_txt">
+							<span class="adimn_pr_txt">
+								<a href="http://fc2.to/aotzEZ" class="pr_link gtm-notify_pr" target="_blank">
+									<img class="pr_tag" src="//static.fc2.com/image/ja/admin/pr_tag.png" alt="" /><span class="pr_txt">ここだけの話、ブログの広告、非表示にできます。</span>
+								</a>
+							</span>
+						</li>
+					</ul>
+				</div>
+				<p class="more_info"><a href="http://fc2support.blog85.fc2.com/blog-category-1.html" target="_blank" class="gtm-notify_support">メンテナンス・障害情報はこちらから</a></p>
+				<p class="more_info"><a href="http://fc2information.blog.fc2.com/blog-category-21.html" target="_blank" class="gtm-notify_information">ブログインフォメーションはこちらから</a></p>
+			</div><!-- top_info -->
+
+			<div id="new_coments" class="clear" style="clear: both;">
+				<div id="blog_info">
+
+								</div>
+			</div>
+
+			<div id="manage_main_menu" class="contents clear">
+				<h3 class="sh_heading_main_b">メインメニュー</h3>
+				<div id="pre">
+					<span id="pre_title">プレビュー</span>
+					<span id="pre_pc"><a href="http://hdfdatabase.blog.fc2.com/?pc" target="_blank" class="gtm-notify_pre_pc">PC</a></span>
+					<span id="pre_mob"><a href="http://hdfdatabase.blog.fc2.com/?m" target="_blank" class="gtm-notify_pre_m">携帯</a></span>
+					<span id="pre_sp"><a href="http://hdfdatabase.blog.fc2.com/?sp" target="_blank" class="gtm-notify_pre_sp">スマートフォン</a></span>
+				</div>
+
+				<ul id="main_menu">
+					<li id="editor"><a href="?mode=editor&process=new" class="gtm-notify_editor">記事を書く</a></li>
+					<li id="entry"><a href="?mode=control&process=entry" class="gtm-notify_entry">記事の管理</a></li>
+					<li id="upload"><a href="?mode=control&process=upload" class="gtm-notify_upload">ファイル管理</a></li>
+					<li id="album"><a href="?mode=album" class="gtm-notify_album">アルバム管理</a></li>
+					<li id="user" class="mr0"><a href="?mode=setting&process=user" class="gtm-notify_user">プロフィール</a></li>
+					<li id="design_pc"><a href="?mode=design&process=general" class="gtm-notify_design_pc">テンプレートの設定[PC]</a></li>
+					<li id="design_mob"><a href="?mode=design&process=general&mob=1" class="gtm-notify_design_m">テンプレートの設定[携帯]</a></li>
+					<li id="design_sp"><a href="?mode=design&process=general&sp=1" class="gtm-notify_design_sp">テンプレートの設定[スマホ]</a></li>
+					<li id="plugin"><a href="?mode=plugin" class="gtm-notify_plugin">プラグインの設定</a></li>
+					<li id="setting" class="mr0"><a href="?mode=setting&process=1" class="gtm-notify_setting">環境設定</a></li>
+					<li id="comment"><a href="?mode=control&process=comment" class="gtm-notify_comment">コメント</a></li>
+					<li id="trackback"><a href="?mode=control&process=trackback" class="gtm-notify_trackback">トラックバック</a></li>
+					<li id="paid"><a href="?mode=paid" class="gtm-notify_paid">有料プラン</a></li>
+					<li id="ranking"><a href="?mode=ranking" class="gtm-notify_ranking">ランキング</a></li>
+					<li id="id_link" class="mr0"><a href="http://id.fc2.com/" target="_blank" class="gtm-notify_id">FC2 ID</a></li>
+				</ul>
+
+
+
+					<style>
+					.domainex_notify_bnr{
+						width: 610px;
+						margin: 0 0 0 60px;
+						background: url(//static.fc2.com/image/admin/domainex/domain_notify_bg.png) center center no-repeat;
+						text-align: center;
+						border: 1px solid #e3e3e3;
+						border-radius: 5px;
+						clear: both;
+					}
+					@media screen\9 {
+					    #main_menu {
+					    	overflow: hidden;
+					    }
+					}
+					.domainex_notify_bnr .domain_message{
+						font-size: 15px;
+						padding: 16px 0 4px;
+					}
+					.domainex_notify_bnr .blog_id_domain_wrap{
+						font-size: 18px;
+						margin: 1px 0;
+						padding: 0 16px;
+					}
+					.domainex_notify_bnr .blog_id_domain_wrap .blog_id_domain{
+						font-weight: bold;
+						font-size: 24px;
+					}
+
+					.domainex_notify_bnr .admin_common_positive_btn{
+						padding: 4px 21px;
+						padding: 6px 0 5px;
+						display: block;
+						width: 173px;
+						margin: 10px auto 18px;
+					}
+					</style>
+					<div class="domainex_notify_bnr">
+						<p class="domain_message">有料プランに申し込むと1年間、<b>無料</b>でJPドメインとメールが使えます。</p>
+						<div class="blog_id_domain_wrap">
+							<span class="blog_id_domain">hdfdatabase.jp</span>を取得できます。
+						</div>
+						<a target='_blank' href="http://admin.blog.fc2.com/control.php?mode=paid&sld=hdfdatabase&sldfirst" class="gtm-notify_domainex admin_common_positive_btn">
+							ドメインを取得する
+						</a>
+					</div>
+
+			</div>
+		</div><!--/mypage-->
+
+<!-- FC2管理用 -->
+<script language="JavaScript" type="text/javascript" src="//media.fc2.com/counter_empjs.php?id=476"></script><noscript><img src="//media.fc2.com/counter_img.php?id=476" width="1" height="1" /></noscript>
+<!-- FC2管理用 -->
+		</div><!-- /right -->
+	</div><!-- /ajaxcontent -->
+</div><!--contents_box end-->
+		<div id="ad_sidebody">
+		<iframe src="//assys01.fc2.com/1191" style="width:200px;height:200px;border:none;" scrolling="no"></iframe>
+<!-- FC2管理用 -->
+<img src="//media.fc2.com/counter_img.php?id=878" width="1" height="1">
+<!-- FC2管理用 -->	</div>
+
+
+	<div class="header_ad">
+				<iframe src="//assys01.fc2.com/1192" style="width:468px;height:60px;border:none;" scrolling="no"></iframe>
+<!-- FC2管理用 -->
+<img src="//media.fc2.com/counter_img.php?id=977" width="1" height="1">
+<!-- FC2管理用 -->					</div>
+
+
+</div><!-- /container -->
+</div><!-- /wrap -->
+
+
+
+<div id="f-wrap" style="text-align:left">
+	<div id="f-wrap_inner" style="width:900px;">
+		<div id="f-service_outline">
+			<h3 id="f-serevice_logo">
+				<a href="http://blog.fc2.com/" target="_blank">
+					<img src="//static.fc2.com/image/blog_portal/pc/blog_logo.png" alt="FC2ブログ">
+				</a>
+			</h3>
+
+			<ul class="service_outline_list" style="display: none;">
+				<li class="service_outline_item"><a class="gtm-f_link" href="http://help.fc2.com/blog/" target="_blank">ヘルプ</a></li>
+				<li class="service_outline_item"><a class="gtm-f_link" href="http://fc2information.blog.fc2.com/?cat=21" target="_blank">インフォメーション</a></li>
+				<li class="service_outline_item"><a class="gtm-f_link" href="http://request.fc2.com/search_wish.php?ct1=5" target="_blank">リクエスト</a></li>
+				<li class="service_outline_item"><a class="gtm-f_link" href="http://help.fc2.com/blog/tos/ja#service_blog" target="_blank">利用規約</a></li>
+				<li class="service_outline_item"><a class="gtm-f_link" href="http://fc2support.blog85.fc2.com/blog-category-1.html" target="_blank">障害情報</a></li>
+			</ul>
+		</div>
+		<div id="f-service_map">
+			<div class="service_map_contents">
+				<h4 class="service_map_title">FC2ブログについて</h4>
+				<ul class="service_map_list">
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/guide/" target="_blank">FC２の豊富な機能</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/mobile/" target="_blank">スマホからもブログ投稿</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/paid/" target="_blank">有料プラン</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/album/" target="_blank">アルバム機能</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/recommend/" target="_blank">おすすめブログ</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/template_search.php" target="_blank">テンプレート一覧</a></li>
+				</ul>
+			</div>
+			<div class="service_map_contents">
+				<h4 class="service_map_title">ブロマガ</h4>
+				<ul class="service_map_list">
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/blomaga/" target="_blank">ブロマガとは？</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/genre/ranking/blomaga/" target="_blank">ブロマガランキング</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/blomaga/write.html" target="_blank">ブロマガの書き方</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/blomaga/affiliate.html" target="_blank">ブロマガアフィリエイト</a></li>
+				</ul>
+			</div>
+			<div class="service_map_contents last">
+				<h4 class="service_map_title">サポート</h4>
+				<ul class="service_map_list">
+					<li class="service_map_item"><a class="gtm-f_link" href="http://help.fc2.com/blog/" target="_blank">ヘルプ</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://fc2information.blog.fc2.com/?cat=21" target="_blank">インフォメーション</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://request.fc2.com/search_wish.php?ct1=5" target="_blank">リクエスト</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://help.fc2.com/blog/tos/ja#service_blog" target="_blank">利用規約</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://fc2support.blog85.fc2.com/blog-category-1.html" target="_blank">障害情報</a></li>
+				</ul>
+			</div>
+			<div class="footer_bnr_area">
+				<h4 class="service_map_title">アプリでもブログ投稿</h4>
+				<a href="http://apps.fc2.com/referrer/index.php?nexturl=https%3A%2F%2Fitunes.apple.com%2Fjp%2Fapp%2Fid374259309&amp;utm_source=blog.fc2.com&amp;utm_medium=referral&amp;utm_term=blog.ios.app&amp;utm_content=pc_rightColumn&amp;utm_campaign=officialBanner-ja" class="gtm-f_link footer_bnr" target="_blank">
+					<img src="//static.fc2.com/image/app/appstore139x41.png" alt="App Store">
+				</a>
+				<a href="http://apps.fc2.com/referrer/index.php?nexturl=http%3A%2F%2Fapps.fc2.com%2Fblog%2F%3Fc_device%3Dandroid&amp;utm_source=blog.fc2.com&amp;utm_medium=referral&amp;utm_term=blogn.android.app&amp;utm_content=pc_rightColumn&amp;utm_campaign=banner-ja" class="gtm-f_link footer_bnr" target="_blank">
+					<img src="//static.fc2.com/image/app/andoroid_n_139x41.png" alt="Google play">
+				</a>
+			</div>
+		</div>
+		<div id="f-service_common">
+			<ul class="common_service_list">
+				<li class="common_service_item"><a class="gtm-f_link" href="http://fc2.com/" target="_blank">FC2トップ</a></li>
+				<li class="common_service_item"><a class="gtm-f_link" href="http://help.fc2.com/inquiry">お問い合わせ</a></li>
+				<li class="common_service_item"><a class="gtm-f_link" href="http://fc2.com/company.html" target="_blank">会社概要</a></li>
+				<li class="common_service_item"><a class="gtm-f_link" href="http://fc2.com/privacy.html" target="_blank">プライバシーポリシー</a></li>
+				<li class="common_service_item"><a class="gtm-f_link" href="http://help.fc2.com/copyrights/tos/ja" target="_blank">著作権ガイドライン</a></li>
+				<li class="common_service_item"><a class="gtm-f_link" href="http://fc2.com/ja/sales.html" target="_blank">広告掲載</a></li>
+			</ul>
+
+			<div class="copyright_wrap">
+				<p class="copyright">Copyright(c)1999 FC2, Inc. All Rights Reserved.</p>
+				<a href="https://twitter.com/fc2info" class="twitter-follow-button" data-show-count="false" data-lang="ja">@fc2infoさんをフォロー</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+			<script type="text/javascript">
+		$.fn.extend({
+				"stripe": function(){
+				var cnt=0;
+				this.each(function(i,n){
+					if(++cnt % 2 == 0){
+						$(n).addClass("evencell");
+					}
+				});
+			}
+		});
+		$(function(){
+			$('table#comment_list tr').stripe(); // コメント管理
+			$('table#oldlog_list tr').stripe(); // 過去記事管理
+			$('table#trackback_list tr').stripe(); // トラックバック管理
+			$('table#history_list tr').stripe(); // 訪問者リスト
+			$('table#clap_comment tr').stripe(); // 拍手コメント
+			$('table#time_statistics > tr').stripe(); // 拍手コメント -> 履歴詳細
+			$('div#community_area > table.main_table tr ').stripe(); // ブロとも足跡
+			$('div#right ul.messagetable li').stripe(); // メッセージ
+			$('table#amazon_itemlist tr').stripe(); // マイショップ管理
+			$('table#category_list tr').stripe(); // カテゴリ編集
+			$('table#template_plist tr').stripe(); // テンプレートの設定
+			$('table#template_userdetail tr').stripe(); // テンプレートの設定 -> PC用テンプレート, 共有プラグイン追加
+			$('table#template_mlist tr').stripe(); // テンプレートの設定 -> モバイル用テンプレート
+			$('div#setting_area form[name="plugin1"] table.plgin_list tr').stripe(); // PCプラグイン管理 1
+			$('div#setting_area form[name="plugin2"] table.plgin_list tr').stripe(); // PCプラグイン管理 2
+			$('div#setting_area form[name="public"] > table.main_table tr').stripe(); // PC/モバイルプラグイン管理 -> 公式プラグイン追加
+			$('table#link_list tr').stripe(); // リンクの設定
+			$('table#file_detail tr').stripe(); // ファイルアップロード一覧
+			$('table#usertag_list tr').stripe(); // ユーザータグ管理
+			$('table#theme_list tr').stripe(); // スレッドテーマ
+			$('div#right div.tbl table').stripe(); // コミュニケーションタブ -> コミュニティ
+			$('div#appli_developer table tr ').stripe(); // アプリ作成
+			$('div#appli_list table.main_table tr ').stripe(); // アプリ一覧
+			$('div#search_list div.appli').stripe(); // アプリ一覧 -> 検索
+			$('div#appli_developer > form > table > tr').stripe(); // アプリ開発
+			$('div#right div.block dl.topic_list_test dd').stripe(); // 参加コミュ一覧
+			$('div#right table.default_table tr').stripe(); // ブロとも設定
+			$('div#newbaton > ul > li').stripe(); // バトン管理 -> 新着バトン
+			$('div#baton_news div#ranking > ul > li').stripe(); // バトン管理 -> バトンランキング
+			$('div#baton_edit ul.create_baton li').stripe(); // バトン作成 -> バトン設定
+			$('div#baton_log table.loglist tr').stripe(); // バトン管理 -> 作成済みバトン一覧
+			$('table#shop_category tr').stripe(); // Amazon -> カテゴリ一覧
+			$('table#export_list tr').stripe(); // 書籍化, import/export
+			$('table#template_commentlist tr').stripe(); // 共有プラグイン詳細 -> コメント
+			$('div#control_area table#fc2info tr').stripe(); // FC2からのおしらせ
+			$('div#control_area table#recent_cotr tr').stripe(); // 新着コメント・トラバ
+			$('div#tool_area table#theme_making tr').stripe(); // テーマ作成
+			$('div#setting_area table#main_table tr').stripe(); // 環境設定
+		});
+		</script>
+
+<script type="text/javascript">
+function toggleMenuCookie(id) {
+	var style_display = $('#'+id).css('display');
+	var coookie = document.cookie+";",key_find = "blog_menu_conf=",key_begin = coookie.indexOf(key_find);
+	if(key_begin != -1){
+		cookie = decodeURIComponent(coookie.substring(key_begin+key_find.length, coookie.indexOf(";", key_begin)));
+		id = id.substring(id.indexOf('menu_')+5);
+		cookie = cookie.replace(new RegExp(id+"=[01]"), id+"="+(style_display == 'none' ? '1' : '0'));
+		SetCookie("blog_menu_conf", cookie);
+	}
+}
+$(function(){
+	var toggleSpeed = 150;
+	$('h3.ml_home').click(function() {
+		$('#menu_home').slideToggle(toggleSpeed, toggleMenuCookie('menu_home'));
+		return false;
+	});
+	$('h3.ml_sns').click(function() {
+		$('#menu_sns').slideToggle(toggleSpeed, toggleMenuCookie('menu_sns'));
+		return false;
+	});
+	$('h3.ml_setting').click(function() {
+		$('#menu_setting').slideToggle(toggleSpeed, toggleMenuCookie('menu_setting'));
+		return false;
+	});
+	$('h3.ml_tool').click(function() {
+		$('#menu_tool').slideToggle(toggleSpeed, toggleMenuCookie('menu_tool'));
+		return false;
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,2182 @@
+http://admin.blog.fc2.com/control.php?mode=control&process=upload
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+	<meta name="robots" content="noindex,nofollow" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>HDF;DataBase - FC2 BLOG 管理ページ</title>
+	<link rel="shortcut icon" type="image/ico" href="//static.fc2.com/share/image/favicon.ico" />
+			<link href="//static.fc2.com/css/admin/wide/common.css" rel="stylesheet" type="text/css" charset="UTF-8" />
+	<link href="//static.fc2.com/css/admin/wide/default_150525.css?160113a2" rel="stylesheet" type="text/css" charset="UTF-8" />
+	<link href="//static.fc2.com/css/admin/wide/ja/style_150528.css" rel="stylesheet" type="text/css" charset="UTF-8" />
+	<link href="//static.fc2.com/css/admin/wide/main/tool_150525.css?150630a3" rel="stylesheet" type="text/css" charset="UTF-8" />
+
+	<link rel="stylesheet" type="text/css" href="//static.fc2.com/share/fc2parts/css/share.css" />
+	<script type="text/javascript" src="//static.fc2.com/js/lib/jquery-1.7.2.min.js"></script>
+
+	<script type="text/javascript" src="//static.fc2.com/js/admin/lang_ja.js" charset="utf-8"></script>
+	<script type="text/javascript" src="//static.fc2.com/js/admin/admin.js?20151224" charset="utf-8"></script>
+
+	<script type="text/javascript">
+	    <!--
+	    function search_back(){
+	        var isMSIE = /*@cc_on!@*/false; //IE判別
+	        if (isMSIE) {
+	            if(document.charset!="utf-8"){ //文字コードが変換されているかチェック
+	                document.charset="utf-8"; //変換されていたら指定の文字コードに戻す
+	                location.reload();
+	            }
+	        }
+	    }
+	    window.onload=search_back;
+	    //-->
+	</script>
+
+	<script type="text/javascript">
+	<!--
+	function checkiMac(){
+		return 0;//others
+	}
+	document.cookie = 'access_time' + "=" + escape('1496298958') + ";";
+		//-->
+	</script>
+
+			<script type="text/javascript" src="//static.fc2.com/js/lib/jquery.cookie.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#upload_form a").click( toggleMultiUploadForm);
+			if( $.cookie( 'multi_upload_menu') == 'block'){
+				toggleMultiUploadForm();
+			}
+		});
+
+		function toggleMultiUploadForm(){
+			$("#upload_form a").toggleClass("open");
+			if( $("#multi_upload").css('display') == 'block'){
+				$("#multi_upload").fadeOut('fast');
+				$.cookie( 'multi_upload_menu', 'none', { expires: 14 });
+			}else{
+				$("#multi_upload").fadeIn();
+				$.cookie( 'multi_upload_menu', 'block', { expires: 14});
+
+			}
+		}
+	</script>
+		<script type="text/javascript">
+if (Blog == undefined) var Blog={};
+Blog.isSimple = true;
+
+function switch_sipmle_normal(){
+Blog.isSimple = !Blog.isSimple;
+
+//switch
+var change_normal_link = document.getElementById('change_normal_link');
+if (change_normal_link) change_normal_link.style.display = (Blog.isSimple)? '' : 'none';
+var change_simple_link = document.getElementById('change_simple_link');
+if (change_simple_link) change_simple_link.style.display = (Blog.isSimple)? 'none' : '';
+
+var switch_list = ['menu_simple_normal_block','tabmenu','sub_menu2','intro_tools','tr_entry_genre','tr_entry_theme','tr_entry_tb','left_menu_trackback','left_menu_charge','highlight_toggle_body','tvtheme_box','left_menu_box_app','left_menu_myshop','left_menu_box_fc2srv'];
+
+for(var i = 0, j = switch_list.length, b; i < j; i++){
+	var switch_element = document.getElementById(switch_list[i]);
+	if (switch_element) switch_element.style.display = (Blog.isSimple)? 'none' : '';
+}
+// editor
+var bodyToolbar = document.getElementById('bodyToolbar');
+if (bodyToolbar) bodyToolbar.style.display = (Blog.isSimple)? 'none' : '';
+var bodySimpleToolbar = document.getElementById('bodySimpleToolbar');
+if (bodySimpleToolbar) bodySimpleToolbar.style.display = (Blog.isSimple)? '' : 'none';
+var bodySimpleEmoticon = document.getElementById('bodySimpleEmoticon');
+if (bodySimpleEmoticon) bodySimpleEmoticon.style.display = (Blog.isSimple)? '' : 'none';
+}
+</script>
+
+
+
+</head>
+<body class="common_lang_ja">
+
+	<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N4H7X2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N4H7X2');</script>
+<!-- End Google Tag Manager -->
+<!-- bg image box -->
+<div id="wrap" style="min-height: 800px;">
+	<div id="header">
+		<h1><a title="FC2ブログ - 無料ブログ(blog)を簡単作成！" href="//blog.fc2.com/" target="_blank">ブログ</a></h1>
+		<p class="charge_icon">
+			<a href="//fc2.to/cdpsHI" target="_blank">
+				<img src="//static.fc2.com/image/sh_design/duck_domainex01.png">
+			</a>
+		</p>
+	</div>
+<!-- hader menu -->
+	<div class="header_menu">
+		<div class="header_menu_inner clear">
+						<p class="userid">ブログID : hdfdatabase</p>
+			<ul id="header_menulist">
+									<li><a href="?mode=logging&process=out&lang=ja" title="ログアウトします" class="gtm-hm_logout">ログアウト</a></li>
+												<li id="myservice" class="off" onfocus="this.className='on'" onblur="this.className='off'" onmouseover="this.className='on'" onmouseout="this.className='off'" onactivate="this.className='on'" ondeactivate="this.className='off'">
+					<a href="#" title="登録済みサービスメニュー">マイサービス</a>
+					<ul class="drop_list">
+						<li><a href="//id.fc2.com/" title="FC2ID" target="_blank" class="gtm-hm_id">FC2ID</a></li>
+						<li><a href="http://id.fc2.com/?mode=login&done=counter" title="カウンター" target="_blank" class="gtm-hm_counter">カウンター</a></li>					</ul>
+				</li>
+								<li id="bloghelp" class="off" onfocus="this.className='on'" onblur="this.className='off'" onmouseover="this.className='on'" onmouseout="this.className='off'" onactivate="this.className='on'" ondeactivate="this.className='off'">
+					<a href="#" title="ヘルプ">ヘルプ</a>
+					<ul class="drop_list">
+						<li><a href="http://help.fc2.com/blog/manual/Home.html" target="_blank" class="gmt-header_menu_help">マニュアル</a></li>						<li><a href="http://blog.fc2.com/forum_community/" target="_blank" class="gmt-header_menu_forum">ユーザーフォーラム</a></li>						<li><a href="http://help.fc2.com/blog/" target="_blank" class="gmt-header_menu_qa">公式Q&A</a></li>						<li><a href="http://blog.fc2.com/spam/" target="_blank" class="gmt-header_menu_qa">スパム対策</a></li>						<li><a href="http://help.fc2.com/inquiry" target="_blank" class="gmt-header_menu_inquire">お問い合わせ</a></li>						<li><a href="http://request.fc2.com/search_wish.php?ct1=5" target="_blank" title="FC2サービスに対する要望などが投稿できます">リクエスト</a></li>					</ul>
+				</li>
+								<li><a href="//fc2.to/1ehAWZ" class="gtm-hm_ranking">ランキング</a></li>
+				<li><a href="//fc2.to/flmnqy" target="_blank" title="Twitter" class="gtm-hm_twitter"><img alt="twitter" src="//static.fc2.com/image/twitter_icon.png" /></a></li>
+								<li><a href="?mode=notify" title="ＦＣ２からのお知らせや新着情報" class="gtm-hm_notify">お知らせ</a></li>
+
+								<li id="simple_mode">
+					<a href="#" title="簡易モードに切り替える" id="change_simple_link" class="gtm-hm_change_simple" style="display:none;">簡易モード&nbsp;：&nbsp;<img src="//static.fc2.com/image/ja/admin/simple_mode_off.png" alt="通常モード" onclick="switchmenu('menu_simple_normal','not');switch_sipmle_normal();return false;" /></a>
+					<a href="#" title="通常モードに切り替える" id="change_normal_link" class="gtm-hm_change_normal" style="display:;">簡易モード&nbsp;：&nbsp;<img src="//static.fc2.com/image/ja/admin/simple_mode_on.png" alt="簡易モード" onclick="switchmenu('menu_simple_normal','not');switch_sipmle_normal();return false;" /></a>
+				</li>
+							</ul>
+					<div id="menu_simple_normal" style="display:none;"></div>		</div>
+	</div>
+<!-- /header menu -->
+<div id="container" class="clear m_simple">
+<div class="contents_box">
+	<div id="left" >
+					<!--PR--><div id="ad_sidebar"></div>
+				<div class="menu">
+			<h3 class="ml_home" >
+					<a href="#" title="クリックでメニューが開閉します">ホーム</a>
+			</h3>
+			<ul class="menulist" id="menu_home" style="display:block;">
+				<li><a href="?mode=notify" class="gtm-lm_notify">お知らせ</a></li>
+				<li><a href="http://hdfdatabase.blog.fc2.com/" target="_blank" class="gtm-lm_myblog">ブログの確認</a></li>
+				<li><a href="?mode=editor&process=new" class="gtm-lm_editor">新しく記事を書く</a></li>
+				<li><a href="?mode=control&process=entry" class="gtm-lm_entry">記事の管理</a></li>
+				<li><a href="?mode=control&process=comment" class="gtm-lm_comment">コメントの管理</a></li>
+				<li id="left_menu_trackback" style="display:none;"><a href="?mode=control&process=trackback" class="gtm-lm_trackback">トラックバックの管理</a></li>
+				<li><a href="?mode=control&process=upload" class="gtm-lm_upload"><img src="//static.fc2.com/image/icon_main/blue_arr.png" class="menu_point" alt="" /><strong>ファイルアップロード</strong></a></li>
+				<li><a href="control.php?mode=album" class="gtm-lm_album">アルバムの管理</a></li>
+			</ul>
+		</div>
+		<div class="menu">
+			<h3 class="ml_sns"><a href="#" title="クリックでメニューが開閉します">コミュニケーション</a></h3>
+			<ul class="menulist" id="menu_sns" style="display:block;">
+				<li><a href="?mode=history" class="gtm-lm_history">訪問者リスト</a></li>
+								<li><a href="http://fc2.to/8INRVZ" class="gtm-lm_ranking">ランキング</a></li>
+								<li><a href="?mode=clap" class="gtm-lm_clap">ブログ拍手</a></li>
+				<li><a href="?mode=sns_community" class="gtm-lm_community">コミュニティ</a></li>
+				<li><a href="?mode=sns" class="gtm-lm_sns">ブロとも</a></li>
+				<li>
+<a href="?mode=message" class="gtm-lm_message">
+<span class="menulist_txt">メッセージ</span>
+</a>
+				</li>
+								<li><a href="?mode=baton" class="gtm-lm_baton">バトン</a></li>
+								<li><a href="?mode=invite" class="gtm-lm_invite">招待する</a></li>
+			</ul>
+		</div>
+		<div class="menu">
+			<h3 class="ml_setting"><a href="#" title="クリックでメニューが開閉します">設定</a></h3>
+			<ul class="menulist" id="menu_setting" style="display:block;">
+				<li><a href="?mode=setting&process=1" class="gtm-lm_setting">環境設定</a></li>
+				<li><a href="?mode=design" class="gtm-lm_design">テンプレートの設定</a></li>
+				<li><a href="?mode=plugin" class="gtm-lm_plugin">プラグインの設定</a></li>
+				<li><a href="?mode=control&process=category" class="gtm-lm_category">カテゴリの編集</a></li>
+				<li><a href="?mode=control&process=link" class="gtm-lm_link">リンクの編集</a></li>
+								<li id="left_menu_paid" class="paid_label"><a href="?mode=paid" class="gtm-lm_paid"><img src="//static.fc2.com/image/ja/paid/pro_label_small.png" class="paid_label_img" alt="" />				<span class="paid_menu">有料プラン</span></a></li>
+																			</ul>
+		</div>
+		<div class="menu">
+			<h3 class="ml_tool"><a href="#" title="クリックでメニューが開閉します">ツール</a></h3>
+			<ul class="menulist" id="menu_tool" style="display:block;">
+				<li id="left_menu_charge" style="display:none;"><a href="?mode=blomaga" class="gtm-lm_charge">ブロマガ</a></li>
+				<li id="left_menu_payreport"><a href="?mode=payreport" class="gtm-lm_payreport">アフィリエイト</a></li>
+
+												<li><a href="?mode=control&process=backup" class="gtm-lm_backup">ログインポート</a></li>
+				<li><a href="?mode=control&process=backup" class="gtm-lm_backup">データバックアップ</a></li>
+				<li><a href="?mode=control&process=tag" class="gtm-lm_tag">ユーザータグの編集</a></li>
+				<li><a href="?mode=control&process=theme" class="gtm-lm_theme">スレッドテーマの編集</a></li>
+								<li><a href="http://r.fc2.com/" target="_blank" title="ブログに貼り付ける画像を好きなサイズに縮小できます" class="gtm-lm_resize">画像縮小</a></li>
+												<li><a href="?mode=epub" class="gtm-lm_epub">電子書籍化</a></li>
+								<li><a href="?mode=control&process=publish" class="gtm-lm_publish">ブログ書籍化</a></li>
+							</ul>
+		</div>
+
+				<!--<div class="menu" id="side_help_search">
+			<h3>FC2ヘルプ検索</h3>
+			<div class="clear">
+				<form action="http://help.fc2.com/search/qa" method="get" target="_blank">
+					<input type="text" name="q" class="help_form_tetarea" /><input type="hidden" name="service_id" value="2" /><input type="submit" value="検索" class="admin_common_btn" />
+				</form>
+			</div>
+		</div>-->
+
+
+	</div><!--/left-->
+
+	<!-- 右カラム -->
+	<div id="ajaxcontent">
+<dl id="tabmenu" style="display:none;">
+		<dd class="tabselected" title="ブログ"><a href="?" title="ブログ">ブログ</a></dd>
+
+			<dd><a href="?mode=sns" title="コミュニケーション">コミュニケーション</a></dd>
+	</dl>	<ul id="sub_menu2" style="display:none;">
+		<li><a class="gtm-hsub_menu" href="http://hdfdatabase.blog.fc2.com/" target="_blank" title="ブログの確認">ブログの確認</a></li>
+		<li>
+			<a class="gtm-hsub_menu" href="?mode=editor&process=new" title="新しく記事を書く">新しく記事を書く</a>					</li>
+		<li>
+						<a class="gtm-hsub_menu" href="?mode=control&process=upload" title="ファイルアップロード"><img src="//static.fc2.com/image/icon_main/blue_arr.png" class="menu_point" alt="" /><span style="font-weight:bold;">ファイルアップロード</a></span>		</li>
+		<li class="last">
+			<a class="gtm-hsub_menu" href="?mode=setting&process=1" title="環境設定">環境設定</a>					</li>
+	</ul>
+	<script langeage="javascript">
+	<!--
+	function CheckOverwrite(server,message){
+		var type = document.getElementById('overwrite').value;
+
+		if(type=='force'){
+			tmpnames = Array('upfile','upfile1','upfile2','upfile3','upfile4','upfile5');
+			var check_name = "";
+			for (i=0;i<6;i++){
+				tmpname = document.getElementById(tmpnames[i]).value;
+				tmpname = tmpname.substring(tmpname.lastIndexOf("\\")+1,tmpname.length);
+				if(tmpname!=""){
+					if(check_name!=""){check_name = check_name + ',';}
+					check_name = check_name + tmpname;
+				}
+			}
+			check_name = encodeURIComponent(check_name);
+			if (server == 'blog') {
+				url = "/control.php?mode=control&process=upload&type=check&names=" + check_name;
+			} else {
+				url = "//" + server + ".fc2.com/control.php?mode=control&process=upload&type=check&names=" + check_name;
+			}
+			$.get(url,function(data){
+				if(data=='true'){
+					res = confirm(message);
+					if(res == true){
+						document.upload.submit();
+					}
+				}else{
+					document.upload.submit();
+				}
+			});
+		}else{
+			document.upload.submit();
+		}
+	}
+
+	$(function() {
+		$('#upload_link,#list_file_link').click(function() {
+			var targetY = $($(this).attr('href')).offset().top;
+			$('html,body').animate({scrollTop: targetY}, 300, 'swing');
+			return false;
+		});
+	});
+
+	-->
+	</script>
+
+	<!-- 右カラム -->
+
+	<div id="right">
+
+		<div id="tool_area" class="section file_upload">
+
+		<h2>ファイル管理<a href="#upload_title" id="upload_link">アップロード</a><a href="#list_file_title" id="list_file_link">ファイル一覧</a></h2>
+
+				<h3 class="sh_heading_main_b">利用状況</h3>
+		<table id="capacity" class="sh_manage_table">
+			<tr class="align_center">
+				<th>ファイル数</th>
+				<th>合計サイズ</th>
+				<th>使用サイズ</th>
+				<th>使用率</th>
+			</tr>
+			<tr class="align_center">
+				<td>421</td>
+				<td>10240 MB</td>
+				<td>42.33 MB</td>
+				<td>0.41 %</td>
+			</tr>
+		</table>
+
+
+		<h3 class="sh_heading_main_b" id="upload_title">アップロード
+<span class="adimn_pr_txt">
+	<a href="http://fc2.to/489ciV" class="pr_link" target="_blank">
+	<img class="pr_tag" src="//static.fc2.com/image/ja/admin/pr_tag.png" alt="" /><span class="pr_txt">本当は教えたくない、ブログの広告を完全非表示にする方法</span>
+</a>
+</span>
+
+		</h3>
+
+		<div class="upload_caution clear">
+			<div class="attention_mark_wrapper">
+				<p class="attention_mark"><img src="//static.fc2.com/share/fc2footermenu/blank.gif" alt=""></p>
+			</div>
+			<p class="attention_text">
+				<strong>【ユーザーの皆様へのお願い】</strong>
+第三者の所有権・著作権・プライバシー・肖像権などを侵害するコンテンツ、児童ポルノ、暴力行為・犯罪行為など社会道徳・公序良俗に反する内容のアップロードを厳しく禁止します。<br />
+違反した場合のアカウントは凍結され、違反者は賠償責任の発生、および法的な処罰の対象となりますのでご注意ください。			</p>
+		</div>
+
+<link type="text/css" rel="stylesheet" href="//static.fc2.com/css/admin/wide/sh_css/sh_admin.css?130121" />
+
+	<link type="text/css" rel="stylesheet" href="//static.fc2.com/css/admin/wide/swfupload/webuploader_1612_ja.css?161130a3">
+
+
+<script type="text/javascript" src="//static.fc2.com/js/admin/swfupload/uploader.min.js"></script>
+<script type="text/javascript" src="//static.fc2.com/js/admin/swfupload/customConfirm.js"></script>
+<script type="text/javascript" src="//static.fc2.com/js/admin/swfupload/add_album.js?130213"></script>
+<script type="text/javascript" src="//static.fc2.com/js/admin/swfupload/jquery.linkselect.min.js"></script>
+<script type="text/javascript" src="//static.fc2.com/js/admin/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="//static.fc2.com/js/admin/swfupload/swfupload.swfobject.js"></script>
+<script type="text/javascript" src="//static.fc2.com/js/admin/swfupload/swfupload.queue.js"></script>
+<script type="text/javascript" src="//static.fc2.com/js/admin/swfupload/swfupload.cookies.js"></script>
+
+
+<script type="text/javascript">
+$(function(){
+	var lang = "ja";
+	/* swf button */
+	var config = {
+		button_image_url: "//static.fc2.com/image/admin/swfupload/ja/upload_select_btn_ja.png?201303",
+		button_width: "113",
+		button_height: "29",
+		button_text: "<span class='theFont'></span>",
+		button_text_style: ".theFont { font-size: 12; }",
+		button_text_left_padding: 3,
+		button_text_top_padding: 4
+	}
+
+	var Message = function(key) {
+		var max = "2097152";
+		var key = key || function() {
+			var num = 0;
+
+			if (5000000 < max) num = 3;
+			else if (5000000 < max) num = 2;
+			else if (2000000 < max) num = 1;
+			else if (2000000 < max) num = 0;
+			return num;
+		};
+		var size = { 0: "2MB", 1: "2MB", 2: "5MB", 3: "5MB" }[key()];
+
+		this.CONFIRM = {
+			OVER_WRITE_FILE        : "ファイルをアップロードしますか？\n同じ名前のファイルは上書き保存されます。",
+			SAVE_AS_FILE           : "ファイルをアップロードしますか？\n同じ名前のファイルは別名で保存します。"
+		};
+		this.NOTICE = {
+			QUEUE_LIMIT_EXCEEDED   : "一度のアップロードで選択できるファイルは20までです。",
+			FILE_EXCEEDS_SIZE_LIMIT: "アップロード可能なファイルのサイズは、" + size + "までです。",
+			ZERO_BYTE_FILE         : "ファイルサイズが0のファイルはアップロードできません。",
+			INVALID_FILETYPE       : "対応していない形式のファイルです。",
+			INVALID_FILENAME       : "ファイル名にスラッシュやピリオドを含めることは出来ません。",
+			ALBUM_LIMIT_EXCEEDED   : "これ以上アルバムを作成できません。"
+		};
+		this.RESULT = {
+			UPLOAD_COMPLETE        : "アップロード完了",
+			UPLOAD_COMPLETE_SUB    : "完了",
+			UPLOAD_FAILED          : "アップロードに\n失敗しました。",
+			UPLOAD_LIMIT_EXCEEDED  : "これ以上はアップロードできません"
+		};
+		this.TITLE = {
+			NEWFLASH_ALBUMTITLE    : "アルバムの新規作成"
+		};
+		this.NOTE = {
+			CLASS_NAME : {
+				DRAGGABLE_MESSAGE_FREE        : "draggableMessageFree",
+				DRAGGABLE_MESSAGE_PAID        : "draggableMessagePaid",
+				DRAGGABLE_MESSAGE_ADULT_FREE  : "draggableMessageAdultFree",
+				DRAGGABLE_MESSAGE_ADULT_PAID  : "draggableMessageAdultPaid",
+
+				SELECTFILES_MESSAGE_FREE       : "selectFilesMessageFree",
+				SELECTFILES_MESSAGE_PAID       : "selectFilesMessagePaid",
+				SELECTFILES_MESSAGE_ADULT_FREE : "selectFilesMessageAdultFree",
+				SELECTFILES_MESSAGE_ADULT_PAID : "selectFilesMessageAdultPaid"
+			}
+		};
+		this.FILE_LIST = {
+			TH_FILE_INFO         : "ファイル情報",
+			TH_ACTION            : "アクション",
+			TH_DELETE            : '削除',
+			DISPLAY              : "表示",
+			INSERT_FILE          : "ファイルを挿入しました",
+			RENAME_FILE          : "ファイル名修正",
+			POST_ENTRY           : "記事を書く",
+			POST_ENTRY_THIS_IMAGE: "この画像で記事を書く",
+			POST_ENTRY_THUMBNAIL : "サムネイルで記事を書く",
+			DELETE_FILE          : "削除"
+		};
+	};
+
+
+	var FileManager = function(option){
+		this.baseUrl    = option.url;
+		this.processing = false;
+		this.isSsl      = (location.protocol === "https:");
+	};
+
+
+	FileManager.prototype.setProcessing = function(bool){
+		this.processing = bool;
+	};
+
+
+	FileManager.prototype.isProcessing = function(){
+		return this.processing;
+	};
+
+
+	FileManager.prototype.send = function(method, query, data, dataType){
+		var method  = method || "GET";
+		var query   = query || "";
+		var data    = data || {};
+		var dataType= dataType || "";
+		var ajax = {
+			type: method,
+			url : this.baseUrl + query,
+			data: data
+		};
+		if (dataType) {
+			ajax.dataType = dataType;
+		};
+		return $.ajax(ajax);
+	};
+
+
+	FileManager.prototype.trimImage = function() {
+		var imgs = $(".sh_manage_table").find(".thumb").find("img");
+		var i = 0;
+		var t = setInterval(function(){
+			if (i > imgs.length - 1) {
+				clearInterval(t);
+				return;
+			};
+			var elm = $(imgs[i]);
+			var size = elm.parent().width();
+			var src = elm.attr("src");
+			var image = new Image();
+			image.onload = function(){
+				_trimImage(elm, size, image.width, image.height);
+				elm.show().css({
+					opacity: 0
+				}).animate({
+					opacity: 1.0
+				}, 100);
+			};
+			image.src = src;
+			i++;
+		}, 30);
+
+		function _trimImage(img, size, width, height){
+			if (width > size || height > size) {
+				var ratio = 1;
+				if (width > height) {
+					ratio = Math.ceil(width / height * 100) / 100;
+					var w = size * ratio;
+					img.css({
+						width   : w + "px",
+						height  : size + "px",
+						position: "absolute",
+						top     : 0,
+						left    : ((-w + size) / 2) + "px"
+					});
+				} else {
+					ratio = Math.ceil(height / width * 100) / 100;
+					var h = size * ratio;
+					img.css({
+						width   : size + "px",
+						height  : h + "px",
+						position: "absolute",
+						top     : ((-h + size) / 2) + "px",
+						left    : 0
+					});
+				}
+			} else {
+				img.css({
+					position: "absolute",
+					top     : ((size - height) / 2) + "px",
+					left    : ((size - width) / 2) + "px"
+				});
+			};
+		};
+	};
+
+
+	FileManager.prototype.event = {}
+	FileManager.prototype.event.unload = function(e) {
+		var confirmationMessage = "この画面から移動してよろしいですか？\nファイルのアップロードは中断されます。";
+		e.returnValue = confirmationMessage;     // Gecko and Trident
+		return confirmationMessage;              // Gecko and WebKit
+	};
+
+
+	FileManager.prototype.event.onclickPaging = function(obj) {
+		if (!obj) return;
+		var self = this;
+		var curList = $("#file_list");
+
+		loadingImage.dist = $(document.file).children()[0];
+		loadingImage.show();
+		curList.css("visibility", "hidden");
+		$("div.page").css("visibility", "hidden");
+
+		var form = document.file;
+		var tail = (search.tail)? search.tail: "";
+		var sort = (search.sort)? search.sort: "";
+		var key  = (search.key)? search.key: "";
+
+		var param = {
+			ajax   : "getFiles",
+			tail   : tail,
+			sort   : sort,
+			key    : key,
+			mode   : "control",
+			process: "upload",
+			type   : "",
+			crc    : $(form.crc).val(),
+			insert : imgInsert,
+			page   : obj.data.page
+		};
+
+		fileManager.send("POST", "", param, "html").done(function(data) {
+			loadingImage.hide();
+			if(!data) return;
+			// var list = data.listFiles;
+			$("div.page").remove();
+			var timer = setTimeout(function(){
+				$(document.file).append(data);
+				addStripeFileList();
+				curList.remove();
+
+				generatePagingButton();
+
+				fileManager.trimImage();
+				clearTimeout(timer);
+			}, 100);
+		}).always(function(XMLHttpRequest, textStatus) {
+			loadingImage.hide();
+			$(self).prop("disabled", false);
+		});
+	};
+
+
+	FileManager.prototype.event.onBlurTitle = function() {
+		$(this).off("forcus");
+		$(this).val("").addClass("textboxTitle").removeClass("textboxTitle_active");
+	};
+
+
+	/* textbox の初期値「タイトル」を消す */
+	FileManager.prototype.event.onFocusTitle = function(){
+		$(this).val("").addClass("textboxTitle_active").removeClass("textboxTitle");
+		var id = $(this).parent().parent().parent().parent().attr("cueue_id");
+		var c  = wu.getCueue(id);
+		c.edited = true;
+	};
+
+
+	FileManager.prototype.event.oncancelCueue = function() {
+		if (dialog) return;
+		var elm = $(this).parent();
+		var id = elm.attr("cueue_id");
+		wu.deleteCueue(id);
+		elm.remove();
+		toggleAlbumCheckBox();
+		if (!wu.getCueueList().length) {
+			setNotifyText(true);
+			toggleHeaderRow(false);
+		}
+	};
+
+
+	FileManager.prototype.event.onclickUploaderToggle = function() {
+		$(this).hide();
+		if ($("#multiFileUploader:visible").length) {
+			showHTMLUploadForm();
+		} else {
+			showAjaxUploadForm();
+		}
+		setOption();
+		$(".style_error").empty();
+	};
+
+
+	FileManager.prototype.event.onclickUploadButton = function() {
+		var self = this;
+		var cueueNum = wu.getCueueList().length;
+		if (0 == cueueNum) return;
+
+		if (!$("input.confirmFlgChkBox:checked").length) {
+			var msg = "";
+			if ("force" == $("#multiFileUploader .selectOverwrite").linkselect("val")){
+				/* 上書き */
+				msg = wu.Message.CONFIRM.OVER_WRITE_FILE;
+			} else {
+				/* 別名 */
+				msg = wu.Message.CONFIRM.SAVE_AS_FILE;
+			};
+			cc.setMsg(msg);
+			cc.setCallback(confirmCallback, self);
+			cc.show();
+		} else {
+			startUpload();
+		};
+	};
+
+	FileManager.prototype.event.toggleAlbumAllCheckBox = function() {
+		if ($("input.albumAllCheck:checked").length) {
+			$("#multiFileUploader").find("input[name=album]").prop({"checked": true});
+		} else {
+			$("#multiFileUploader").find("input[name=album]").prop({"checked": false});
+		};
+	};
+
+
+	FileManager.prototype.event.togglePermissionElm = function() {
+		var sel = $(this).val();
+		var elm = $("#addAlbumContainer").find(".albumPasswordRow");
+		if (2 == sel) {
+			elm.show();
+		} else {
+			elm.hide();
+		};
+	};
+
+
+	var wu, cc, ui, album, cp;
+	var draggable = true;
+	var imgSrc    = "//static.fc2.com/image/ja/admin/upload/28x28loading.gif";
+	var server    = "blog";
+	var controlUrl= "/";
+	var page      = "1";
+	var imgInsert = "";
+	var maxsize   = "2097152";
+	var totalLimit= ("10240") - 0;
+	var curUsage  = ("42.33") - 0;
+	var url = "";
+	if (server == 'blog') {
+		url = controlUrl + "control_upload.php?mode=control&process=upload&";
+	} else {
+		url = "//" + server + ".fc2.com/control_upload.php?mode=control&process=upload&";
+	};
+	var fileManager = new FileManager({url: url});
+
+	var not_add_album = 0;
+	var albumLimit    = 10;
+
+	var uiconfig    = "1";
+	var chkconfig   = "0";
+	var thumbconfig = "0";
+	var exifconfig  = "1";
+
+	var operatingMode = (function(){
+		var num = 0;
+		if (5000000 < maxsize) num = 3;
+		else if (5000000 < maxsize) num = 2;
+		else if (2000000 < maxsize) num = 1;
+		else if (2000000 < maxsize) num = 0;
+		return num;
+	})();
+
+	var search = {
+		tail: "",
+		sort: "dd",
+		key: ""
+	};
+
+	var dialog = false;
+	var isExistAlbum = true;
+
+	/* loading image用 */
+	var img;
+	/* obj clone of cueue html */
+	var cloneCueue = null;
+	/* check ie version */
+	var ie = (function(){
+		var undef, v = 3, div = document.createElement('div');
+		while (
+			div.innerHTML = '<!--[if gt IE '+(++v)+']><i></i><![endif]-->',
+			div.getElementsByTagName('i')[0]
+		);
+		return v > 4 ? v : undef;
+	}());
+	var isFlashInstalled = function(){if(navigator.plugins["Shockwave Flash"]){return true;}try{new ActiveXObject("ShockwaveFlash.ShockwaveFlash");return true;}catch(a){return false;}}();
+	var uaStr = document.upload.ua.value;
+
+	/* file list の読み込み */
+	var refleshFileList = function() {
+		imgInsert = (imgInsert)? imgInsert: "";
+
+		var param = {
+			insert: imgInsert
+		};
+
+		loadingImage.show();
+		// $(".style_error").empty();
+		$("#file_list").css("visibility", "hidden").empty();
+		fileManager.send("get", "ajax=getFiles", param, "html").done(function(data) {
+			loadingImage.hide();
+			if(!data) return;
+			$("#file_list").remove();
+			$("div.page").remove();
+			var ajaxTimer = setTimeout(function(){
+				$(document.file).append(data);
+				addStripeFileList();
+				generatePagingButton();
+				fileManager.trimImage();
+				clearTimeout(ajaxTimer);
+			}, 100);
+		}).fail(function() {
+			console.log(arguments);
+		});
+		page = "";
+	};
+
+	/* file list の検索 */
+	var searchFileList = function(page) {
+		page = (parseInt(page))? parseInt(page) : "";
+		var self = $("#searchButton");
+		var curList = $("#file_list");
+		$(self).prop("disabled", true);
+		loadingImage.dist = $(document.file).children()[0];
+		loadingImage.show();
+		curList.css("visibility", "hidden");
+		$("div.page").css("visibility", "hidden");
+
+		var form = document.file;
+		search.tail = $(form.tail).val();
+		search.sort = $(form.sort).val();
+		search.key  = $(form.key).val();
+
+		var param = {
+			ajax   : "getFiles",
+			tail   : search.tail,
+			sort   : search.sort,
+			key    : search.key,
+			mode   : "control",
+			process: "upload",
+			type   : "",
+			crc    : $(form.crc).val(),
+			insert : imgInsert,
+			page   : page
+		};
+
+		fileManager.send("POST", "", param, "html").done(function(data) {
+			if(!data) return;
+			$("div.page").remove();
+			var timer = setTimeout(function(){
+				$(document.file).append(data);
+				addStripeFileList();
+				curList.remove();
+
+				generatePagingButton();
+				$(self).prop("disabled", false);
+				fileManager.trimImage();
+
+				clearTimeout(timer);
+			}, 100);
+		}).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+			console.log([XMLHttpRequest, textStatus, errorThrown]);
+		}).always(function(XMLHttpRequest, textStatus) {
+			loadingImage.hide();
+		});
+	};
+
+	var generatePagingButton = function() {
+		var curList = $("#file_list");
+		var pageElms = $("div.page a");
+		for (var i = 0; i < pageElms.length; i++) {
+			var url = $(pageElms[i]).attr("href");
+			if (!url.match(/page=[0-9]+/)) continue;
+
+			var page = url.match(/page=[0-9]+/)[0].replace("page=", "");
+			$(pageElms[i]).on("mouseup", {page: page}, fileManager.event.onclickPaging);
+			$(pageElms[i]).attr("href", "javascript: void(0)");
+		};
+	};
+
+	/* form の中にloading image を表示、非表示 */
+	var loadingImage = {
+		dist: "",
+		show: function() {
+			if (img) $(img).remove();
+			img = document.createElement("img");
+			img.setAttribute("src", imgSrc);
+			this.dist = (this.dist)? this.dist: document.file;
+			$(this.dist).after(img);
+		},
+		hide: function() {
+			$(img).remove();
+		}
+	};
+
+	/* file list にストライプを適用 */
+	var addStripeFileList = function() {
+		$("#file_list tr:even").addClass("even");
+		$("#file_list tr:odd").addClass("odd");
+	};
+
+	/* プレースフォルダに SWF object が作られたどうかを返す */
+	var isValidateSWF = function() {
+		return ($("#spanButtonPlaceHolder").length)? false: true;
+	};
+
+	/* flashが入っていないか無効 */
+	var noSWF = function() {
+		$("#multiFileUploader").children().hide();
+		$("#multiFileUploader").find(".noSWFContent").show();
+	};
+
+	var onDrap = function(e) {
+		e.preventDefault();
+		if (!draggable) return;
+		$(".dragPanel").hide();
+		$(".style_error").empty();
+		var files = e.originalEvent.dataTransfer.files;
+		console.log(files);
+		addUploadCueue(files);
+	};
+
+	var addUploadCueue = function (files) {
+		var msg = [];
+		var obj = null;
+		if (wu.getValues("maxCueue") < files.length + wu.getCueueList().length) {
+			errorMessage(wu.Message.NOTICE.QUEUE_LIMIT_EXCEEDED);
+			return;
+		};
+		for (var i = 0; i < files.length; i++) {
+			var res = wu.validateFile(files[i]);
+			if (res === 9001 && "function" == typeof showSuggestDialog) {
+				// dialog
+				showSuggestDialog();
+				return;
+			} else if (res !== true) {
+				errorMessage(res);
+				return;
+			};
+			var formdata = new FormData();
+			var apiObj = {
+				form  : formdata,
+				name  : files[i].name,
+				type  : files[i].type,
+				size  : files[i].size,
+				edited: false
+			};
+			formdata.append("upfile[]", files[i]);
+			obj = wu.addCueue(apiObj);
+			if (500 == obj) {
+				/* error code 500: cueue limit 処理はここで中止 */
+				errorMessage(wu.Message.NOTICE.QUEUE_LIMIT_EXCEEDED);
+				return;
+			};
+			showCueueInfo(obj, files[i]);
+		};
+		toggleAlbumCheckBox();
+	};
+
+	var errorMsgCount = 0;
+	var msg = [];
+	var errorMessage = function(str) {
+		/* swfからは一つのファイルごとにエラー処理が呼ばれるようなのでここで溜める */
+		errorMsgCount++;
+		msg.push(str);
+
+		var timer = setInterval(function(){
+			if (0 < errorMsgCount) {
+				errorMsgCount--;
+				return;
+			};
+			if (1 > msg.length) return;
+			var txt = msg[0];
+			msg = [];
+			errorMsgCount = 0;
+			clearInterval(timer);
+			alert(txt);
+		}, 200);
+	};
+
+	/* アルバム機能 */
+	var openAddAlbumContainer = function() {
+		if ("addAlbum" != $("#multiFileUploader").find(".selectAlbumUK").linkselect("val")) return;
+		if (albumLimit <= $("#selectAlbumUK_list").find("li").length - 1) {
+			var msg = wu.Message.NOTICE.ALBUM_LIMIT_EXCEEDED;
+			alert(msg); return false;
+		};
+		draggable = false;
+		dialog    = true;
+		resetAddAlbumContainer();
+		album.show();
+		return false;
+	};
+
+	var closeAddAlbumContainer = function() {
+		draggable = true;
+		dialog    = false;
+		album.hide();
+	};
+
+	var noAlbumItem = function(e) {
+		if (1 < $("#selectAlbumUK_list").find("li").length) {
+			$(this).off("mousedown", e);
+			return;
+		};
+		openAddAlbumContainer();
+	};
+
+	var resetAddAlbumContainer = function() {
+		document.addAlbumForm.reset();
+		$("#addAlbumContainer").find(".errorMessage").text("").hide();
+		$("#addAlbumContainer").find(".albumPasswordRow").hide();
+	};
+
+	var doAddAlbum = function() {
+		$("#addAlbumContainer").find(".errorMessage").text("");
+		album.send(function(data) {
+
+			if (!data) { alert("error"); };
+
+			if ("object" == typeof data.result) {
+				var res  = data.result;
+				if (1 > res.length) {
+					return;
+					alert("error");
+				};
+				for (var i = 0; i < res.length; i++) {
+					var code = res[i].code;
+					var msg  = res[i].msg;
+					if (1 == code) {
+						closeAddAlbumContainer();
+						alert(msg);
+
+						if (!isExistAlbum) {
+							isExistAlbum = true;
+							$("#multiFileUploader").find(".albumAllCheck").prop("disabled", false);
+							$("#multiFileUploader").find("input[name=album]").prop("disabled", false);
+						}
+
+						var albumList = data.album;
+						$("#selectAlbumUK").linkselect("destroy");
+						var time = setTimeout(function() {
+							/* select 作り直し */
+							$("#selectAlbumUK").empty();
+							var elm = document.createElement("option");
+							elm.setAttribute("value", "addAlbum");
+							elm.appendChild(document.createTextNode(wu.Message.TITLE.NEWFLASH_ALBUMTITLE));
+							$("#selectAlbumUK").append(elm);
+							for (var i = 0; i < albumList.length; i++) {
+								var option = document.createElement("option");
+								option.setAttribute("value", albumList[i].uk);
+								option.appendChild(document.createTextNode(albumList[i].name));
+								$("#selectAlbumUK").append(option);
+							};
+							$("select#selectAlbumUK").linkselect({change: openAddAlbumContainer});
+							var time2 = setTimeout(function(){
+								console.log(albumList[0].uk);
+								$("#selectAlbumUK").linkselect("val", albumList[0].uk);
+								clearTimeout(time2);
+							}, 50);
+							clearTimeout(time);
+						}, 50);
+						break;
+
+					} else if (0 == code) {
+
+					} else if (3001 == code) {
+						/* error_album_limit_over */
+						closeAddAlbumContainer();
+						alert(msg);
+						break;
+					};
+
+					if (1001 == code || 1002 == code) {
+						/* error_album_name */
+						$("#addAlbumContainer").find(".add_album_title").find(".errorMessage").text(msg).css("display", "inline-block");
+					};
+					if (2001 == code) {
+						/* error_bad_passwd */
+						$("#addAlbumContainer").find(".albumPasswordRow").find(".errorMessage").text(msg).css("display", "inline-block");
+					};
+				};
+			};
+		});
+	};
+
+	/* Event : open swf dialog */
+	var dialogStart = function(flg) {
+		if (this._mask) $(this._mask).remove();
+		if (true === flg) {
+			draggable = false;
+			dialog    = true;
+			this._mask = document.createElement("div");
+			var w = $("#multiFileUploader").width() + "px";
+			var h = $("#multiFileUploader").height() + "px";
+			$(this._mask)
+				.width(w)
+				.height(h)
+				.css({
+					"background": "#fff",
+					"position"  : "absolute",
+					"top"       : "0",
+					"left"      : "0",
+					"z-index"   : "9999",
+					"opacity"   : "0.1"
+				});
+			$("#multiFileUploader").append(this._mask);
+		} else {
+			draggable = true;
+			dialog    = false;
+			$(".style_error").empty();
+		};
+	};
+
+	var showCueueInfo = function(cueueObj, file) {
+		if (!cueueObj) return;
+		var file = file || null;
+
+		var cueueId  = cueueObj._cueue_id;
+		var fileName = cueueObj.name;
+		var html     = generateCueueHtml(cueueId, fileName);
+		var fileType = fileName.match(wu.getValues("fileType"));
+		var thumbnail = $(html).find(".uploadQueueThumbnail");
+		if (fileType && file) {
+			fileType = fileType[0].toLowerCase();
+			if (fileType.match(/jpe?g|png|gif/)) {
+				thumbnail.addClass("icon_image");
+				getImageDataURL(file).then(function(data){
+					if (!data) return false;
+					thumbnail.css("background-image", "url(" + data + ")");
+				}, function(){
+
+				});
+			} else {
+				thumbnail.addClass("icon_" + fileType);
+			};
+		} else {
+			thumbnail.addClass("unknow_file");
+		};
+
+		$("div.fileListView > ul").append(html);
+		var timer = setTimeout(function() {
+			if (!not_add_album && isExistAlbum) {
+				$("li[cueue_id=" + cueueId + "]").find("input[name=album]").prop("checked", true);
+			};
+			if (!isExistAlbum) {
+				$("#multiFileUploader").find(".albumAllCheck").prop("disabled", true);
+				$("li[cueue_id=" + cueueId + "]").find("input[name=album]").prop("disabled", true);
+			};
+			html.css("visibility", "");
+			setNotifyText(false);
+			toggleHeaderRow(true);
+			toggleAlbumCheckBox();
+
+			$("div.fileListView > ul > li:even").addClass("even");
+			$("div.fileListView > ul > li:odd").addClass("odd");
+			clearTimeout(timer);
+		}, 0);
+	};
+
+	var initCueueHtml = function() {
+		var fileview = $(".fileListView > ul > li");
+		if (fileview) {
+			cloneCueue = fileview.clone();
+			fileview.remove();
+		}
+	};
+
+	var generateCueueHtml = function(id, name) {
+		if (!cloneCueue) return;
+		var elm = cloneCueue.clone();
+		elm.attr("cueue_id", id)
+			.find(".mainview").find(".filename")
+			.text(name);
+		return elm;
+	};
+
+	var getImageDataURL = function(file) {
+		if ("undefined" == typeof FileReader) return;
+		var reader = new FileReader();
+		var deferred = $.Deferred();
+		reader.onload = function() {
+			deferred.resolve(reader.result);
+		};
+		reader.readAsDataURL(file);
+		return deferred.promise();
+	};
+
+	var confirmCallback = function(b, elm) {
+		cc.hide();
+		if (true === b) {
+			$(elm).prop("disabled", true);
+			wu.setDisabled(true);
+			startUpload();
+		};
+		return;
+	};
+
+	var startUpload = function() {
+		$("li[cueue_id]").find("span.cueueCancelButton").remove();
+		$("#multiFileUploader").find(".albumAllCheck").prop("disabled", true);
+		$("li[cueue_id]").find("input").prop("disabled", true);
+		var cueueNum = wu.getCueueList().length;
+		var count = 0;
+		var uploadtimer = setInterval(function(){
+			if (count >= cueueNum) {
+				clearInterval(uploadtimer);
+				return;
+			};
+			var cueue_id = $(".fileListView > ul > li:eq(" + count + ")").attr("cueue_id");
+			console.log({cueueId: cueue_id});
+			draggable = false;
+			wu.doUpload(cueue_id);
+			count++;
+		}, 1500);
+
+		/* upload監視 */
+		var resulttimer = setInterval(function() {
+			var flg = wu.isComplete();
+			if (!flg) return;
+			console.log("finished: onCompleteUpload");
+			// clearTimeout(timeout);
+			clearInterval(resulttimer);
+			onCompleteUpload();
+		}, 1000);
+
+		wu.doUploadSWF();
+		wu.showProgressBar();
+		fileManager.setProcessing(true);
+		$(window).on("beforeunload", fileManager.event.unload);
+	};
+
+	var doDestroy = function() {
+		/* 必須 counter IE Memory leak */
+		wu.clear();
+	};
+	var onCompleteUpload = function() {
+		wu.clearCueue();
+		refleshFileList();
+		$("#multiFileUploader").find(".startUploadButton").prop("disabled", false);
+		wu.setDisabled(false);
+		draggable = true;
+		$(window).off("beforeunload", fileManager.event.unload);
+	};
+
+	var toggleThumbSize = function() {
+		if($("#multiFileUploader").find("input[name=thumb]:checked").length) {
+			$("#multiFileUploader").find(".thumb_size").prop("disabled", false);
+		} else {
+			$("#multiFileUploader").find(".thumb_size").prop("disabled", true);
+		};
+	};
+
+	var toggleAlbumCheckBox = function() {
+		if (!isExistAlbum) return;
+
+		var input = $("#multiFileUploader").find("input[name=album]");
+		for (var i = 0; i < input.length; i++) {
+			if (!input[i].checked) {
+				$("input.albumAllCheck").prop({"checked": false});
+				return;
+			};
+		};
+		$("input.albumAllCheck").prop({"checked": true});
+	};
+
+	var showAjaxUploadForm = function() {
+		$("#multiFileUploader:hidden").show();
+		$("form[name=upload]:visible").hide();
+		$(".uploaderToggle").find("span[mode=toOld]").show();
+		$(".uploaderToggle").find("span[mode=toNew]").hide();
+	};
+	var showHTMLUploadForm = function() {
+		$("#multiFileUploader:visible").hide();
+		$("form[name=upload]:hidden").show();
+		$(".uploaderToggle").find("span[mode=toNew]").show();
+		$(".uploaderToggle").find("span[mode=toOld]").hide();
+	};
+	var setOption = function() {
+		var timer = setTimeout(function(){
+			var mode  = $(".uploaderToggle span:visible").attr("mode");
+			var chk   = ($(".confirmFlgChkBox:checked").length)? 0: 1;
+			var thumb = $("input[type=checkbox][name=thumb]:visible").is(':checked');
+			var exif  = $("input[name=exif]:visible").is(":checked");
+			var param = {
+				mode   : "control",
+				process: "upload",
+				type   : "",
+				crc    : $(document.file.crc).val()
+			};
+			param.ui    = ("toOld" == mode)? 1: 0;
+			param.chk   = (!chk)? 0: 1;
+			param.thumb = (!thumb)? 0: 1;
+			param.exif  = (!exif)? 0: 1;
+
+			fileManager.send("POST", "ajax=setOption", param).done(function(data){
+				if (!data) return;
+			}).fail(function(XMLHttpRequest, textStatus, errorThrown){
+				console.log([XMLHttpRequest, textStatus, errorThrown]);
+			});
+			clearTimeout(timer);
+		}, 300);
+	};
+
+	var toggleConfirmFlg = function(e) {
+		if ($("#customConfirmBox").find("input.confirmFlgChkBox:checked").length) {
+			$("#multiFileUploader").find("input.confirmFlgChkBox").prop({"checked": true});
+			setOption();
+		} else {
+			$("#multiFileUploader").find("input.confirmFlgChkBox:checked").prop({"checked": false});
+			setOption();
+		};
+	};
+	var toggleConfirmFlg_s = function(e) {
+		if ($("#multiFileUploader").find("input.confirmFlgChkBox:checked").length) {
+			$("#customConfirmBox").find("input.confirmFlgChkBox").prop({"checked": true});
+			setOption();
+		} else {
+			$("#customConfirmBox").find("input.confirmFlgChkBox:checked").prop({"checked": false});
+			setOption();
+		};
+	};
+
+	var toggleGenerateThumbnail = function() {
+		if ($("input[type=checkbox][name=thumb]:visible").is(':checked')) {
+			$("input[type=checkbox][name=thumb]:hidden").prop("checked", true);
+		} else {
+			$("input[type=checkbox][name=thumb]:hidden").prop("checked", false);
+		}
+		setOption();
+	};
+
+	var toggleClearExif = function() {
+		if ($("input[type=checkbox][name=exif]:visible").is(':checked')) {
+			$("input[type=checkbox][name=exif]:hidden").prop('checked', true);
+		} else {
+			$("input[type=checkbox][name=exif]:hidden").prop('checked', false);
+		}
+		setOption();
+	}
+
+	var setNotifyText = function(visible) {
+		var num = wu.getValues("operatingMode");
+		var className = "";
+
+		if (wu.isDraggable()) {
+			switch (num) {
+				case 3:
+					className = wu.Message.NOTE.CLASS_NAME.DRAGGABLE_MESSAGE_PAID;
+					break;
+				case 2:
+					className = wu.Message.NOTE.CLASS_NAME.DRAGGABLE_MESSAGE_ADULT_PAID;
+					break;
+				case 1:
+					className = wu.Message.NOTE.CLASS_NAME.DRAGGABLE_MESSAGE_FREE;
+					break;
+				default:
+					className = wu.Message.NOTE.CLASS_NAME.DRAGGABLE_MESSAGE_ADULT_FREE;
+					break;
+			}
+		} else {
+			switch (num) {
+				case 3:
+					className = wu.Message.NOTE.CLASS_NAME.SELECTFILES_MESSAGE_PAID;
+					break;
+				case 2:
+					className = wu.Message.NOTE.CLASS_NAME.SELECTFILES_MESSAGE_ADULT_PAID;
+					break;
+				case 1:
+					className = wu.Message.NOTE.CLASS_NAME.SELECTFILES_MESSAGE_FREE;
+					break;
+				default:
+					className = wu.Message.NOTE.CLASS_NAME.SELECTFILES_MESSAGE_ADULT_FREE;
+					break;
+			}
+		};
+
+		if (true === visible) {
+			$("#multiFileUploader").find(".notifyDrag").addClass(className).show();
+		} else if (!visible) {
+			$("#multiFileUploader").find(".notifyDrag").hide().removeClass(className);
+		};
+	};
+
+	var toggleHeaderRow = function(visible) {
+		if (visible) {
+			$("#multiFileUploader").find(".headerRow").css("visibility", "visible");
+		} else {
+			$("#multiFileUploader").find(".headerRow").css("visibility", "hidden");
+		};
+	};
+	var selectBoxFixedIE = function() {
+		var elm = [];
+		var flg = true;
+		var padding = 2;
+		var border  = 2;
+		var show = function() {
+			if (!flg) return;
+			$(this).width("auto");
+			flg = false;
+		};
+		var reset = function(e) {
+			var self = this;
+			if (flg) return;
+			var data = e.data;
+			var time = setTimeout(function(){
+				$(self).width(data.w + "px");
+				flg = true;
+				clearTimeout(time);
+			}, 50);
+		};
+		var init = function() {
+			var selectBox = $("#multiFileUploader").find(".selectAlbumUK");
+			for (var i = 0; i < selectBox.length; i++) {
+				var w   = $(selectBox[i]).width() + (padding + padding + border + border);
+				var obj = {
+					obj : selectBox[i],
+					w   : w
+				};
+				elm.push(obj);
+				var span = document.createElement("span");
+				$(span).css("width", (w) + "px")
+					.css("display", "inline-block")
+					.css("overflow", "hidden");
+				$(selectBox[i]).wrap(span);
+				$(selectBox[i])
+					.on("mousedown", selectBox[i], show);
+				$(selectBox[i])
+					.on("change", obj, reset)
+					.on("blur", obj, reset)
+					.on("select", obj, reset);
+			};
+		};
+		init();
+	};
+
+	var doSearch = function(e) {
+		if (e.keyCode == 13 && !$("#searchButton:disabled").length) {
+			searchFileList();
+			return false;
+		};
+	};
+
+	var onchangeMultipleInput = function() {
+		if (!this.files) return;
+		for (var i = 0; i < this.files.length; i++) {
+			console.log(this.files[i]);
+		}
+		addUploadCueue(this.files);
+		var timer = setTimeout(function(){
+			var input = document.createElement("input");
+			input.setAttribute("name", "upfile[]");
+			input.setAttribute("type", "file");
+			input.setAttribute("multiple", true);
+			$(input)
+				.change(onchangeMultipleInput)
+				.css("position", "absolute")
+				.css("z-index", "-9999");
+			$("#spanButtonPlaceHolder").parent().append(input);
+			clearTimeout(timer);
+		}, 100);
+		$(this).remove();
+		$(".style_error").empty();
+	};
+
+	var openMultipleFileInput = function() {
+		$("#multiFileUploader input[name='upfile[]']").click();
+		return false;
+	};
+
+	var setupNoSwf = function() {
+		var input = document.createElement("input");
+		input.setAttribute("name", "upfile[]");
+		input.setAttribute("type", "file");
+		input.setAttribute("multiple", true);
+
+		$(input)
+			.change(onchangeMultipleInput)
+			.css("position", "absolute")
+			.css("z-index", "-9999");
+		$("#spanButtonPlaceHolder").parent().append(input);
+
+		$("#spanButtonPlaceHolder").click(openMultipleFileInput);
+	};
+
+	var initFileList = function() {
+		if (!page) page = 1;
+		searchFileList(page);
+		$(document)
+			.on("mouseover", ".fileUrl", function(){
+				$(this).addClass("mouseover");
+			})
+			.on("click", ".fileUrl", function(){
+				$(this).select();
+			})
+			.on("mouseout", ".fileUrl", function(){
+				$(this).removeClass("mouseover");
+			});
+	};
+
+	var setSearcValues = function() {
+		if ("string" == typeof search.tail) {
+			search.tail = (search.tail.match(/^htm/))? "htm" : search.tail;
+		}
+		$(".search_area").find("input[name=key]").val(search.key);
+		$(".search_area").find("select[name=tail]").val(search.tail);
+		$(".search_area").find("select[name=sort]").val(search.sort);
+	}
+
+
+	var initialize = function() {
+		var $fileUploaderContainer = $("#multiFileUploader");
+
+		config.paramName            = "upfile[]";
+		config.placeFolder          = "multiFileUploader";
+		config.server               = url;
+		config.controlUrl           = controlUrl;
+		config.maxsize              = maxsize;
+		config.operatingMode        = operatingMode;
+		config.callback             = showCueueInfo;
+		config.callbackAddedCueue   = showCueueInfo;
+		config.callbackErrorAddCueue= errorMessage;
+		config.callbackDialogStart  = dialogStart;
+		if (!ie) {
+			config.swf = false;
+		} else {
+			config.swf = true;
+		}
+
+		/* swf */
+		wu         = WebUploader.init(config);
+		wu.Message = new Message();
+		cc         = new customConfirm();
+		album      = new Album(controlUrl);
+		cp         = new customPulldown();
+
+		setSearcValues();
+		initFileList();
+
+		setNotifyText(true);
+		toggleHeaderRow(false);
+
+		if (!ie) {
+			setupNoSwf();
+		} else {
+			if (ie <= 9) {
+				$("#multiFileUploader").addClass("lte_ie9");
+			}
+			$(window).unload(doDestroy);
+		}
+
+		if (wu.isDraggable()) {
+			$(".dragPanel").on("drop", onDrap)
+			.on("dragenter", function(e) {
+				e.preventDefault();
+				return false;
+			})
+			.on("dragover", function(e) {
+				e.preventDefault();
+				return false;
+			})
+			.on("dragleave", function(e) {
+				e.preventDefault();
+				$(this).hide();
+			})
+			.hide();
+
+			$fileUploaderContainer.on("dragenter", function(e) {
+				e.preventDefault();
+				if (!draggable) return;
+				var h = $fileUploaderContainer.find(".FileUploader").height() + "px";
+				$("div.dragPanel").height(h).show();
+			});
+		};
+		/* event set */
+		/* upload */
+		$fileUploaderContainer.find("input.startUploadButton").click(fileManager.event.onclickUploadButton);
+		/* cueue cancel */
+		$(document)
+			.on("click", "#multiFileUploader span.cueueCancelButton", fileManager.event.oncancelCueue)
+			.on("focus", "#multiFileUploader input.textboxTitle", fileManager.event.onFocusTitle)
+			.on("blur", "#multiFileUploader input.textboxTitle", fileManager.event.onBlurTitle);
+
+		/* アップローダ切替 */
+		$(".uploaderToggle").find("span").on("click", fileManager.event.onclickUploaderToggle);
+		/* thumb size available */
+		$fileUploaderContainer.find("input[name=thumb]").click(function(){
+			toggleThumbSize();
+		});
+		/* 画像をアルバムに追加する */
+		$(document).on("click", "#multiFileUploader input[name=album]", function(){
+			toggleAlbumCheckBox();
+		});
+		/* 全てアルバムに追加する */
+		$fileUploaderContainer.find("input.albumAllCheck").click(fileManager.event.toggleAlbumAllCheckBox);
+
+		$("select#selectOverwrite").linkselect();
+		$("select#selectAlbumUK").linkselect({change: openAddAlbumContainer});
+
+		/* アルバム追加 */
+		$("#addAlbumContainer").find("select[name=permission]").on("change", fileManager.event.togglePermissionElm);
+		$("#addAlbumContainer").find(".cancel").on("click", function(){
+			closeAddAlbumContainer();
+		});
+		$("#addAlbumContainer").find(".submit").on("click", function(){
+			doAddAlbum();
+		});
+
+		/* 確認を表示しない (ダイアログ内) */
+		$("#customConfirmBox").find("input.confirmFlgChkBox").click(toggleConfirmFlg);
+		/* 確認を表示しない2 (共通設定) */
+		$fileUploaderContainer.find("input.confirmFlgChkBox").click(toggleConfirmFlg_s);
+
+		/* サムネイル同時に作成 */
+		$("input[type=checkbox][name=thumb]").click(toggleGenerateThumbnail);
+
+		/* Exif消去 */
+		$("input[name=exif]").click(toggleClearExif);
+
+		/* 検索 */
+		$("#searchButton").click(searchFileList);
+
+		$("input[name=key]").keypress(doSearch);
+	};
+	initialize();
+
+	var initTimer = setTimeout(function(){
+		/* 初期状態 */
+		if ("0" === uiconfig) {
+			// $(".uploaderToggle span:visible").click();
+			showHTMLUploadForm();
+		} else {
+			showAjaxUploadForm();
+		};
+		if (chkconfig != "") {
+			if ("1" === chkconfig) {
+				if ($("#customConfirmBox").find("input.confirmFlgChkBox:checked").length) {
+					$("#multiFileUploader").find("input.confirmFlgChkBox").prop("checked", false);
+				};
+			} else {
+				$("#multiFileUploader").find("input.confirmFlgChkBox").prop("checked", true);
+			};
+		};
+		if ("undefined" != typeof thumbconfig) {
+			if ("1" === thumbconfig) $("input[type=checkbox][name=thumb]").prop("checked", true);
+		};
+		if ("undefined" != typeof exifconfig) {
+			if ("1" === exifconfig) $("input[type=checkbox][name=exif]").prop("checked", true);
+		};
+		toggleThumbSize();
+
+		if (!isValidateSWF() && wu.isUsingSwf()) {
+			noSWF();
+		};
+
+		/* キュー一覧の html obj のクローンを作成・元のhtmlは削除 */
+		initCueueHtml();
+		/* アップローダ表示 */
+		$("#multiFileUploader").css("visibility", "");
+		/* 独自セレクトボックス */
+		if (1 < $("#selectAlbumUK_list li").length) {
+			$("#selectAlbumUK").linkselect("val", $("#selectAlbumUK_list li:eq(1)").attr("data-value"));
+		} else {
+			$("#selectAlbumUK_link").on("mousedown", noAlbumItem);
+			isExistAlbum = false;
+			$("#multiFileUploader").find(".albumAllCheck").prop("disabled", true);
+		};
+		clearTimeout(initTimer);
+	}, 100);
+});
+</script>
+
+		<script type="text/javascript">
+		$(function() {
+			var $target = $('.txt_list');
+			$('#toggleTxtListArea').toggle(function() {
+				$(this).css('background', 'url(//static.fc2.com/image/icon_main/btn_plus.png) 5px center no-repeat');
+				$target.hide();
+			},function() {
+				$(this).css('background', 'url(//static.fc2.com/image/icon_main/btn_minus.png) 5px center no-repeat');
+				$target.show();
+			}).click();
+		});
+		</script>
+		<script type="text/javascript">
+		function toggleAddAlbumFlg(flg) {
+			var form = document.upload;
+			for (var i=0; i<=5; i++) {
+				form.elements['album['+i+']'][flg].checked = true;
+			}
+		}
+		</script>
+		<a href="#" id="toggleTxtListArea">利用前にご確認ください。</a>
+
+				<p class="uploaderToggle">
+			<span mode="toOld" style="display: none;">旧ファイルアップロード画面</span>
+			<span mode="toNew" style="display: none;">新ファイルアップロード画面</span>
+		</p>
+				<div class="txt_list" style="display: none;">
+			<h4 class="sh_heading_sub_main_b">ご利用前の注意事項</h4>
+			<ul>
+				<li>拡張子は jpg/gif/png/mid/swf/ico/mp3/html/txt/css/js/rdf/xml/xsl サイズは<strong>2MB</strong>まで<br>※アルバムへ追加できる拡張子は jpg/gif/png です　⇒<a href="http://help.fc2.com/blog/manual/Home/album.html" target="_blank">アルバム機能とは？</a></li><li>ファイル名が banner.jpg/banner.png/banner.gif であれば外部から呼び出せます</li><li><u>被写体が18歳未満と思われるポルノ画像のアップロード</u>は<strong class="style_red">固く禁止しております</strong></li><li class="style_red">児童ポルノおよび規約違反とみられる画像は削除することがあります</li><li>サムネイルの設定は<a href="?mode=setting&process=4#moblog">モブログ</a>と共通です</li><li>アップロード画像が大きい場合はこちらの無料サービスで縮小できます　⇒<a href="http://r.fc2.com/" target="_blank">画像縮小</a></li><li>Exif情報の中に、画像の方向が含まれている場合、画像のサイズが元のファイルより増える場合があります。</li><li>ファイルの上書き・削除が反映されるまでに、しばらく時間がかかることもあります</li><li class="style_red">アップロードした画像を削除した場合、<br />画像を使用した記事にも画像が表示されなくなりますのでご注意下さい</li>			</ul>
+		</div>
+
+		<noscript>
+		<p class="js_off">正常に管理画面をご覧いただくにはJavaScriptを有効にしていただく必要があります。</p>
+		</noscript>
+
+<div id="multiFileUploader" style="visibility: hidden">
+
+	<div class="dragPanel"></div>
+	<div class="noSWFContent"  style="display: none;">
+		<p class="flash_txt">Flash Playerが有効ではありません。
+最新のFlash Playerをインストールするか、旧ファイルアップロード画面をご利用ください。</p>
+		<p class="flash_link"><a href='http://www.adobe.com/go/getflashplayer/'><img src="//static.fc2.com/image/ja/admin/upload/160x41_Get_Flash_Player.jpg" alt="Flash Player" /></a></p>
+	</div>
+	<form name="multiFileUploaderForm">
+
+		<div class="FileUploader">
+			<div class="FileUploader_header">
+				<span><span id="spanButtonPlaceHolder"></span></span><p>「Ctrl」を押しながらファイルを同時に選択できます。</p>
+			</div>
+
+			<div class="headerRow">
+				<ul>
+					<li class="titleColumn">ファイル名/タイトル</li>
+					<li class="toggleColumn">
+						<label>
+							<input type="checkbox" class="albumAllCheck" />全てアルバムに追加						</label>
+					</li>
+					<li class="cancelColumn">取消</li>
+				</ul>
+			</div>
+
+			<div class="fileListView">
+				<p class="notifyDrag">&nbsp;</p>
+				<ul>
+					<!-- upload queue -->
+					<li class="fileListViewItem" style="visibility: hidden;">
+						<div class="uploadQueueThumbnail"></div>
+						<div class='mainview'>
+							<span class='filename'></span>
+						</div>
+						<div class='setting'>
+							<ul>
+								<li class='setting_title'>
+									<input class='textboxTitle' type='text' value='タイトル' name='description' />
+								</li>
+								<li class='setting_album'>
+									<label><input type='checkbox' name='album' />アルバムに追加</label>
+								</li>
+								<li class='setting_cueueStatus'><span class='cueueStatus'></span></li>
+							</ul>
+						</div>
+						<span class='cueueCancelButton upload_bg'></span>
+					</li>
+					<!-- /upload queue -->
+				</ul>
+			</div>
+		</div>
+
+		<div class="setting_menu">
+			<h4>共通設定</h4>
+			<div class="clear file_setting">
+				<ul class="left">
+					<li class="rename clear">
+						<span class="upload_bg upload_bg_list">同名ファイル</span>
+						<select name="overwrite" class="selectOverwrite" id="selectOverwrite">
+							<option value="rename">別名で保存 </option>
+							<option value="force" selected>上書き保存 </option>
+						</select>
+					</li>
+
+					<li>
+						<span class="upload_bg upload_bg_list">アルバム</span>
+						<select name="auk" class="selectAlbumUK" id="selectAlbumUK">
+							<option value="addAlbum">アルバムの新規作成</option>
+<option value="20160926RwNCrAL5">animeSS</option>						</select>
+					</li>
+				</ul>
+
+				<ul class="right">
+					<li>
+						<span class="thumb_check">
+							<span class="upload_bg upload_bg_list">サムネイル</span>
+							<label for="thumb">
+								<input type="checkbox" name="thumb" id="thumb"  />同時に作成する(jpg、gif、png)							</label>
+						</span>
+						<span class="thumbsizeRow">
+							<span class="thumb_width"><span class="title">横幅</span><input type="text" name="width" value="300" size="3" maxlength="3" class="thumb_size" />px</span>
+							<span class="thumb_height"><span class="title">縦幅</span><input type="text" name="height" value="180" size="3" maxlength="3" class="thumb_size" />px</span>
+						</span>
+					</li>
+				</ul>
+				<div class="clear_exif_check both">
+					<span class="upload_bg upload_bg_list">Exif</span>
+					<label for="clear_exif">
+						<input type="checkbox" name="exif" id="clear_exif" />画像に含まれるExif情報を削除する(JPEG形式のみ)
+					</label>
+					<a class="tool_tip">
+						<img alt="" src="//static.fc2.com/image/admin/sh_design/sh_hint_icon.png">
+						<span class="tool_tip_text">
+							※カメラの情報や製造元や露出補正情報、<br />
+							GPSによる位置情報など、画像についての<br />
+							付加情報を記録した領域のことです。
+						</span>
+					</a>
+				</div>
+				<div class="both">
+					<span class="upload_bg upload_bg_list">確認メッセージ</span>
+					<label>
+						<input type="checkbox" class="confirmFlgChkBox" />アップロードの際に確認メッセージを出さない					</label>
+				</div>
+			</div>
+			<input type="hidden" value="0" class="confirmFlg" />
+		</div>
+	</form>
+
+	<div class="uploader_btn">
+		<p><input class="upload_bg upload_bg_uploader startUploadButton" type="button" value="" /></p>
+	</div>
+</div>
+
+
+
+<div id='customConfirmBox' style='display: none;'>
+	<div class='confirmText'>
+		<p></p>
+	</div>
+	<div class="customConfirmOption">
+		<label>
+			<input type="checkbox" class="confirmFlgChkBox" />次からこの確認を行わない		</label>
+	</div>
+	<div class='customConfirmFooter'>
+		<input type='button' value='OK' name='okBtn' />
+		<input type='button' value='キャンセル' name='cancelBtn' />
+	</div>
+</div>
+
+
+<div id="addAlbumContainer">
+		<p class="add_new_album">アルバムの新規作成</p>
+
+		<form name="addAlbumForm">
+			<div class="add_album_title">
+				<span class="add_album_form_title">アルバム名</span>
+				<input type="text" name="name" value="" maxlength="50" />
+				<p class="errorMessage"></p>
+			</div>
+			<div class="add_album_select">
+			<span class="add_album_form_title">公開範囲</span>
+				<select name="permission">
+					<option value="10">公開</option>
+					<option value="2">パスワード制限</option>
+					<option value="3">ブロとも限定</option>
+					<option value="1">非公開</option>
+				</select>
+			</div>
+
+			<div class="albumPasswordRow" style="display: none;">
+				<!-- type=password にするかどうか  -->
+				<span class="add_album_form_title">パスワード</span>
+				<input type="text" name="passwd" value="" maxlength="20" />
+				<p class="errorMessage"></p>
+				<p class="notify">
+					※限定公開の場合はパスワードを設定してください。<br />
+※設定できるのは半角英数字のみ。				</p>
+			</div>
+
+			<div class="add_album_check clear">
+				<label>
+					<input type="checkbox" name="isDefault" value="1" />デフォルトアルバム				</label>
+				<span class="link_mark">
+					<a href="http://help.fc2.com/blog/manual/Home/album.html#1" target="_blank" title="デフォルトアルバムとは？"><img src="//static.fc2.com/share/fc2parts/image/sh_help_icon.gif" width="20" height="20" alt="" /></a>				</span>
+			</div>
+
+			<input type="hidden" name="mode" value="album" />
+			<input type="hidden" name="process" value="create" />
+			<input type="hidden" name="crc" value="bd1925d6bd28d30c7a1ce609954e17dd" />
+		</form>
+		<div class="customConfirmFooter clear">
+			<div class="customConfirmFooterInner">
+				<input type="button" value="" class="submit" />
+				<input type="button" value=""  class="cancel" />
+			</div>
+		</div>
+</div>
+
+		<form name="upload" method="post" enctype="multipart/form-data" style="display: none;">
+				<div id="upload">
+				<dl class="fileupload clear">
+					<dt><label for="upfile">ファイル</label></dt>
+					<dd><input type="file" id="upfile" name="upfile[]" /></dd>
+					<dt><label for="description">タイトル</label></dt>
+					<dd><input type="text" id="description" name="description[]" /></dd>
+					<dt>アルバム</dt>
+					<dd>
+						<label><input type="radio" name="album[0]" value="1" checked="checked" />追加する</label>
+						<label><input type="radio" name="album[0]" value="0" />追加しない</label>
+					</dd>
+				</dl>
+								<p id="upload_form"><a href="#" class="close" onclick="return false;">複数アップロード</a></p>
+								<div id="multi_upload" style="display: none;">
+									<div style="margin: 20px 15px 10px;background-color: #E6F3F9;color:gray;padding: 10px;">
+						アルバムへの追加設定：<a href="#" onclick="toggleAddAlbumFlg(0);return false;">全て追加する</a>
+						/
+						<a href="#" onclick="toggleAddAlbumFlg(1);return false;">全て追加しない</a>
+					</div>
+									<dl class="fileupload clear">
+						<dt><label for="upfile1">ファイル</label></dt>
+						<dd><input type="file" id="upfile1" name="upfile[]" /></dd>
+						<dt><label for="description1">タイトル</label></dt>
+						<dd><input type="text" id="description1" name="description[]" /></dd>
+						<dt>アルバム</dt>
+						<dd>
+							<label><input type="radio" name="album[1]" value="1" checked="checked" />追加する</label>
+							<label><input type="radio" name="album[1]" value="0" />追加しない</label>
+						</dd>
+					</dl>
+					<dl class="fileupload clear">
+						<dt><label for="upfile2">ファイル</label></dt>
+						<dd><input type="file" id="upfile2" name="upfile[]" /></dd>
+						<dt><label for="description2">タイトル</label></dt>
+						<dd><input type="text" id="description2" name="description[]" /></dd>
+						<dt>アルバム</dt>
+						<dd>
+							<label><input type="radio" name="album[2]" value="1" checked="checked" />追加する</label>
+							<label><input type="radio" name="album[2]" value="0" />追加しない</label>
+						</dd>
+					</dl>
+					<dl class="fileupload clear">
+						<dt><label for="upfile3">ファイル</label></dt>
+						<dd><input type="file" id="upfile3" name="upfile[]" /></dd>
+						<dt><label for="description3">タイトル</label></dt>
+						<dd><input type="text" id="description3" name="description[]" /></dd>
+						<dt>アルバム</dt>
+						<dd>
+							<label><input type="radio" name="album[3]" value="1" checked="checked" />追加する</label>
+							<label><input type="radio" name="album[3]" value="0" />追加しない</label>
+						</dd>
+					</dl>
+					<dl class="fileupload clear">
+						<dt><label for="upfile4">ファイル</label></dt>
+						<dd><input type="file" id="upfile4" name="upfile[]" /></dd>
+						<dt><label for="description4">タイトル</label></dt>
+						<dd><input type="text" id="description4" name="description[]" /></dd>
+						<dt>アルバム</dt>
+						<dd>
+							<label><input type="radio" name="album[4]" value="1" checked="checked" />追加する</label>
+							<label><input type="radio" name="album[4]" value="0" />追加しない</label>
+						</dd>
+					</dl>
+					<dl class="fileupload clear">
+						<dt><label for="upfile5">ファイル</label></dt>
+						<dd><input type="file" id="upfile5" name="upfile[]" /></dd>
+						<dt><label for="description5">タイトル</label></dt>
+						<dd><input type="text" id="description5" name="description[]" /></dd>
+						<dt>アルバム</dt>
+						<dd>
+							<label><input type="radio" name="album[5]" value="1" checked="checked" />追加する</label>
+							<label><input type="radio" name="album[5]" value="0" />追加しない</label>
+						</dd>
+					</dl>
+				</div>
+
+
+				<div class="upload_setting">
+					<h4>設定</h4>
+					<dl class="clear">
+						<dt>サムネイル</dt>
+						<dd><input type="checkbox" name="thumb" id="thumb" /> <label for="thumb">同時に作成する(jpg、gif、png) </label>
+						横幅:<input type="text" name="width"  value="300" size="3" maxlength="3" class="thumb_size" />
+						縦幅:<input type="text" name="height" value="180" size="3" maxlength="3" class="thumb_size" /></dd>
+						<dt>Exif</dt>
+						<dd>
+							<input type="checkbox" name="exif" id="clear_exif" /> <label for="clear_exif">画像に含まれるExif情報を削除する(JPEG形式のみ)</label>
+						</dd>
+						<dt><label for="overwrite">同名ファイル</label></dt>
+						<dd>
+							<select name="overwrite" id="overwrite">
+								<option value="rename">別名で保存 </option>
+								<option value="force" selected>上書き保存 </option>
+							</select>
+						</dd>
+						<dt>アルバム</dt>
+						<dd>
+							<select name="auk" id="fixed_select">
+<option value="20160926RwNCrAL5">animeSS</option>							</select>
+						</dd>
+					</dl>
+				</div><!--/upload_setting-->
+
+								<fieldset>
+				<div id='btn_upload'></div>
+			    <script langeage="javascript">
+				<!--
+					document.getElementById('btn_upload').innerHTML = '<input type="button" onClick="CheckOverwrite(\'blog\',\'同名ファイルが存在します。上書きしてもよろしいですか？\');" value="アップロード" />';
+				-->
+				</script>
+				<noscript>
+				  <input type="submit" value="アップロード" />
+				</noscript>
+				</fieldset>
+											</div><!--/upload-->
+
+			<input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
+			<input type="hidden" name="isform"        value="1" />
+			<input type="hidden" name="mode"          value="control" />
+			<input type="hidden" name="process"       value="upload" />
+			<input type="hidden" name="type"          value="upload" />
+			<input type="hidden" name="crc"           value="bd1925d6bd28d30c7a1ce609954e17dd" />
+			<input type="hidden" name="insert"        value="" />
+			<input type="hidden" name="ua"            value="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36" />
+
+			</form>
+
+		<div class="boxposition_left"><span class="style_error" name="errorMessageView"></span></div>			<div class="boxposition_left"><span class="style_error" id="js_message"></span></div>
+
+
+
+			<h3 class="sh_heading_main_b" id="list_file_title">ファイル一覧</h3>
+
+		<form method="post" name="file" action="/control.php">
+			<div class="pulldownmenu1 clear">
+				<div class="search_area">
+					<select name="tail" onChange="document.file.type.value='';">
+						<option value="">種類</option>
+						<option value="jpg" >JPEG画像</option><option value="gif" >GIF画像</option><option value="png" >PNG画像</option><option value="ico" >アイコン</option><option value="swf" >フラッシュ</option><option value="mid" >MIDI音源</option><option value="mp3" >MP3音源</option><option value="htm" >HTML文書</option><option value="js" >JavaScript</option><option value="css" >StyleSheet</option><option value="xml" >XML文書</option><option value="xsl" >XSL文書</option><option value="rdf" >RDF文書</option><option value="txt" >テキスト</option>					</select>
+					<select name="sort" onChange="document.file.type.value='';">
+						<option value="da" >日付昇順</option><option value="dd" selected>日付降順</option><option value="sa" >サイズ昇順</option><option value="sd" >サイズ降順</option><option value="na" >名前昇順</option><option value="nd" >名前降順</option>					</select>
+					<input type="text" name="key" value="" />
+					<input type="button" value="検索" id="searchButton">
+					<input type="hidden" name="mode"    value="control" />
+					<input type="hidden" name="process" value="upload" />
+					<input type="hidden" name="type"    value="" />
+					<input type="hidden" name="crc"     value="bd1925d6bd28d30c7a1ce609954e17dd" />
+					<input type="hidden" name="insert"  value="" />
+				</div>
+
+				<div class="file_select">
+					<div class="file_select_btn">
+						<input onclick="All(document.file);" type="button" value="全て選択" />
+						<input onclick="Reverse(document.file);" type="button" value="選択反転" />
+						<input onclick="document.file.type.value='delete';Delete(document.file);document.file.type.value='';"  type="button" class="delbtn_style" value="一括削除" />
+					</div>
+
+					<p class="albumlink_btn">
+						<a class="upload_bg_album upload_bg gtm-upload_albumlink" href="http://admin.blog.fc2.com/control.php?mode=album">
+							<span><img alt="アルバム管理はこちら" src="//static.fc2.com/share/fc2footermenu/blank.gif" /></span>
+						</a>
+					</p>
+				</div>
+			</div>
+
+							<div class="page">            <span>1</span>                <a href="/control.php?page=2&mode=control&process=upload&sort=dd" title="2">2</a>        <a href="/control.php?page=3&mode=control&process=upload&sort=dd" title="3">3</a>        <a href="/control.php?page=4&mode=control&process=upload&sort=dd" title="4">4</a>        <a href="/control.php?page=5&mode=control&process=upload&sort=dd" title="5">5</a>        <a href="/control.php?page=6&mode=control&process=upload&sort=dd" title="6">6</a>        <a href="/control.php?page=7&mode=control&process=upload&sort=dd" title="7">7</a>        <a href="/control.php?page=8&mode=control&process=upload&sort=dd" title="8">8</a>        <a href="/control.php?page=9&mode=control&process=upload&sort=dd" title="9">9</a>        <a href="/control.php?page=10&mode=control&process=upload&sort=dd" title="10">10</a>      <a href="/control.php?page=2&mode=control&process=upload&sort=dd">&gt;</a> <a href="/control.php?page=22&mode=control&process=upload&sort=dd">&gt;&gt;</a></div>
+
+							<div class="page">            <span>1</span>                <a href="/control.php?page=2&mode=control&process=upload&sort=dd" title="2">2</a>        <a href="/control.php?page=3&mode=control&process=upload&sort=dd" title="3">3</a>        <a href="/control.php?page=4&mode=control&process=upload&sort=dd" title="4">4</a>        <a href="/control.php?page=5&mode=control&process=upload&sort=dd" title="5">5</a>        <a href="/control.php?page=6&mode=control&process=upload&sort=dd" title="6">6</a>        <a href="/control.php?page=7&mode=control&process=upload&sort=dd" title="7">7</a>        <a href="/control.php?page=8&mode=control&process=upload&sort=dd" title="8">8</a>        <a href="/control.php?page=9&mode=control&process=upload&sort=dd" title="9">9</a>        <a href="/control.php?page=10&mode=control&process=upload&sort=dd" title="10">10</a>      <a href="/control.php?page=2&mode=control&process=upload&sort=dd">&gt;</a> <a href="/control.php?page=22&mode=control&process=upload&sort=dd">&gt;&gt;</a></div>
+
+		</form>
+
+
+		</div><!--/tool_area-->
+		</div><!-- /right -->
+	</div><!-- /ajaxcontent -->
+</div><!--contents_box end-->
+		<div id="ad_sidebody">
+		<iframe src="//assys01.fc2.com/1191" style="width:200px;height:200px;border:none;" scrolling="no"></iframe>
+<!-- FC2管理用 -->
+<img src="//media.fc2.com/counter_img.php?id=878" width="1" height="1">
+<!-- FC2管理用 -->	</div>
+
+
+	<div class="header_ad">
+				<iframe src="//assys01.fc2.com/1192" style="width:468px;height:60px;border:none;" scrolling="no"></iframe>
+<!-- FC2管理用 -->
+<img src="//media.fc2.com/counter_img.php?id=977" width="1" height="1">
+<!-- FC2管理用 -->					</div>
+
+
+</div><!-- /container -->
+</div><!-- /wrap -->
+
+
+
+<div id="f-wrap" style="text-align:left">
+	<div id="f-wrap_inner" style="width:900px;">
+		<div id="f-service_outline">
+			<h3 id="f-serevice_logo">
+				<a href="http://blog.fc2.com/" target="_blank">
+					<img src="//static.fc2.com/image/blog_portal/pc/blog_logo.png" alt="FC2ブログ">
+				</a>
+			</h3>
+
+			<ul class="service_outline_list" style="display: none;">
+				<li class="service_outline_item"><a class="gtm-f_link" href="http://help.fc2.com/blog/" target="_blank">ヘルプ</a></li>
+				<li class="service_outline_item"><a class="gtm-f_link" href="http://fc2information.blog.fc2.com/?cat=21" target="_blank">インフォメーション</a></li>
+				<li class="service_outline_item"><a class="gtm-f_link" href="http://request.fc2.com/search_wish.php?ct1=5" target="_blank">リクエスト</a></li>
+				<li class="service_outline_item"><a class="gtm-f_link" href="http://help.fc2.com/blog/tos/ja#service_blog" target="_blank">利用規約</a></li>
+				<li class="service_outline_item"><a class="gtm-f_link" href="http://fc2support.blog85.fc2.com/blog-category-1.html" target="_blank">障害情報</a></li>
+			</ul>
+		</div>
+		<div id="f-service_map">
+			<div class="service_map_contents">
+				<h4 class="service_map_title">FC2ブログについて</h4>
+				<ul class="service_map_list">
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/guide/" target="_blank">FC２の豊富な機能</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/mobile/" target="_blank">スマホからもブログ投稿</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/paid/" target="_blank">有料プラン</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/album/" target="_blank">アルバム機能</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/recommend/" target="_blank">おすすめブログ</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/template_search.php" target="_blank">テンプレート一覧</a></li>
+				</ul>
+			</div>
+			<div class="service_map_contents">
+				<h4 class="service_map_title">ブロマガ</h4>
+				<ul class="service_map_list">
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/blomaga/" target="_blank">ブロマガとは？</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/genre/ranking/blomaga/" target="_blank">ブロマガランキング</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/blomaga/write.html" target="_blank">ブロマガの書き方</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://blog.fc2.com/contents/blomaga/affiliate.html" target="_blank">ブロマガアフィリエイト</a></li>
+				</ul>
+			</div>
+			<div class="service_map_contents last">
+				<h4 class="service_map_title">サポート</h4>
+				<ul class="service_map_list">
+					<li class="service_map_item"><a class="gtm-f_link" href="http://help.fc2.com/blog/" target="_blank">ヘルプ</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://fc2information.blog.fc2.com/?cat=21" target="_blank">インフォメーション</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://request.fc2.com/search_wish.php?ct1=5" target="_blank">リクエスト</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://help.fc2.com/blog/tos/ja#service_blog" target="_blank">利用規約</a></li>
+					<li class="service_map_item"><a class="gtm-f_link" href="http://fc2support.blog85.fc2.com/blog-category-1.html" target="_blank">障害情報</a></li>
+				</ul>
+			</div>
+			<div class="footer_bnr_area">
+				<h4 class="service_map_title">アプリでもブログ投稿</h4>
+				<a href="http://apps.fc2.com/referrer/index.php?nexturl=https%3A%2F%2Fitunes.apple.com%2Fjp%2Fapp%2Fid374259309&amp;utm_source=blog.fc2.com&amp;utm_medium=referral&amp;utm_term=blog.ios.app&amp;utm_content=pc_rightColumn&amp;utm_campaign=officialBanner-ja" class="gtm-f_link footer_bnr" target="_blank">
+					<img src="//static.fc2.com/image/app/appstore139x41.png" alt="App Store">
+				</a>
+				<a href="http://apps.fc2.com/referrer/index.php?nexturl=http%3A%2F%2Fapps.fc2.com%2Fblog%2F%3Fc_device%3Dandroid&amp;utm_source=blog.fc2.com&amp;utm_medium=referral&amp;utm_term=blogn.android.app&amp;utm_content=pc_rightColumn&amp;utm_campaign=banner-ja" class="gtm-f_link footer_bnr" target="_blank">
+					<img src="//static.fc2.com/image/app/andoroid_n_139x41.png" alt="Google play">
+				</a>
+			</div>
+		</div>
+		<div id="f-service_common">
+			<ul class="common_service_list">
+				<li class="common_service_item"><a class="gtm-f_link" href="http://fc2.com/" target="_blank">FC2トップ</a></li>
+				<li class="common_service_item"><a class="gtm-f_link" href="http://help.fc2.com/inquiry">お問い合わせ</a></li>
+				<li class="common_service_item"><a class="gtm-f_link" href="http://fc2.com/company.html" target="_blank">会社概要</a></li>
+				<li class="common_service_item"><a class="gtm-f_link" href="http://fc2.com/privacy.html" target="_blank">プライバシーポリシー</a></li>
+				<li class="common_service_item"><a class="gtm-f_link" href="http://help.fc2.com/copyrights/tos/ja" target="_blank">著作権ガイドライン</a></li>
+				<li class="common_service_item"><a class="gtm-f_link" href="http://fc2.com/ja/sales.html" target="_blank">広告掲載</a></li>
+			</ul>
+
+			<div class="copyright_wrap">
+				<p class="copyright">Copyright(c)1999 FC2, Inc. All Rights Reserved.</p>
+				<a href="https://twitter.com/fc2info" class="twitter-follow-button" data-show-count="false" data-lang="ja">@fc2infoさんをフォロー</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+			<script type="text/javascript">
+		$.fn.extend({
+				"stripe": function(){
+				var cnt=0;
+				this.each(function(i,n){
+					if(++cnt % 2 == 0){
+						$(n).addClass("evencell");
+					}
+				});
+			}
+		});
+		$(function(){
+			$('table#comment_list tr').stripe(); // コメント管理
+			$('table#oldlog_list tr').stripe(); // 過去記事管理
+			$('table#trackback_list tr').stripe(); // トラックバック管理
+			$('table#history_list tr').stripe(); // 訪問者リスト
+			$('table#clap_comment tr').stripe(); // 拍手コメント
+			$('table#time_statistics > tr').stripe(); // 拍手コメント -> 履歴詳細
+			$('div#community_area > table.main_table tr ').stripe(); // ブロとも足跡
+			$('div#right ul.messagetable li').stripe(); // メッセージ
+			$('table#amazon_itemlist tr').stripe(); // マイショップ管理
+			$('table#category_list tr').stripe(); // カテゴリ編集
+			$('table#template_plist tr').stripe(); // テンプレートの設定
+			$('table#template_userdetail tr').stripe(); // テンプレートの設定 -> PC用テンプレート, 共有プラグイン追加
+			$('table#template_mlist tr').stripe(); // テンプレートの設定 -> モバイル用テンプレート
+			$('div#setting_area form[name="plugin1"] table.plgin_list tr').stripe(); // PCプラグイン管理 1
+			$('div#setting_area form[name="plugin2"] table.plgin_list tr').stripe(); // PCプラグイン管理 2
+			$('div#setting_area form[name="public"] > table.main_table tr').stripe(); // PC/モバイルプラグイン管理 -> 公式プラグイン追加
+			$('table#link_list tr').stripe(); // リンクの設定
+			$('table#file_detail tr').stripe(); // ファイルアップロード一覧
+			$('table#usertag_list tr').stripe(); // ユーザータグ管理
+			$('table#theme_list tr').stripe(); // スレッドテーマ
+			$('div#right div.tbl table').stripe(); // コミュニケーションタブ -> コミュニティ
+			$('div#appli_developer table tr ').stripe(); // アプリ作成
+			$('div#appli_list table.main_table tr ').stripe(); // アプリ一覧
+			$('div#search_list div.appli').stripe(); // アプリ一覧 -> 検索
+			$('div#appli_developer > form > table > tr').stripe(); // アプリ開発
+			$('div#right div.block dl.topic_list_test dd').stripe(); // 参加コミュ一覧
+			$('div#right table.default_table tr').stripe(); // ブロとも設定
+			$('div#newbaton > ul > li').stripe(); // バトン管理 -> 新着バトン
+			$('div#baton_news div#ranking > ul > li').stripe(); // バトン管理 -> バトンランキング
+			$('div#baton_edit ul.create_baton li').stripe(); // バトン作成 -> バトン設定
+			$('div#baton_log table.loglist tr').stripe(); // バトン管理 -> 作成済みバトン一覧
+			$('table#shop_category tr').stripe(); // Amazon -> カテゴリ一覧
+			$('table#export_list tr').stripe(); // 書籍化, import/export
+			$('table#template_commentlist tr').stripe(); // 共有プラグイン詳細 -> コメント
+			$('div#control_area table#fc2info tr').stripe(); // FC2からのおしらせ
+			$('div#control_area table#recent_cotr tr').stripe(); // 新着コメント・トラバ
+			$('div#tool_area table#theme_making tr').stripe(); // テーマ作成
+			$('div#setting_area table#main_table tr').stripe(); // 環境設定
+		});
+		</script>
+
+<script type="text/javascript">
+function toggleMenuCookie(id) {
+	var style_display = $('#'+id).css('display');
+	var coookie = document.cookie+";",key_find = "blog_menu_conf=",key_begin = coookie.indexOf(key_find);
+	if(key_begin != -1){
+		cookie = decodeURIComponent(coookie.substring(key_begin+key_find.length, coookie.indexOf(";", key_begin)));
+		id = id.substring(id.indexOf('menu_')+5);
+		cookie = cookie.replace(new RegExp(id+"=[01]"), id+"="+(style_display == 'none' ? '1' : '0'));
+		SetCookie("blog_menu_conf", cookie);
+	}
+}
+$(function(){
+	var toggleSpeed = 150;
+	$('h3.ml_home').click(function() {
+		$('#menu_home').slideToggle(toggleSpeed, toggleMenuCookie('menu_home'));
+		return false;
+	});
+	$('h3.ml_sns').click(function() {
+		$('#menu_sns').slideToggle(toggleSpeed, toggleMenuCookie('menu_sns'));
+		return false;
+	});
+	$('h3.ml_setting').click(function() {
+		$('#menu_setting').slideToggle(toggleSpeed, toggleMenuCookie('menu_setting'));
+		return false;
+	});
+	$('h3.ml_tool').click(function() {
+		$('#menu_tool').slideToggle(toggleSpeed, toggleMenuCookie('menu_tool'));
+		return false;
+	});
+});
+</script>
+</body>
+</html>

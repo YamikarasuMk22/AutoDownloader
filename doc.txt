@@ -8,6 +8,14 @@
 	・ダウンローダーとアップローダーは分ける？
 	・イメージのURLは可変数字部分を変数(@@等)として処理するか？
 
+
+ブログURL：http://blogName.blog.fc2.com/blog-entry-[blogID].html
+
+画像ファイル名：[id]-[page].jpg
+画像URL：http://blog-imgs-[blogImgID].fc2.com/b/l/o/blogName/[id]-[page].jpg
+サンプル：http://blog-imgs-77.fc2.com/h/d/f/hdfdatabase/23a-ss4.jpg
+
+
 タグで検索
 ↓
 ページ数を解析

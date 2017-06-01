@@ -1,0 +1,201 @@
+view-source:https://fc2.com/login.php
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-Transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ログイン　FC2 - 無料ホームページ アクセス解析 ブログ レンタルサーバー SEO 対策 等 -</title>
+<meta name="description" content="無料レンタル アクセス解析" />
+<meta name="keywords" content="FC2,blog,ブログ,ホームページ,無料,アクセス解析,カウンター,掲示板,BBS,アイコン,レンタルサーバー,ショッピングモール,ショッピングカート,携帯,メールフォーム,アダルト" />
+<meta name="robots" content="noindex,nofollow,noarchive">
+
+<meta name="author" content="FC2,Inc." />
+<meta name="copyright" content="Copyright (c) 1999- FC2, Inc. All Rights Reserved." />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<link rel="canonical" href="//fc2.com/"><link rel="start" href="//fc2.com/">
+<link rel="shortcut icon" href="//static.fc2.com/share/image/favicon.ico" />
+
+<link rel="stylesheet" type="text/css" href="//static.fc2.com/share/css/common.css" />
+<link rel="stylesheet" type="text/css" href="//static.fc2.com/share/fc2parts/css/share.css" />
+<link rel="stylesheet" type="text/css" href="//static.fc2.com/fc2com/css/fc2com_default.css?12122102" /><!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="//static.fc2.com/fc2com/css/ie.css" media="all" />
+<![endif]-->
+
+<script type="text/javascript" src="//static.fc2.com/fc2com/js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="//static.fc2.com/fc2com/js/tab_panel.js"></script>
+<script type="text/javascript" src="//static.fc2.com/share/fc2parts/js/common_design.js"></script>
+<script type="text/javascript" src="//static.fc2.com/fc2com/ja/loginform.js"></script>
+<link rel="stylesheet" type="text/css" href="//static.fc2.com/fc2com/css/in-out.css" media="all" />
+
+
+</head>
+
+<body><!--test3--><!-- header_box -->
+<div id="sh_header_box">
+	<div id="sh_header_col">
+		<div class="sh_search">
+		</div>
+		<div class="sh_langselect">
+		<select onchange="javascript:location.replace('https://' + document.domain + '/' + this.options[this.selectedIndex].value);"><option value="">Language</option><option value="ja/login.php?ref=">日本語</option><option value="en/login.php?ref=">English</option><option value="tw/login.php?ref=">繁體中文</option><option value="cn/login.php?ref=">简体中文</option><option value="th/login.php?ref=">ภาษาไทย</option><option value="ko/login.php?ref=">한국어</option><option value="de/login.php?ref=">Deutsch</option><option value="es/login.php?ref=">Español</option><option value="ru/login.php?ref=">Русский</option><option value="fr/login.php?ref=">Français</option><option value="id/login.php?ref=">Indonesia</option><option value="pt/login.php?ref=">Português</option><option value="vi/login.php?ref=">Tiếng Việt</option></select>		</div>
+		<div class="sh_header_nav">
+		</div>
+	</div>
+</div>
+<!-- /header_box -->
+
+<div id="container" class="clear">
+	<div id="header" class="whenIE7below">
+		<h1><a href="//fc2.com/">FC2 total Web Solutions</a></h1>
+	</div>
+
+	<h2 class="sh_heading_main_b_wide"><span>
+		FC2IDへログインします。ログイン情報を入力し[ログイン]ボタンをクリックしてください。		</span></h2>
+	<div id="login-content">
+
+				<form name="form_login" method="post" action="https://secure.id.fc2.com/index.php?mode=login&switch_language=ja" onsubmit="return login_form_check()">
+			<ul>
+								<li>登録メールアドレス：</li>
+				<li><input name="email" type="text" id="email" value="" class="input_fc2id_login" /></li>
+				<li>パスワード：</li>
+				<li><input name="pass" type="password" id="pass" class="input_fc2id_login" /></li>
+				<li>
+					<p class="sh_login_ja" align="center" style="margin-top:12px;"><a>
+					<input name="image" type="image" value="ログイン" width="200" height="47" src="https://secure.id.fc2.com/image/fc2footer/blank.gif" />
+					<img width="200" height="47" alt="" src="https://secure.id.fc2.com/image/fc2footer/blank.gif" />
+					</a></p>
+				</li>
+				<li>
+				<div align="center">
+					<label><input name="keep_login" type="checkbox" id="keep_login" onclick="alert_keep_login()" value="1" /> ログイン状態を維持</label>
+					<input name="done" type="hidden" id="done" value="" />
+				</div>
+				</li>
+			</ul>
+			<img src="//static.fc2.com/share/fc2parts/image/sh_help_icon.gif" width="20" height="20" alt="" class="icon_help" />
+			<a href="http://id.fc2.com/remind.php">メールアドレス／パスワードを忘れた？</a>						<br />
+			<img src="//static.fc2.com/share/fc2parts/image/sh_help_icon.gif" width="20" height="20" alt="" class="icon_help" /> <a href="http://help.fc2.com/fc2id/qa/group4" target="_blank">ログインできない</a>		</form>
+			<br /><br />			<div class="regist_new_around" align="center">
+			<h3 class="sh_regist_ja"><a href="http://id.fc2.com/signup.php?switch_language=ja&ref="><img width="200" height="47" alt="FC2ID取得" src="//static.fc2.com/share/fc2footermenu/blank.gif" /></a></h3>
+			<p class="sh_login_text">FC2IDをお持ちでない方</p>
+			<img src="//static.fc2.com/share/fc2parts/image/sh_help_icon.gif" width="20" height="20" alt="" class="icon_help" /><a href="//help.fc2.com/fc2id/qa/group2/4" target="_blank">FC2IDってなんですか？</a>			</div>
+
+
+	</div><!-- /login-content -->
+
+<!-- header_ad 468x60 -->
+	<div id="ad_banner468x60">
+	<iframe src="//assys01.fc2.com/1302" style="width:468px;height:60px;border:none;" scrolling="no"></iframe>
+<!-- FC2管理用 -->
+<img src="//media.fc2.com/counter_img.php?id=3761" width="1" height="1">
+<!-- FC2管理用 -->
+
+
+	</div>
+<!-- /header_ad 468x60 -->
+	<div id="ad-content" class="clear">
+		<ul id="ad">
+<li class="pr">PR</li>
+<li>
+<center>
+
+<iframe src="//assys01.fc2.com/1271" style="width:300px;height:250px;border:none;" scrolling="no"></iframe>
+
+</center>
+</li>
+<!--<li><p>テキスト記入欄</p></li>-->
+</ul>
+</center>
+</li>
+<!--<li><p>テキスト記入欄</p></li>-->
+</ul><!-- FC2管理用 --><img src="//media.fc2.com/counter_img.php?id=401" width="1" height="1"><!-- FC2管理用 -->			</div>
+	<br clear="all" />
+</div><!--/container-->
+ <!--is_loginjack-->
+
+	<div id="ad-footer" align="center">
+       <!-- FC2管理用 --><img src="//media.fc2.com/counter_img.php?id=1303" width="1" height="1"><!-- FC2管理用 -->	</div>
+
+	<div id="ad_overlay" style="style="z-index: ; position: ; text-align: ; width: %; visibility: ; -webkit-transform: (1.01); left: ; -webkit-transform-origin-x: %; -webkit-transform-origin-y: %; top: ; display: ; "">
+      	</div>
+	<script type="text/javascript" src="//static.fc2.com/fc2com/js/overlay4tablet.js?7774159"></script>
+	<script type="text/javascript">FC2AdTabletOverlay('ad_overlay');</script>
+
+<!-- FC2広告View管理用 --><img src="//media.fc2.com/counter_img.php?id=838" width="1" height="1"><!-- /FC2管理用 -->
+<!-- ja版共通フッタここから -->
+<div id="sh_fc2footer_fix">
+	<div id="sh_fc2footer_menu">
+		<div id="sh_fc2tooter_tab">
+			<div><span class="sh_footer_rnd5"></span><span class="sh_footer_rnd4"></span><span class="sh_footer_rnd3"></span><span class="sh_footer_rnd2"></span><span class="sh_footer_rnd1"></span></div>
+			<ul>
+				<li class="sh_request"><a href="//request.fc2.com/search_wish.php?ct1=0" title="FC2リクエストへ">リクエスト</a></li>
+				<li class="sh_kiyaku"><a href="//help.fc2.com/common/tos/ja" title="サービス利用規約へ">利用規約</a></li>
+				<li class="sh_shogai"><a href="http://fc2support.blog85.fc2.com/">障害情報</a></li>
+				<li class="sh_pagetop"><a href="javascript:scroller(0);" title="このページの先頭へ">ページトップへ</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="sh_fc2footer">
+		<div id="sh_fc2footermenu">
+			<ul>
+				<li><a href="//fc2.com/" title="FC2ホームへ"><img src="//static.fc2.com/share/fc2parts/image/fc2logo.png" alt="FC2ホームへ" class="fc2top" /></a></li>
+				<li>
+					<form action="//help.fc2.com/search/qa" method="get" target="_blank">
+						<img src="//static.fc2.com/share/fc2parts/image/sh_help_icon.gif" width="20" height="20" alt="" /><a href="//help.fc2.com/" target="_blank">FC2ヘルプ</a>
+						<input type="text" name="q" class="help_form_tetarea" /><input type="hidden" name="service_id" value="1" /><input type="submit" value="ヘルプ検索" />
+					</form>
+				</li>
+				<li><a href="//help.fc2.com/inquiry">お問い合わせ</a></li>
+				<li class="information"><a href="//fc2.com/company.html" rel="nofollow">会社概要</a></li>
+				<li><a href="//fc2.com/privacy.html" rel="nofollow">プライバシーポリシー</a></li>
+				<li><a href="//help.fc2.com/copyrights/tos/ja" rel="nofollow">著作権ガイドライン</a></li>
+				<li><a href="//fc2.com/ja/sales.html" rel="nofollow">広告掲載</a></li>
+			</ul>
+			<p class="copyright">Copyright(c)1999 FC2, Inc. All Rights Reserved.</p>
+		</div><!-- /sh_fc2footermenu -->
+	</div><!-- /sh_fc2footer -->
+</div><!-- /sh_fc2footer_fix -->
+<!-- /ja版共通フッタ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12020025-9']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>
