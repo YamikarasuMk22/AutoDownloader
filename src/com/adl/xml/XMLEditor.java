@@ -24,7 +24,7 @@ public class XMLEditor implements ConnectionConstants {
 		try {
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = dbf.newDocumentBuilder();
-			Document document = builder.parse(XML_FILE_PATH);
+			Document document = builder.parse(XML_COMICS);
 
 			return document;
 
@@ -96,7 +96,7 @@ public class XMLEditor implements ConnectionConstants {
 				elem = null;
 			}
 
-			createXML(XML_FILE_PATH, document);
+			createXML(XML_COMICS, document);
 
 			return true;
 
@@ -126,7 +126,7 @@ public class XMLEditor implements ConnectionConstants {
 				}
 			}
 
-			createXML(XML_FILE_PATH, document);
+			createXML(XML_COMICS, document);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -152,7 +152,7 @@ public class XMLEditor implements ConnectionConstants {
 				}
 			}
 
-			createXML(XML_FILE_PATH, document);
+			createXML(XML_COMICS, document);
 
 		} catch (Exception e) {
 			e.printStackTrace();

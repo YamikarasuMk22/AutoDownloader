@@ -17,26 +17,28 @@ import com.adl.xml.XMLEditor;
 public class WDProcessor extends WebDriver {
 
 	public static void processALL() {
-		processGallery();
+
 	}
 
 	/**
 	 * GalleryURLのHTMLを解析し、各作品のURLを取得するプロセス
 	 */
-	public static boolean processGallery() {
+	public static boolean processGallery(String downloadOption, int from, int to) {
 		boolean result = false;
 
-		Util.systemLoger("Start Process [Gallery]-----");
-		Util.systemLoger("[Gallery] AccessURL:" + DOWNLOAD_ROOT_URL);
-		String srcGallery = getSrc(DOWNLOAD_ROOT_URL);
-		List<String> contentURLList = new ArrayList<String>();
+		for(int i = from; i <= to; i++) {
+			Util.systemLoger("Start Process [Gallery]-----");
+			Util.systemLoger("[Gallery] AccessURL:" + DOWNLOAD_SITE_URL + downloadOption + CATEGORY_PAGE + i);
+			String srcGallery = getSrc(DOWNLOAD_SITE_URL + downloadOption + CATEGORY_PAGE + i);
+			List<String> contentURLList = new ArrayList<String>();
 
-		contentURLList = SrcFormater.getGalleryURLList(srcGallery);
-		Util.systemLoger("[Gallery] GalleryURLListSize:" + contentURLList.size());
+			contentURLList = SrcFormater.getGalleryURLList(srcGallery);
+			Util.systemLoger("[Gallery] GalleryURLListSize:" + contentURLList.size());
 
-		for (int i = 0; i < contentURLList.size(); i++) {
-			Util.systemLoger("[Gallery] Content Process " + (i + 1) + "/" + contentURLList.size());
-			result = processContent(DOWNLOAD_SITE_URL + contentURLList.get(i));
+			for (int j = 0; j < contentURLList.size(); j++) {
+				Util.systemLoger("[Gallery] Content Process " + (j + 1) + "/" + contentURLList.size());
+				result = processContent(DOWNLOAD_SITE_URL + contentURLList.get(j));
+			}
 		}
 
 		Util.systemLoger("End Process [Gallery]----- Flag:" + result);

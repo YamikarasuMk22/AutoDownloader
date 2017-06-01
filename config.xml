@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+	<Download>
+		<DownloadType>
+			<!-- GalleryのページFrom-Toを指定しダウンロード -->
+			<Common		available="1"			from="" to="" />
+
+			<!-- GalleryのTagおよびページFrom-Toを指定しダウンロード -->
+			<ByTag		available="0" tag=""	from="" to="" />
+
+			<!-- GalleryのParodyおよびページFrom-Toを指定しダウンロード -->
+			<ByParody	available="0" title=""	from="" to="" />
+
+			<!-- 作品IDを指定しダウンロード -->
+			<ByID		available="0" id="" />
+		</DownloadType>
+	</Download>
+	<Upload>
+		<UploadType>
+			<!-- states="downloaded"の全てのファイルをアップロード -->
+			<Common		available="1" />
+		</UploadType>
+	</Upload>
+</Root>

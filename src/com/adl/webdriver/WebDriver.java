@@ -46,17 +46,8 @@ public class WebDriver implements ConnectionConstants {
 		driver.manage().window().setSize(new Dimension(100, 50));
 	}
 
-	public static void quitWebDriver() throws Exception {
+	public static void deleteWebDriver() throws Exception {
 		driver.quit();
-	}
-
-	public static void init() {
-		try {
-			WDProcessor.processGallery();
-			quitWebDriver();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 
 	public static String openWebSite(String url) {
@@ -86,7 +77,7 @@ public class WebDriver implements ConnectionConstants {
 			driver.get(url);
 			srcStr = driver.getPageSource();
 
-			quitWebDriver();
+			deleteWebDriver();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

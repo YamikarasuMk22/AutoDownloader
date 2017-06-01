@@ -9,6 +9,6 @@
 <PageNum>PageNum</PageNum>
 <ComicURL>ComicURL</ComicURL>
 <ComicPath>ComicPath</ComicPath>
-<Blog entryid="entryid" imgid="imgid"></Blog>
+<Blog entryid="entryid" imgid="imgid" categoryid="categoryid"></Blog>
 </Comic>
 </Root>
