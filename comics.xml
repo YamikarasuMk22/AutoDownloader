@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><Root>
-<Comic id="id" imgid="imgid" uploaded="0">
+<Comic id="id" imgid="imgid" states="setup">
 <Title>Title</Title>
 <TitleJ>TitleJ</TitleJ>
 <TitleO>TitleO</TitleO>
