@@ -20,11 +20,11 @@ import com.adl.constant.ConnectionConstants;
 
 public class XMLEditor implements ConnectionConstants {
 
-	public static Document getRootDocument() {
+	public static Document getRootDocument(File file) {
 		try {
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = dbf.newDocumentBuilder();
-			Document document = builder.parse(XML_COMICS);
+			Document document = builder.parse(file);
 
 			return document;
 
@@ -68,8 +68,7 @@ public class XMLEditor implements ConnectionConstants {
 		Element root = document.createElement("Root");
 		document.appendChild(root);
 
-		File file = new File("comics.xml");
-		createXML(file, document);
+		createXML(XML_COMICS, document);
 	}
 
 	/**
@@ -80,7 +79,7 @@ public class XMLEditor implements ConnectionConstants {
 		String[] nodeElems = { "Title", "TitleJ", "TitleO", "Charas", "Tags", "Artist", "PageNum", "ComicURL", "FolderPath" };
 
 		try {
-			Document document = getRootDocument();
+			Document document = getRootDocument(XML_COMICS);
 			Element root = document.getDocumentElement();
 
 			Element comic = document.createElement("Comic");
@@ -113,7 +112,7 @@ public class XMLEditor implements ConnectionConstants {
 	public static void setStats(String id, String states) {
 
 		try {
-			Document document = getRootDocument();
+			Document document = getRootDocument(XML_COMICS);
 			Element root = document.getDocumentElement();
 
 			NodeList list = root.getElementsByTagName("Comic");
@@ -139,7 +138,7 @@ public class XMLEditor implements ConnectionConstants {
 	public static void setImgId(String id, String imgid) {
 
 		try {
-			Document document = getRootDocument();
+			Document document = getRootDocument(XML_COMICS);
 			Element root = document.getDocumentElement();
 
 			NodeList list = root.getElementsByTagName("Comic");

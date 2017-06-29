@@ -10,7 +10,7 @@ public class XMLChecker extends XMLEditor {
 	 */
 	public static boolean isExistId(String id) {
 		try {
-			Document document = getRootDocument();
+			Document document = getRootDocument(XML_COMICS);
 			Element root = document.getDocumentElement();
 			int match = 0;
 
@@ -40,7 +40,7 @@ public class XMLChecker extends XMLEditor {
 	 */
 	public static int isDownloadable(String id) {
 		try {
-			Document document = getRootDocument();
+			Document document = getRootDocument(XML_COMICS);
 			Element root = document.getDocumentElement();
 			String result = "";
 			int match = 0;

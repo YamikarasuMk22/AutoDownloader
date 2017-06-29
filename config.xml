@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Root>
-	<Download>
-		<DownloadType>
-			<!-- GalleryのページFrom-Toを指定しダウンロード -->
-			<Common		available="1"			from="" to="" />
+	<!-- 処理タイプを選択 -->
+	<!-- type=download:	物理データをダウンロードする -->
+	<!-- type=html:		論理リンクデータをhtmlとして保存する -->
+	<!-- type=upload:	ステータスが"Downloaded"のContentをアップロードする -->
+	<Process type="html" />
 
-			<!-- GalleryのTagおよびページFrom-Toを指定しダウンロード -->
-			<ByTag		available="0" tag=""	from="" to="" />
+	<!-- 処理範囲を選択 -->
+	<!-- mode=1: GalleryのページFrom-Toを指定しダウンロード -->
+	<!-- mode=2: GalleryのTagおよびページFrom-Toを指定しダウンロード -->
+	<!-- mode=3: GalleryのParodyおよびページFrom-Toを指定しダウンロード -->
+	<!-- mode=4: 作品IDを指定しダウンロード -->
+	<ProcessConfig mode="1" from="" to="" str="" />
 
-			<!-- GalleryのParodyおよびページFrom-Toを指定しダウンロード -->
-			<ByParody	available="0" title=""	from="" to="" />
-
-			<!-- 作品IDを指定しダウンロード -->
-			<ByID		available="0" id="" />
-		</DownloadType>
-	</Download>
-	<Upload>
-		<UploadType>
-			<!-- states="downloaded"の全てのファイルをアップロード -->
-			<Common		available="1" />
-		</UploadType>
-	</Upload>
+	<!-- すぐにアップロードするか選択 -->
+	<!-- mode=1: アップロードする -->
+	<!-- mode=0: アップロードしない -->
+	<ContinueUpload mode="1" />
 </Root>

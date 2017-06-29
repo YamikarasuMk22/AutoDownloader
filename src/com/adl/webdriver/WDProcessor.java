@@ -14,6 +14,10 @@ import com.adl.util.Util;
 import com.adl.xml.XMLChecker;
 import com.adl.xml.XMLEditor;
 
+/**
+ * リソースのダウンロードをマネジメントするclass
+ * 物理画像データのダウンロード、Galleryデータの成形
+ */
 public class WDProcessor extends WebDriver {
 
 	public static void processALL() {
@@ -115,8 +119,17 @@ public class WDProcessor extends WebDriver {
 			// XML更新
 			XMLEditor.addNode(comicId, param);
 
-			// ダウンロードプロセス
-			result = processDownload(comicId, url, pageNum);
+			// 画像の物理ダウンロードかHTML生成かで場合分け
+			//if(modeType.equals("download")) {
+				// ダウンロードプロセス
+				result = processDownload(comicId, url, pageNum);
+			//} else {
+				// HTML生成プロセス
+				//String html = WDProcessor2.processCreateHTML(comicId, url, pageNum);
+				//if(!html.equals("")) {
+					//result = true;
+				//}
+			//}
 		}
 
 		Util.systemLoger("End Process [Content]----- Flag:" + result);
