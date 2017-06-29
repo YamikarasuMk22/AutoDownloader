@@ -74,29 +74,4 @@ public class XMLReader extends XMLEditor {
 		List<String> list = new ArrayList<String>();
 		return list;
 	}
-
-	public static String readProcessType() {
-		String str = "";
-		return str;
-	}
-
-	public static String readProcessMode() {
-		String str = "";
-		return str;
-	}
-
-	public static String readProcessFrom() {
-		String str = "";
-		return str;
-	}
-
-	public static String readProcessTo() {
-		String str = "";
-		return str;
-	}
-
-	public static String readProcessStr() {
-		String str = "";
-		return str;
-	}
 }
